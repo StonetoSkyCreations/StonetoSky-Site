@@ -4,6 +4,371 @@
   <meta charset="UTF-8" />
   <title>Stone to Sky – Design, Art & Song</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Stone to Sky is the home of Brooke’s branding, artwork, and song – design, illustration, and voice in service to beauty, depth, and the living world.">
+  <style>
+    /* Basic reset */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #f5efe6;          /* light sand */
+      --bg-alt: #efe1d0;      /* warm beige */
+      --bg-soft: #f2e8da;     /* hero + soft areas */
+      --text: #3a2b24;        /* deep brown */
+      --muted: #6f5a4a;       /* muted brown */
+      --accent: #8b5a2b;      /* rich earthy brown */
+      --accent-dark: #6e4520; /* darker for hover */
+      --accent-soft: #c4a889; /* lines, borders */
+      --leaf: #6f7b4b;        /* soft olive green */
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+      color: var(--accent-dark);
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(245, 239, 230, 0.95);
+      border-bottom: 1px solid var(--accent-soft);
+      backdrop-filter: blur(6px);
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.75rem 0;
+    }
+
+    .logo {
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+    }
+
+    .nav-links a {
+      margin-left: 1.25rem;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 500;
+      color: var(--muted);
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    .hero {
+      padding: 4rem 1.5rem 3rem;
+      text-align: left;
+      background: var(--bg-soft);
+      border-bottom: 1px solid var(--accent-soft);
+    }
+
+    .hero-inner {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .hero h1 {
+      font-size: 2.1rem;
+      margin-bottom: 1rem;
+      letter-spacing: 0.03em;
+    }
+
+    .hero p {
+      margin-bottom: 1rem;
+      font-size: 1.05rem;
+      color: var(--muted);
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.7rem 1.4rem;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #fdf7f0;
+      font-size: 0.95rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      border: none;
+    }
+
+    .btn:hover {
+      background: var(--accent-dark);
+      text-decoration: none;
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--accent);
+      border: 1px solid var(--accent-soft);
+    }
+
+    .btn-outline:hover {
+      background: var(--accent);
+      color: #fdf7f0;
+    }
+
+    section {
+      padding: 3rem 1.5rem;
+      border-top: 1px solid var(--accent-soft);
+      background: var(--bg);
+    }
+
+    section:nth-of-type(even) {
+      background: var(--bg-alt);
+    }
+
+    section h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    section p {
+      margin-bottom: 0.75rem;
+      color: var(--muted);
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 2fr 1.5fr;
+      gap: 2rem;
+    }
+
+    ul {
+      margin-left: 1.2rem;
+      margin-bottom: 0.75rem;
+      color: var(--muted);
+    }
+
+    ul li {
+      margin-bottom: 0.35rem;
+    }
+
+    .leaf-divider {
+      margin: 0 auto 1.5rem;
+      height: 2px;
+      width: 60px;
+      background: linear-gradient(to right, transparent, var(--leaf), transparent);
+      border-radius: 999px;
+    }
+
+    /* Social section */
+    .social-block {
+      text-align: center;
+    }
+
+    .social-handle {
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-top: 0.75rem;
+    }
+
+    .social-note {
+      font-size: 0.95rem;
+      margin-top: 0.5rem;
+      color: var(--muted);
+    }
+
+    @media (max-width: 768px) {
+      .nav { flex-direction: column; align-items: flex-start; }
+      .nav-links { margin-top: 0.5rem; }
+      .nav-links a { margin-left: 0; margin-right: 0.9rem; }
+      .two-col { grid-template-columns: 1fr; }
+      .hero { padding-top: 3rem; }
+      .hero h1 { font-size: 1.8rem; }
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1.5rem 3rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+      background: #e3d3c0;
+      border-top: 1px solid var(--accent-soft);
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <div class="logo">Stone to Sky</div>
+    <nav class="nav-links">
+      <a href="#about">About</a>
+      <a href="#branding">Branding</a>
+      <a href="#artwork">Artwork</a>
+      <a href="#singing">Singing</a>
+      <a href="#cocreate">Co-creation</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="hero-inner">
+      <h1>Design, art &amp; song rooted in the living world.</h1>
+      <p>Stone to Sky is the home of Brooke’s branding, art, and song – where design, illustration, and voice come together in service to beauty, depth, and the more-than-human world.</p>
+      <p>I support people, projects, and places that are tending to culture, community, and the Earth.</p>
+      <a class="btn" href="#contact">Work with me</a>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container two-col">
+      <div>
+        <h2>About Brooke</h2>
+        <div class="leaf-divider"></div>
+        <p>Brooke is a designer, artist, and singer who moves between worlds – digital and hand-drawn, inner and outer, personal and collective.</p>
+        <p>Her work weaves three main strands:</p>
+        <ul>
+          <li>Branding &amp; design for soul-led projects and small businesses</li>
+          <li>Artwork &amp; illustration that honour the seasons, the body, and the Earth</li>
+          <li>Singing &amp; facilitation in circles, ceremonies, and community spaces</li>
+        </ul>
+        <p>Stone to Sky is the meeting point of these threads: a place for clear, grounded design that still remembers we belong to something sacred and alive.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="branding">
+    <div class="container">
+      <h2>Branding &amp; Design</h2>
+      <div class="leaf-divider"></div>
+      <p>I create visual identities and design assets for people and projects that care about beauty, integrity, and the Earth.</p>
+      <p><strong>What I offer:</strong></p>
+      <ul>
+        <li>Brand discovery and visual direction</li>
+        <li>Logos and wordmarks</li>
+        <li>Colour palettes and type systems</li>
+        <li>Layout and design for posters, calendars, and print pieces</li>
+        <li>Simple websites and sales pages (in collaboration where needed)</li>
+      </ul>
+      <p><strong>Ideal for:</strong> Herbalists, artists, healers, retreat spaces, small businesses, and community projects that want to feel visually coherent and true to themselves.</p>
+      <p><a href="#contact">Enquire about branding &raquo;</a></p>
+    </div>
+  </section>
+
+  <section id="artwork">
+    <div class="container">
+      <h2>Artwork &amp; Illustration</h2>
+      <div class="leaf-divider"></div>
+      <p>My artwork is an ongoing conversation with the seasons, the body, and the subtle world.</p>
+      <p>I create:</p>
+      <ul>
+        <li>Original pieces and illustrated collections</li>
+        <li>Seasonal calendars and lunar maps</li>
+        <li>Botanical and symbolic illustrations</li>
+        <li>Custom pieces for homes, books, and spaces</li>
+      </ul>
+      <p>If you’d like to carry my work in your shop, or commission a piece for your space or project, I’d love to hear from you.</p>
+      <p><a href="#contact">Enquire about artwork &raquo;</a></p>
+    </div>
+  </section>
+
+  <section id="singing">
+    <div class="container">
+      <h2>Singing &amp; Facilitation</h2>
+      <div class="leaf-divider"></div>
+      <p>My voice work lives in circles, ceremonies, and small gatherings where people come to soften, listen, and reconnect.</p>
+      <p>I offer:</p>
+      <ul>
+        <li>Singing and sound in ceremony and ritual spaces</li>
+        <li>Co-facilitation of retreats and workshops</li>
+        <li>Gentle guided practices that weave song, presence, and grounding</li>
+      </ul>
+      <p>This work is intimate and relational. If you’re holding a space and feel my presence and voice would support the field, reach out and we can feel into it together.</p>
+      <p><a href="#contact">Enquire about singing &amp; facilitation &raquo;</a></p>
+    </div>
+  </section>
+
+  <section id="cocreate">
+    <div class="container">
+      <h2>Co-Creative Projects</h2>
+      <div class="leaf-divider"></div>
+      <p>Some of the most alive work happens in the overlap – where design, art, and song come together around a shared intention.</p>
+      <p>I’m open to collaboration on:</p>
+      <ul>
+        <li>Visual worlds and storytelling for creative projects</li>
+        <li>Offerings that blend artwork, song, and ritual</li>
+        <li>Seasonal and Earth-based projects that need both design and facilitation</li>
+        <li>Quiet, long-term creative partnerships with aligned people and places</li>
+      </ul>
+      <p>If you feel a resonance but don’t see a neat box for it here, you’re welcome to write and share the seed of your idea.</p>
+      <p><a href="#contact">Share a project idea &raquo;</a></p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <h2>Contact</h2>
+      <div class="leaf-divider"></div>
+      <p>You can reach me directly via email.</p>
+      <p><strong>Email:</strong> <a href="mailto:brooke@stonetosky.nz">brooke@stonetosky.nz</a></p>
+      <p><strong>Location:</strong> Ōtautahi / Christchurch, Aotearoa New Zealand</p>
+      <p>When you write, you’re welcome to share what you’re dreaming of or needing support with, which strand you’re most drawn to (branding, artwork, singing, or a mix), and any timelines or key dates.</p>
+    </div>
+  </section>
+
+  <!-- Social / portfolio section near the bottom -->
+  <section id="social">
+    <div class="container social-block">
+      <h2>See More of Brooke’s Work</h2>
+      <div class="leaf-divider"></div>
+      <p>For current pieces, behind-the-scenes process, and offerings, you can visit Brooke’s art and design journal:</p>
+      <a
+        class="btn btn-outline"
+        href="https://www.instagram.com/stone.to.sky"
+        target="_blank"
+        rel="noopener"
+      >
+        Visit Instagram
+      </a>
+      <div class="social-handle">@stone.to.sky</div>
+      <div class="social-note">Opens in a new tab.</div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  &copy; <!-- replace with current year if you like --> Stone to Sky. All rights reserved.
+</footer>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Stone to Sky – Design, Art & Song</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Stone Sky is the home of Brooke’s branding, artwork, and song – design, illustration, and voice in service to beauty, depth, and the living world.">
   <style>
     /* Basic reset */
