@@ -17,7 +17,6 @@
   <meta property="og:description" content="Branding, artwork, and song rooted in the living world. Stone to Sky supports soul-led projects, herbalists, artists, healers, retreats and community spaces." />
   <meta property="og:url" content="https://stonetosky.nz/" />
   <meta property="og:site_name" content="Stone to Sky" />
-  <!-- Replace this image URL once you have a real share image -->
   <meta property="og:image" content="https://stonetosky.nz/og-image.jpg" />
 
   <!-- Twitter / X card -->
@@ -26,14 +25,15 @@
   <meta name="twitter:description" content="Design, art & song rooted in the living world. Branding and illustration for soul-led projects and Earth-based work." />
   <meta name="twitter:image" content="https://stonetosky.nz/og-image.jpg" />
 
-    <link rel="icon" type="image/png" href="favicon-512.png">
-  <link rel="apple-touch-icon" href="favicon-512.png">
+  <!-- Icons -->
+  <link rel="icon" type="image/png" href="favicon-512.png" />
+  <link rel="apple-touch-icon" href="favicon-512.png" />
 
-  <!-- Structured data for search/AI (JSON-LD) -->
+  <!-- Structured data for search / AI (JSON-LD) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "ProfessionalService",
+    "@type": ["LocalBusiness", "ProfessionalService"],
     "name": "Stone to Sky",
     "url": "https://stonetosky.nz/",
     "description": "Stone to Sky is the home of Brooke’s branding, artwork, and song – design, illustration, and voice in service to beauty, depth, and the living world.",
@@ -45,17 +45,9 @@
       "addressRegion": "Canterbury",
       "addressCountry": "NZ"
     },
-    "areaServed": {
-      "@type": "GeoCircle",
-      "geoMidpoint": {
-        "@type": "GeoCoordinates",
-        "latitude": -43.5321,
-        "longitude": 172.6362
-      },
-      "geoRadius": 500000
-    },
     "sameAs": [
-      "https://www.instagram.com/stone.to.sky"
+      "https://www.instagram.com/stone.to.sky",
+      "https://www.facebook.com/stonetoskycreations/"
     ],
     "serviceType": [
       "Branding and visual identity design",
@@ -109,15 +101,6 @@
     a:hover {
       text-decoration: underline;
     }
-
-    .hero-logo {
-    width: 180px;     /* adjust this value to make it bigger/smaller */
-    max-width: 60%;
-    display: block;
-    margin: 0 auto 20px; /* centers the logo and adds space below */
-    opacity: 1;
-}
-
 
     /* ---------- Layout ---------- */
     .container {
@@ -195,15 +178,36 @@
       transition: transform 0.2s ease, opacity 0.2s ease;
     }
 
-    /* Hero */
+    /* ---------- Hero ---------- */
     .hero {
       padding: 4rem 1.5rem 3.5rem;
       background: radial-gradient(circle at top, var(--bg-deeper) 0, var(--bg) 52%);
     }
 
     .hero-inner {
-      max-width: 720px;
+      max-width: 960px;
       margin: 0 auto;
+    }
+
+    .hero-layout {
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+    }
+
+    .hero-logo-wrap {
+      flex: 0 0 auto;
+    }
+
+    .hero-logo {
+      width: 220px;      /* tweak this for bigger/smaller */
+      max-width: 35vw;
+      height: auto;
+      display: block;
+    }
+
+    .hero-copy {
+      flex: 1 1 auto;
     }
 
     .hero-eyebrow {
@@ -242,6 +246,7 @@
       text-decoration: none;
     }
 
+    /* ---------- Sections ---------- */
     section {
       padding: 3.25rem 1.5rem;
       border-top: 1px solid var(--border);
@@ -375,34 +380,23 @@
       .two-col {
         grid-template-columns: 1fr;
       }
+
+      .hero-layout {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .hero-logo-wrap {
+        align-self: center;
+      }
     }
   </style>
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "Stone to Sky",
-  "image": "https://stonetosky.nz/og-image.jpg",
-  "url": "https://stonetosky.nz/",
-  "description": "Stone to Sky is the home of Brooke’s branding, artwork, and song – design, illustration, and voice in service to beauty, depth, and the living world.",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Ōtautahi / Christchurch",
-    "addressCountry": "NZ"
-  },
-  "email": "brooke@stonetosky.nz",
-  "sameAs": [
-    "https://www.instagram.com/stone.to.sky"
-  ]
-}
-</script>
-
 </head>
 <body>
 
 <header>
   <div class="container nav">
-    <div class="logo">Stone to Sky</div>
+    <div class="logo">STONE TO SKY</div>
 
     <button class="menu-toggle" aria-label="Toggle navigation">
       <span></span>
@@ -425,13 +419,19 @@
 <main>
   <section class="hero">
     <div class="hero-inner">
-      <img src="logo-stone-to-sky.png" alt="Stone to Sky logo" class="hero-logo">
+      <div class="hero-layout">
+        <div class="hero-logo-wrap">
+          <img src="logo-stone-to-sky.png" alt="Stone to Sky logo" class="hero-logo" />
+        </div>
 
-      <div class="hero-eyebrow">Design · Art · Song</div>
-      <h1>Design, art &amp; song rooted in the living world.</h1>
-      <p>Stone to Sky is the home of Brooke’s branding, art, and song – where design, illustration, and voice come together in service to beauty, depth, and the more-than-human world.</p>
-      <p>I support people, projects, and places that are tending to culture, community, and the Earth.</p>
-      <a class="btn" href="#contact">Work with me</a>
+        <div class="hero-copy">
+          <div class="hero-eyebrow">Design · Art · Song</div>
+          <h1>Design, art &amp; song rooted in the living world.</h1>
+          <p>Stone to Sky is the home of Brooke’s branding, art, and song – where design, illustration, and voice come together in service to beauty, depth, and the more-than-human world.</p>
+          <p>I support people, projects, and places that are tending to culture, community, and the Earth.</p>
+          <a class="btn" href="#contact">Work with me</a>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -542,14 +542,17 @@
   <section id="social">
     <div class="container social">
       <h2>See more of Brooke’s work</h2>
-      <p>For current pieces, branding projects, reels, and glimpses behind the scenes, you can find Brooke on Instagram.</p>
+      <p>For current pieces, branding projects, reels, and glimpses behind the scenes, you can find Brooke on Instagram and Facebook.</p>
+
       <a class="btn-outline" href="https://www.instagram.com/stone.to.sky" target="_blank" rel="noopener">
         @stone.to.sky on Instagram
       </a>
-      <br><br>
-<a class="btn-outline" href="https://www.facebook.com/stonetoskycreations/" target="_blank" rel="noopener">
-  Stone to Sky on Facebook
-</a>
+
+      <br /><br />
+
+      <a class="btn-outline" href="https://www.facebook.com/stonetoskycreations/" target="_blank" rel="noopener">
+        Stone to Sky on Facebook
+      </a>
     </div>
   </section>
 </main>
