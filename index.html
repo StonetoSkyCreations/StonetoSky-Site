@@ -127,20 +127,32 @@
     }
 
     .logo {
-      display: flex;
-      align-items: center;
-    }
+  display: flex;
+  align-items: center;
+}
 
-    .logo a {
-      display: inline-flex;
-      align-items: center;
-    }
+.logo-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+}
 
-    .logo-image {
-      height: 40px;          /* tweak this to make header logo bigger/smaller */
-      width: auto;
-      display: block;
-    }
+.logo-image {
+  height: 42px; /* adjust to make the header logo bigger/smaller */
+  width: auto;
+  display: block;
+}
+
+.logo-text {
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  color: var(--accent-dark);
+  white-space: nowrap;
+}
+
 
     .nav-links {
       display: flex;
@@ -376,8 +388,9 @@
 <header>
   <div class="container nav">
     <div class="logo">
-      <a href="#top">
-        <img src="logo-stone-to-sky.png" alt="Stone to Sky" class="logo-image" />
+      <a href="#top" class="logo-link">
+        <img src="logo-stone-to-sky.png" alt="Stone to Sky logo" class="logo-image" />
+        <span class="logo-text">STONE TO SKY</span>
       </a>
     </div>
 
@@ -398,6 +411,7 @@
     </nav>
   </div>
 </header>
+
 
 <main id="top">
   <section class="hero">
