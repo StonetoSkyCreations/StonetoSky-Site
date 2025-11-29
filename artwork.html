@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en-NZ">
+<head>
+  <meta charset="UTF-8" />
+  <title>Stone to Sky – Artwork &amp; Illustration Highlights</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="A closer look at Brooke's artwork and illustration for Stone to Sky – seasonal pieces, botanical studies, lunar maps, and commissioned work." />
+  <link rel="icon" type="image/png" href="favicon-512.png" />
+  <link rel="apple-touch-icon" href="favicon-512.png" />
+  <link rel="canonical" href="https://stonetosky.nz/artwork.html" />
+  <style>
+    :root {
+      --bg: #f4ebe2;
+      --bg-alt: #eee0d2;
+      --bg-deeper: #e1cfb7;
+      --text: #3b2a20;
+      --muted: #8e7b6a;
+      --accent: #7b4b2a;
+      --accent-dark: #4a2b16;
+      --green: #4b5b3b;
+      --border: #d9c4ad;
+      --pill: #f1dfc7;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.7;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    h1, h2, h3 {
+      font-family: "Georgia", "Times New Roman", serif;
+      letter-spacing: 0.04em;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(244, 235, 226, 0.96);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(8px);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.75rem 0;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.1rem;
+      text-decoration: none;
+    }
+
+    .logo-image {
+      height: 42px;
+      width: auto;
+      display: block;
+    }
+
+    .logo-text {
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      color: var(--accent-dark);
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      font-size: 0.9rem;
+    }
+
+    .nav-links a {
+      position: relative;
+      padding-bottom: 0.15rem;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 1px;
+      background: var(--accent);
+      transition: width 0.2s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .menu-toggle {
+      display: none;
+      border: none;
+      background: none;
+      cursor: pointer;
+      padding: 0.25rem;
+    }
+
+    .menu-toggle span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--accent-dark);
+      margin: 4px 0;
+    }
+
+    .hero {
+      background: radial-gradient(circle at 20% 30%, rgba(123, 75, 42, 0.06), transparent 40%),
+                  radial-gradient(circle at 80% 20%, rgba(75, 91, 59, 0.06), transparent 38%),
+                  linear-gradient(to bottom, #f6ede3, #f4ebe2);
+      padding: 4.5rem 0 3.2rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero h1 {
+      font-size: 2.2rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero p {
+      max-width: 640px;
+      color: var(--muted);
+    }
+
+    main section {
+      padding: 2.5rem 0;
+    }
+
+    .highlight-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1rem;
+    }
+
+    .highlight-card {
+      background: #fff8f1;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.25rem;
+      box-shadow: 0 18px 40px rgba(59, 42, 32, 0.08);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .highlight-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 48px rgba(59, 42, 32, 0.12);
+    }
+
+    .highlight-card h3 {
+      margin-bottom: 0.4rem;
+    }
+
+    .highlight-card p {
+      color: var(--muted);
+      margin-bottom: 0.6rem;
+    }
+
+    .highlight-card ul {
+      padding-left: 1.2rem;
+      color: var(--text);
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.75rem;
+    }
+
+    .pill {
+      background: var(--pill);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 0.35rem 0.8rem;
+      font-size: 0.9rem;
+    }
+
+    .btn-outline {
+      display: inline-block;
+      padding: 0.65rem 1.4rem;
+      border-radius: 999px;
+      border: 1px solid var(--accent-dark);
+      color: var(--accent-dark);
+      font-size: 0.95rem;
+    }
+
+    .btn-outline:hover {
+      background: var(--accent-dark);
+      color: var(--bg);
+      text-decoration: none;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1.5rem 3rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+      background: var(--bg-deeper);
+      border-top: 1px solid var(--border);
+    }
+
+    footer a {
+      color: var(--green);
+    }
+
+    @media (max-width: 768px) {
+      .nav {
+        padding: 0.55rem 0;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: 64px;
+        right: 1.5rem;
+        background: rgba(244, 235, 226, 0.98);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        box-shadow: 0 18px 48px rgba(59, 42, 32, 0.12);
+        padding: 0.75rem 1rem;
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.3rem;
+        min-width: 200px;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="logo">
+        <a href="index.html#top" class="logo-link">
+          <img src="logo-stone-to-sky.png" alt="Stone to Sky logo" class="logo-image" />
+          <span class="logo-text">STONE TO SKY</span>
+        </a>
+      </div>
+
+      <button class="menu-toggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="index.html#artwork">Artwork overview</a>
+        <a href="index.html#branding">Branding overview</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <p style="text-transform:uppercase; letter-spacing:0.12em; color:var(--muted); font-size:0.85rem;">Artwork &amp; illustration</p>
+        <h1>Selected artwork, illustrations, and seasonal pieces.</h1>
+        <p>Here’s a closer look at the art Brooke creates for Stone to Sky – original pieces, illustrated collections, and commissions that honour the living world.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h2>Highlights &amp; collections</h2>
+        <p>These pieces show the range of styles, symbolism, and mediums Brooke works with. Images are available to share privately on request.</p>
+
+        <div class="highlight-grid" role="list">
+          <article class="highlight-card" role="listitem">
+            <h3>Seasonal calendars &amp; lunar maps</h3>
+            <p>Layered illustrations that track the rhythms of the moon, tides, and seasonal shifts.</p>
+            <ul>
+              <li>Lunar and seasonal calendar suites created annually</li>
+              <li>Mix of hand-drawn ink, watercolour, and digital finishing</li>
+              <li>Print-ready layouts for wall calendars and posters</li>
+            </ul>
+          </article>
+
+          <article class="highlight-card" role="listitem">
+            <h3>Botanical &amp; body studies</h3>
+            <p>Detailed drawings that weave plants, anatomy, and subtle symbolism.</p>
+            <ul>
+              <li>Medicinal botanicals with accompanying notes and sigils</li>
+              <li>Anatomical line work honouring the breath, bones, and nervous system</li>
+              <li>Works sized for prints, book interiors, and educational material</li>
+            </ul>
+          </article>
+
+          <article class="highlight-card" role="listitem">
+            <h3>Ceremony &amp; sacred space</h3>
+            <p>Pieces created for gatherings, retreats, and devotional spaces.</p>
+            <ul>
+              <li>Altarpiece illustrations for seasonal rituals</li>
+              <li>Custom graphics for event posters and invitations</li>
+              <li>Symbolic maps and visual aids for guided journeys</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section style="background: var(--bg-alt); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+      <div class="container">
+        <h2>Ways we can work together</h2>
+        <p>Whether you need a single illustrated piece or a set of artworks for a whole project, we can shape the format to match where and how you’ll use it.</p>
+
+        <div class="pill-row">
+          <span class="pill">Original pieces for homes &amp; studios</span>
+          <span class="pill">Illustrations for books &amp; zines</span>
+          <span class="pill">Art for product packaging</span>
+          <span class="pill">Wall prints &amp; altar cards</span>
+          <span class="pill">Maps &amp; diagrams for courses</span>
+          <span class="pill">Collaborations with retreats</span>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h2>Commissions, licensing, and shop inquiries</h2>
+        <p>If you’re interested in carrying Brooke’s work in your shop, commissioning a new piece, or licensing an existing illustration, reach out with a little about your project, timelines, and where the artwork will live.</p>
+        <p style="margin-top:0.75rem;">You can email Brooke directly at <a href="mailto:brooke@stonetosky.nz">brooke@stonetosky.nz</a>. We’ll map the scope together and share visuals that best fit what you’re creating.</p>
+        <p style="margin-top:1rem;">
+          <a class="btn-outline" href="mailto:brooke@stonetosky.nz">Email Brooke about artwork &raquo;</a>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    &copy; <span id="year"></span> Stone to Sky. All rights reserved.
+    &nbsp;&middot;&nbsp;
+    Site by Stone to Sky &amp; Josh.
+    &nbsp;&middot;&nbsp;
+    <a href="index.html#contact">Back to contact</a>
+  </footer>
+
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+
+    navLinks.addEventListener('click', (e) => {
+      if (e.target.tagName.toLowerCase() === 'a') {
+        navLinks.classList.remove('open');
+      }
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
