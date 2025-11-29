@@ -169,6 +169,37 @@
       gap: 1rem;
     }
 
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.25rem;
+      margin-top: 1rem;
+    }
+
+    .gallery-card {
+      background: #fffaf5;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 12px 32px rgba(59, 42, 32, 0.08);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .gallery-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .gallery-card .caption {
+      padding: 0.85rem 1rem;
+      background: linear-gradient(to bottom, rgba(244, 235, 226, 0.5), #fffaf5);
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.4;
+    }
+
     .highlight-card {
       background: #fff8f1;
       border: 1px solid var(--border);
@@ -339,6 +370,35 @@
               <li>Symbolic maps and visual aids for guided journeys</li>
             </ul>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <section style="background: #fff8f1; border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+      <div class="container">
+        <h2>New work on the studio table</h2>
+        <p>Here are the latest pieces Brooke prepared for 2025–2026, ready for print and digital use.</p>
+
+        <div class="gallery-grid" role="list">
+          <figure class="gallery-card" role="listitem">
+            <img src="cacao-logo.JPG" alt="Cacao logo illustration with botanical line work" loading="lazy" />
+            <figcaption class="caption">Cacao ceremony logo — hand-drawn cacao pod and foliage, prepared for print and web.</figcaption>
+          </figure>
+
+          <figure class="gallery-card" role="listitem">
+            <img src="cycle-of-seasons.PNG" alt="Cycle of the seasons circular illustration" loading="lazy" />
+            <figcaption class="caption">Cycle of the Seasons — circular calendar illustration tracking seasonal shifts.</figcaption>
+          </figure>
+
+          <figure class="gallery-card" role="listitem">
+            <img src="mama-marama.PNG" alt="Mama Marama illustration" loading="lazy" />
+            <figcaption class="caption">Mama Marama — lunar-inspired illustration with layered botanical details.</figcaption>
+          </figure>
+
+          <figure class="gallery-card" role="listitem">
+            <img src="moon-calender2026.png.PNG" alt="Moon calendar illustration for 2026" loading="lazy" />
+            <figcaption class="caption">Moon Calendar 2026 — full-year lunar map, print-ready for large-format display.</figcaption>
+          </figure>
         </div>
       </div>
     </section>
