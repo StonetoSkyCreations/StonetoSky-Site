@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en-NZ">
+<head>
+  <meta charset="UTF-8" />
+  <title>Singing &amp; Facilitation | Stone to Sky</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Ceremonial singing, circles, and gentle facilitation to support retreats and community spaces." />
+  <link rel="icon" type="image/png" href="favicon-512.png" />
+  <link rel="apple-touch-icon" href="favicon-512.png" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="logo">
+        <a href="index.html#top" class="logo-link">
+          <img src="logo-stone-to-sky.png" alt="Stone to Sky logo" class="logo-image" />
+          <span class="logo-text">STONE TO SKY</span>
+        </a>
+      </div>
+
+      <button class="menu-toggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="index.html#top">Home</a>
+        <a href="branding.html">Branding</a>
+        <a href="artwork.html">Artwork</a>
+        <a href="singing.html">Singing</a>
+        <a href="cocreate.html">Co-creation</a>
+        <a href="index.html#contact">Contact</a>
+        <a href="index.html#social">Socials</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="detail-hero">
+      <div class="container">
+        <div class="breadcrumb"><a href="index.html#top">Home</a> &raquo; Singing</div>
+        <h1>Singing &amp; Facilitation</h1>
+        <p>Sacred song, gentle guidance, and presence for circles, ceremonies, and retreats. My voice work is tender and invitational, helping groups soften into listening.</p>
+        <div class="cta-row" style="justify-content:center;">
+          <a class="btn" href="mailto:brooke@stonetosky.nz">Invite Brooke to your space</a>
+          <a class="btn-outline" href="index.html#contact">Share event details</a>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h2>Offerings</h2>
+        <p class="section-lede">Sliding-scale rates are available for community-led gatherings. Let me know what you are holding and what support would feel nourishing.</p>
+        <div class="info-grid">
+          <div class="card">
+            <h3>Ceremony &amp; ritual</h3>
+            <div class="price">NZD 250 – 420</div>
+            <p>Song, harmonies, and sound weaving to hold openings, closings, and liminal moments.</p>
+            <ul class="stacked-list">
+              <li>Pre-ceremony planning call</li>
+              <li>Up to 2 hours on site</li>
+              <li>Portable instruments + sound</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>Retreat co-facilitation</h3>
+            <div class="price">From NZD 520 / day</div>
+            <p>Song-led practices, grounding, and gentle movement woven through your schedule.</p>
+            <ul class="stacked-list">
+              <li>Opening and closing circles</li>
+              <li>Daily song sessions or sound baths</li>
+              <li>Co-design with your facilitation team</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>Workshops &amp; circles</h3>
+            <div class="price">NZD 280 – 520</div>
+            <p>Voice and presence sessions that invite participants into resonance, safety, and play.</p>
+            <ul class="stacked-list">
+              <li>Group vocal warm-ups and layering</li>
+              <li>Earth-based songs and chants</li>
+              <li>Suitable for groups up to 30</li>
+            </ul>
+          </div>
+        </div>
+        <p class="note">Travel within Ōtautahi / Christchurch is included. For journeys further afield, we’ll weave travel costs into the scope.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h2>How we’ll work together</h2>
+        <div class="band">
+          <div class="info-grid">
+            <div>
+              <h3>Feel</h3>
+              <p>We connect on the intention of your gathering, the mood you’re cultivating, and the needs of your group.</p>
+            </div>
+            <div>
+              <h3>Shape</h3>
+              <p>I propose songs, pacing, and practices that support your flow. We align on timings, logistics, and any tech needs.</p>
+            </div>
+            <div>
+              <h3>Hold</h3>
+              <p>During the event I offer music, presence, and spaciousness. Afterwards I can share lyrics or recordings for your community.</p>
+            </div>
+          </div>
+        </div>
+        <div class="cta-row">
+          <a class="btn" href="mailto:brooke@stonetosky.nz">Check availability</a>
+          <a class="btn-outline" href="index.html#contact">Send a voice note</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    &copy; <span id="year"></span> Stone to Sky. All rights reserved. &nbsp;&middot;&nbsp; Site by Stone to Sky &amp; Josh.
+  </footer>
+
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+
+    navLinks.addEventListener('click', (e) => {
+      if (e.target.tagName.toLowerCase() === 'a') {
+        navLinks.classList.remove('open');
+      }
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en-NZ">
+<head>
+  <meta charset="UTF-8" />
+  <title>Artwork &amp; Illustration | Stone to Sky</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Artwork, illustration, and commissioned pieces inspired by the seasons and the living world." />
+  <link rel="icon" type="image/png" href="favicon-512.png" />
+  <link rel="apple-touch-icon" href="favicon-512.png" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="logo">
+        <a href="index.html#top" class="logo-link">
+          <img src="logo-stone-to-sky.png" alt="Stone to Sky logo" class="logo-image" />
+          <span class="logo-text">STONE TO SKY</span>
+        </a>
+      </div>
+
+      <button class="menu-toggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="index.html#top">Home</a>
+        <a href="branding.html">Branding</a>
+        <a href="artwork.html">Artwork</a>
+        <a href="singing.html">Singing</a>
+        <a href="cocreate.html">Co-creation</a>
+        <a href="index.html#contact">Contact</a>
+        <a href="index.html#social">Socials</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="detail-hero">
+      <div class="container">
+        <div class="breadcrumb"><a href="index.html#top">Home</a> &raquo; Artwork</div>
+        <h1>Artwork &amp; Illustration</h1>
+        <p>Botanical, lunar, and symbolic works that honour the seasons and the body. I create originals, editions, and commissions for homes, books, and sacred spaces.</p>
+        <div class="cta-row" style="justify-content:center;">
+          <a class="btn" href="mailto:brooke@stonetosky.nz">Commission a piece</a>
+          <a class="btn-outline" href="index.html#social">See current work</a>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h2>Current offerings</h2>
+        <p class="section-lede">Whether you need artwork for a personal altar, a publication, or a public space, we can tailor the medium and format to suit.</p>
+        <div class="info-grid">
+          <div class="card">
+            <h3>Custom illustration</h3>
+            <div class="price">From NZD 480</div>
+            <p>Detailed botanical or symbolic illustrations for books, zines, or product packaging.</p>
+            <ul class="stacked-list">
+              <li>Ink, pencil, or digital line work</li>
+              <li>Includes licensing for your project</li>
+              <li>Print-ready and web-ready files</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>Personal commissions</h3>
+            <div class="price">NZD 320 – 850</div>
+            <p>Original pieces for gifts, homes, and altars. We weave your story, symbols, and colours into the work.</p>
+            <ul class="stacked-list">
+              <li>Watercolour, mixed media, or digital</li>
+              <li>Framing guidance and print options</li>
+              <li>Progress check-ins to align the piece</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>Seasonal calendars</h3>
+            <div class="price">From NZD 360</div>
+            <p>Custom lunar or seasonal calendars for retreats, communities, and stores.</p>
+            <ul class="stacked-list">
+              <li>Design + illustration of the full cycle</li>
+              <li>Print management guidance</li>
+              <li>Digital delivery for reprints</li>
+            </ul>
+          </div>
+        </div>
+        <p class="note">Bulk orders and wholesale inquiries for prints or calendars are welcome.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h2>How commissions work</h2>
+        <div class="band">
+          <div class="info-grid">
+            <div>
+              <h3>Share the brief</h3>
+              <p>Tell me about the feeling, story, and format you’re after. We’ll confirm the size, medium, and any key symbols.</p>
+            </div>
+            <div>
+              <h3>Sketch &amp; refine</h3>
+              <p>I create sketches for your review. You’ll have two rounds of refinements before we finalise the artwork.</p>
+            </div>
+            <div>
+              <h3>Deliver &amp; frame</h3>
+              <p>High-quality files (and originals where relevant) are delivered with notes on printing, paper stocks, and care.</p>
+            </div>
+          </div>
+        </div>
+        <p class="section-lede">Need illustration plus design? I can pair artwork with layout design for booklets, posters, or packaging.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h2>Ready to create?</h2>
+        <p class="section-lede">Share the story or space you’re making art for and I’ll suggest mediums, sizes, and timelines that fit.</p>
+        <div class="cta-row">
+          <a class="btn" href="mailto:brooke@stonetosky.nz">Start an artwork request</a>
+          <a class="btn-outline" href="index.html#contact">View contact details</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    &copy; <span id="year"></span> Stone to Sky. All rights reserved. &nbsp;&middot;&nbsp; Site by Stone to Sky &amp; Josh.
+  </footer>
+
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+
+    navLinks.addEventListener('click', (e) => {
+      if (e.target.tagName.toLowerCase() === 'a') {
+        navLinks.classList.remove('open');
+      }
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

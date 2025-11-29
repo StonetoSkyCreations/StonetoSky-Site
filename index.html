@@ -62,328 +62,8 @@
   }
   </script>
 
-  <style>
-    /* ---------- Colour palette ---------- */
-    :root {
-      --bg: #f4ebe2;          /* soft parchment */
-      --bg-alt: #eee0d2;      /* slightly deeper beige */
-      --bg-deeper: #e1cfb7;   /* warm sand */
-      --text: #3b2a20;        /* deep brown */
-      --muted: #8e7b6a;       /* soft taupe */
-      --accent: #7b4b2a;      /* warm brown */
-      --accent-dark: #4a2b16; /* dark cacao */
-      --green: #4b5b3b;       /* moss green */
-      --border: #d9c4ad;      /* light border */
-      --pill: #f1dfc7;        /* chip background */
-    }
+    <link rel="stylesheet" href="styles.css" />
 
-    /* Basic reset */
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      line-height: 1.7;
-      color: var(--text);
-      background: var(--bg);
-    }
-
-    h1, h2 {
-      font-family: "Georgia", "Times New Roman", serif;
-      letter-spacing: 0.04em;
-    }
-
-    a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    /* ---------- Layout ---------- */
-    .container {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 0 1.5rem;
-    }
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      background: rgba(244, 235, 226, 0.96);
-      border-bottom: 1px solid var(--border);
-      backdrop-filter: blur(8px);
-    }
-
-    .nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0.75rem 0;
-    }
-
-    .logo {
-  display: flex;
-  align-items: center;
-}
-
-.logo-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.1rem;
-  text-decoration: none;
-}
-
-.logo-image {
-  height: 42px; /* adjust to make the header logo bigger/smaller */
-  width: auto;
-  display: block;
-}
-
-.logo-text {
-  font-weight: 600;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  font-size: 0.9rem;
-  color: var(--accent-dark);
-  white-space: nowrap;
-}
-
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
-      font-size: 0.9rem;
-    }
-
-    .nav-links a {
-      position: relative;
-      padding-bottom: 0.15rem;
-    }
-
-    .nav-links a::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 0;
-      height: 1px;
-      background: var(--accent);
-      transition: width 0.2s ease;
-    }
-
-    .nav-links a:hover::after {
-      width: 100%;
-    }
-
-    /* Hamburger (mobile) */
-    .menu-toggle {
-      display: none;
-      border: none;
-      background: none;
-      cursor: pointer;
-      padding: 0.25rem;
-    }
-
-    .menu-toggle span {
-      display: block;
-      width: 22px;
-      height: 2px;
-      background: var(--accent-dark);
-      margin: 4px 0;
-      transition: transform 0.2s ease, opacity 0.2s ease;
-    }
-
-    /* ---------- Hero ---------- */
-    .hero {
-      padding: 4rem 1.5rem 3.5rem;
-      background: radial-gradient(circle at top, var(--bg-deeper) 0, var(--bg) 52%);
-    }
-
-    .hero-inner {
-      max-width: 720px;
-      margin: 0 auto;
-    }
-
-    .hero-eyebrow {
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      font-size: 0.7rem;
-      color: var(--muted);
-      margin-bottom: 0.6rem;
-    }
-
-    .hero h1 {
-      font-size: 2.25rem;
-      margin-bottom: 1rem;
-      color: var(--accent-dark);
-    }
-
-    .hero p {
-      margin-bottom: 0.85rem;
-      font-size: 1.02rem;
-    }
-
-    .hero .btn {
-      display: inline-block;
-      margin-top: 1.2rem;
-      padding: 0.75rem 1.6rem;
-      border-radius: 999px;
-      background: var(--accent-dark);
-      color: var(--bg);
-      font-size: 0.95rem;
-      border: 1px solid var(--accent-dark);
-    }
-
-    .hero .btn:hover {
-      background: transparent;
-      color: var(--accent-dark);
-      text-decoration: none;
-    }
-
-    /* ---------- Sections ---------- */
-    section {
-      padding: 3.25rem 1.5rem;
-      border-top: 1px solid var(--border);
-    }
-
-    section:nth-of-type(odd):not(.hero) {
-      background: var(--bg-alt);
-    }
-
-    section:nth-of-type(even) {
-      background: var(--bg);
-    }
-
-    section h2 {
-      font-size: 1.6rem;
-      margin-bottom: 1rem;
-      color: var(--accent-dark);
-    }
-
-    section p {
-      margin-bottom: 0.75rem;
-      font-size: 0.98rem;
-    }
-
-    .two-col {
-      display: grid;
-      grid-template-columns: 2fr 1.3fr;
-      gap: 2.25rem;
-    }
-
-    ul {
-      margin-left: 1.2rem;
-      margin-bottom: 0.75rem;
-    }
-
-    li {
-      margin-bottom: 0.35rem;
-    }
-
-    /* Pills for “ideal for” lists etc. */
-    .pill-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
-      margin: 0.75rem 0 0.3rem;
-    }
-
-    .pill {
-      background: var(--pill);
-      color: var(--text);
-      border-radius: 999px;
-      padding: 0.25rem 0.9rem;
-      font-size: 0.78rem;
-      letter-spacing: 0.03em;
-      text-transform: uppercase;
-    }
-
-    /* Social section */
-    .social {
-      text-align: center;
-    }
-
-    .social p {
-      max-width: 520px;
-      margin: 0 auto 1.25rem;
-    }
-
-    .btn-outline {
-      display: inline-block;
-      padding: 0.65rem 1.4rem;
-      border-radius: 999px;
-      border: 1px solid var(--accent-dark);
-      color: var(--accent-dark);
-      font-size: 0.95rem;
-    }
-
-    .btn-outline:hover {
-      background: var(--accent-dark);
-      color: var(--bg);
-      text-decoration: none;
-    }
-
-    footer {
-      text-align: center;
-      padding: 2rem 1.5rem 3rem;
-      font-size: 0.85rem;
-      color: var(--muted);
-      background: var(--bg-deeper);
-      border-top: 1px solid var(--border);
-    }
-
-    footer a {
-      color: var(--green);
-    }
-
-    /* ---------- Responsive ---------- */
-    @media (max-width: 768px) {
-      .nav {
-        padding: 0.55rem 0;
-      }
-
-      .menu-toggle {
-        display: block;
-      }
-
-      .nav-links {
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 100%;
-        background: rgba(244, 235, 226, 0.98);
-        border-bottom: 1px solid var(--border);
-        flex-direction: column;
-        padding: 0.75rem 1.5rem 1rem;
-        gap: 0.75rem;
-        display: none;
-      }
-
-      .nav-links.open {
-        display: flex;
-      }
-
-      .hero {
-        padding-top: 3.25rem;
-      }
-
-      .hero h1 {
-        font-size: 1.9rem;
-      }
-
-      .two-col {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
 </head>
 <body>
 
@@ -403,11 +83,11 @@
     </button>
 
     <nav class="nav-links" aria-label="Main navigation">
-      <a href="#about">About</a>
-      <a href="#branding">Branding</a>
-      <a href="#artwork">Artwork</a>
-      <a href="#singing">Singing</a>
-      <a href="#cocreate">Co-creation</a>
+      <a href="#top">Home</a>
+      <a href="branding.html">Branding</a>
+      <a href="artwork.html">Artwork</a>
+      <a href="singing.html">Singing</a>
+      <a href="cocreate.html">Co-creation</a>
       <a href="#contact">Contact</a>
       <a href="#social">Socials</a>
     </nav>
@@ -469,7 +149,10 @@
         <span class="pill">Community projects</span>
       </div>
       <p style="margin-top:0.75rem;">If you’re tending to something soul-led and want it to feel visually coherent and true to itself, we can shape a brand that feels like home.</p>
-      <p><a href="#contact">Enquire about branding &raquo;</a></p>
+      <div class="cta-row">
+        <a class="btn" href="branding.html">View branding packages</a>
+        <a class="btn-outline" href="#contact">Start a branding enquiry</a>
+      </div>
     </div>
   </section>
 
@@ -485,7 +168,10 @@
         <li>Custom pieces for homes, books, and spaces</li>
       </ul>
       <p>If you’d like to carry my work in your shop, or commission a piece for your space or project, I’d love to hear from you.</p>
-      <p><a href="#contact">Enquire about artwork &raquo;</a></p>
+      <div class="cta-row">
+        <a class="btn" href="artwork.html">See artwork offerings</a>
+        <a class="btn-outline" href="#contact">Commission a piece</a>
+      </div>
     </div>
   </section>
 
@@ -500,7 +186,10 @@
         <li>Gentle guided practices that weave song, presence, and grounding</li>
       </ul>
       <p>This work is intimate and relational. If you’re holding a space and feel my presence and voice would support the field, reach out and we can feel into it together.</p>
-      <p><a href="#contact">Enquire about singing &amp; facilitation &raquo;</a></p>
+      <div class="cta-row">
+        <a class="btn" href="singing.html">Explore singing offerings</a>
+        <a class="btn-outline" href="#contact">Invite Brooke to sing</a>
+      </div>
     </div>
   </section>
 
@@ -516,7 +205,10 @@
         <li>Quiet, long-term creative partnerships with aligned people and places</li>
       </ul>
       <p>If you feel a resonance, you’re welcome to write and share the seed of your idea.</p>
-      <p><a href="#contact">Share a project idea &raquo;</a></p>
+      <div class="cta-row">
+        <a class="btn" href="cocreate.html">See co-creation ideas</a>
+        <a class="btn-outline" href="#contact">Share your project seed</a>
+      </div>
     </div>
   </section>
 

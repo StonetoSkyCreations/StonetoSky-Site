@@ -1,0 +1,430 @@
+    /* ---------- Colour palette ---------- */
+    :root {
+      --bg: #f4ebe2;          /* soft parchment */
+      --bg-alt: #eee0d2;      /* slightly deeper beige */
+      --bg-deeper: #e1cfb7;   /* warm sand */
+      --text: #3b2a20;        /* deep brown */
+      --muted: #8e7b6a;       /* soft taupe */
+      --accent: #7b4b2a;      /* warm brown */
+      --accent-dark: #4a2b16; /* dark cacao */
+      --green: #4b5b3b;       /* moss green */
+      --border: #d9c4ad;      /* light border */
+      --pill: #f1dfc7;        /* chip background */
+    }
+
+    /* Basic reset */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.7;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    h1, h2 {
+      font-family: "Georgia", "Times New Roman", serif;
+      letter-spacing: 0.04em;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* ---------- Layout ---------- */
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(244, 235, 226, 0.96);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(8px);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.75rem 0;
+    }
+
+    .logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.1rem;
+  text-decoration: none;
+}
+
+.logo-image {
+  height: 42px; /* adjust to make the header logo bigger/smaller */
+  width: auto;
+  display: block;
+}
+
+.logo-text {
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  color: var(--accent-dark);
+  white-space: nowrap;
+}
+
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      font-size: 0.9rem;
+    }
+
+    .nav-links a {
+      position: relative;
+      padding-bottom: 0.15rem;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 1px;
+      background: var(--accent);
+      transition: width 0.2s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    /* Hamburger (mobile) */
+    .menu-toggle {
+      display: none;
+      border: none;
+      background: none;
+      cursor: pointer;
+      padding: 0.25rem;
+    }
+
+    .menu-toggle span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--accent-dark);
+      margin: 4px 0;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    /* ---------- Hero ---------- */
+    .hero {
+      padding: 4rem 1.5rem 3.5rem;
+      background: radial-gradient(circle at top, var(--bg-deeper) 0, var(--bg) 52%);
+    }
+
+    .hero-inner {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .hero-eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 0.7rem;
+      color: var(--muted);
+      margin-bottom: 0.6rem;
+    }
+
+    .hero h1 {
+      font-size: 2.25rem;
+      margin-bottom: 1rem;
+      color: var(--accent-dark);
+    }
+
+    .hero p {
+      margin-bottom: 0.85rem;
+      font-size: 1.02rem;
+    }
+
+    .hero .btn {
+      display: inline-block;
+      margin-top: 1.2rem;
+      padding: 0.75rem 1.6rem;
+      border-radius: 999px;
+      background: var(--accent-dark);
+      color: var(--bg);
+      font-size: 0.95rem;
+      border: 1px solid var(--accent-dark);
+    }
+
+    .hero .btn:hover {
+      background: transparent;
+      color: var(--accent-dark);
+      text-decoration: none;
+    }
+
+    /* ---------- Sections ---------- */
+    section {
+      padding: 3.25rem 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+
+    section:nth-of-type(odd):not(.hero) {
+      background: var(--bg-alt);
+    }
+
+    section:nth-of-type(even) {
+      background: var(--bg);
+    }
+
+    section h2 {
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+      color: var(--accent-dark);
+    }
+
+    section p {
+      margin-bottom: 0.75rem;
+      font-size: 0.98rem;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 2fr 1.3fr;
+      gap: 2.25rem;
+    }
+
+    ul {
+      margin-left: 1.2rem;
+      margin-bottom: 0.75rem;
+    }
+
+    li {
+      margin-bottom: 0.35rem;
+    }
+
+    /* Pills for “ideal for” lists etc. */
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin: 0.75rem 0 0.3rem;
+    }
+
+    .pill {
+      background: var(--pill);
+      color: var(--text);
+      border-radius: 999px;
+      padding: 0.25rem 0.9rem;
+      font-size: 0.78rem;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+
+    /* Detail pages */
+    .detail-hero {
+      padding: 4.25rem 0 3.25rem;
+      background: radial-gradient(circle at 12% 18%, rgba(75, 91, 59, 0.08), transparent 38%),
+                  radial-gradient(circle at 80% 0%, rgba(123, 75, 42, 0.08), transparent 35%),
+                  var(--bg);
+      border-bottom: 1px solid var(--border);
+      text-align: center;
+    }
+
+    .detail-hero h1 {
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      margin-bottom: 0.5rem;
+      color: var(--accent-dark);
+    }
+
+    .detail-hero p {
+      max-width: 720px;
+      margin: 0.5rem auto 1.25rem;
+    }
+
+    .breadcrumb {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 0.75rem;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.25rem;
+      margin-top: 1.25rem;
+    }
+
+    .card {
+      background: #fff7ed;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.25rem 1.1rem;
+      box-shadow: 0 12px 36px rgba(75, 43, 16, 0.08);
+    }
+
+    .card h3 {
+      margin-bottom: 0.35rem;
+      color: var(--accent-dark);
+    }
+
+    .card .price {
+      font-weight: 700;
+      color: var(--green);
+      margin-bottom: 0.4rem;
+    }
+
+    .card small {
+      color: var(--muted);
+    }
+
+    .stacked-list {
+      display: grid;
+      gap: 0.4rem;
+      margin: 0.75rem 0 0.25rem;
+      padding-left: 1rem;
+    }
+
+    .band {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.25rem;
+      margin: 1.4rem 0;
+    }
+
+    .highlight {
+      background: var(--pill);
+      border: 1px solid var(--border);
+      color: var(--accent-dark);
+      padding: 0.5rem 0.9rem;
+      border-radius: 12px;
+      display: inline-flex;
+      gap: 0.4rem;
+      align-items: center;
+      font-weight: 600;
+      margin-bottom: 0.8rem;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+      align-items: center;
+      margin-top: 0.6rem;
+    }
+
+    .section-lede {
+      max-width: 760px;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+
+    .note {
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    /* Social section */
+    .social {
+      text-align: center;
+    }
+
+    .social p {
+      max-width: 520px;
+      margin: 0 auto 1.25rem;
+    }
+
+    .btn-outline {
+      display: inline-block;
+      padding: 0.65rem 1.4rem;
+      border-radius: 999px;
+      border: 1px solid var(--accent-dark);
+      color: var(--accent-dark);
+      font-size: 0.95rem;
+    }
+
+    .btn-outline:hover {
+      background: var(--accent-dark);
+      color: var(--bg);
+      text-decoration: none;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1.5rem 3rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+      background: var(--bg-deeper);
+      border-top: 1px solid var(--border);
+    }
+
+    footer a {
+      color: var(--green);
+    }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 768px) {
+      .nav {
+        padding: 0.55rem 0;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 100%;
+        background: rgba(244, 235, 226, 0.98);
+        border-bottom: 1px solid var(--border);
+        flex-direction: column;
+        padding: 0.75rem 1.5rem 1rem;
+        gap: 0.75rem;
+        display: none;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .hero {
+        padding-top: 3.25rem;
+      }
+
+      .hero h1 {
+        font-size: 1.9rem;
+      }
+
+      .two-col {
+        grid-template-columns: 1fr;
+      }
+
+      .cta-row {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  
