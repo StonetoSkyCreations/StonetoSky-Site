@@ -9,6 +9,7 @@
   <meta name="description" content="Stone to Sky is the home of Brooke’s branding, artwork, and song – design, illustration, and voice in service to beauty, depth, and the living world. Based in Ōtautahi / Christchurch, Aotearoa New Zealand." />
   <meta name="keywords" content="Stone to Sky, Brooke, branding, brand design, illustration, artwork, singing, ceremony, Ōtautahi, Christchurch, Aotearoa, New Zealand, herbalist branding, retreat branding, calendars, lunar calendar, moon calendar" />
   <meta name="author" content="Stone to Sky" />
+  <meta name="robots" content="index,follow" />
   <link rel="canonical" href="https://stonetosky.nz/" />
 
   <!-- Open Graph (Facebook, LinkedIn, etc.) -->
@@ -38,7 +39,7 @@
     "url": "https://stonetosky.nz/",
     "description": "Stone to Sky is the home of Brooke’s branding, artwork, and song – design, illustration, and voice in service to beauty, depth, and the living world.",
     "image": "https://stonetosky.nz/og-image.jpg",
-    "email": "mailto:brooke@stonetosky.nz",
+    "email": "brooke@stonetosky.nz",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Ōtautahi / Christchurch",
@@ -126,11 +127,19 @@
     }
 
     .logo {
-      font-weight: 600;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      font-size: 0.9rem;
-      color: var(--accent-dark);
+      display: flex;
+      align-items: center;
+    }
+
+    .logo a {
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .logo-image {
+      height: 40px;          /* tweak this to make header logo bigger/smaller */
+      width: auto;
+      display: block;
     }
 
     .nav-links {
@@ -185,29 +194,8 @@
     }
 
     .hero-inner {
-      max-width: 960px;
+      max-width: 720px;
       margin: 0 auto;
-    }
-
-    .hero-layout {
-      display: flex;
-      align-items: center;
-      gap: 3rem;
-    }
-
-    .hero-logo-wrap {
-      flex: 0 0 auto;
-    }
-
-    .hero-logo {
-      width: 420px;      /* tweak this for bigger/smaller */
-      max-width: 420px;
-      height: auto;
-      display: block;
-    }
-
-    .hero-copy {
-      flex: 1 1 auto;
     }
 
     .hero-eyebrow {
@@ -380,15 +368,6 @@
       .two-col {
         grid-template-columns: 1fr;
       }
-
-      .hero-layout {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .hero-logo-wrap {
-        align-self: center;
-      }
     }
   </style>
 </head>
@@ -396,7 +375,11 @@
 
 <header>
   <div class="container nav">
-    <div class="logo">STONE TO SKY</div>
+    <div class="logo">
+      <a href="#top">
+        <img src="logo-stone-to-sky.png" alt="Stone to Sky" class="logo-image" />
+      </a>
+    </div>
 
     <button class="menu-toggle" aria-label="Toggle navigation">
       <span></span>
@@ -416,22 +399,14 @@
   </div>
 </header>
 
-<main>
+<main id="top">
   <section class="hero">
     <div class="hero-inner">
-      <div class="hero-layout">
-        <div class="hero-logo-wrap">
-          <img src="logo-stone-to-sky.png" alt="Stone to Sky logo" class="hero-logo" />
-        </div>
-
-        <div class="hero-copy">
-          <div class="hero-eyebrow">Design · Art · Song</div>
-          <h1>Design, art &amp; song rooted in the living world.</h1>
-          <p>Stone to Sky is the home of Brooke’s branding, art, and song – where design, illustration, and voice come together in service to beauty, depth, and the more-than-human world.</p>
-          <p>I support people, projects, and places that are tending to culture, community, and the Earth.</p>
-          <a class="btn" href="#contact">Work with me</a>
-        </div>
-      </div>
+      <div class="hero-eyebrow">Design · Art · Song</div>
+      <h1>Design, art &amp; song rooted in the living world.</h1>
+      <p>Stone to Sky is the home of Brooke’s branding, art, and song – where design, illustration, and voice come together in service to beauty, depth, and the more-than-human world.</p>
+      <p>I support people, projects, and places that are tending to culture, community, and the Earth.</p>
+      <a class="btn" href="#contact">Work with me</a>
     </div>
   </section>
 
