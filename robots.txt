@@ -1,4 +1,7 @@
+# robots.txt for Stone to Sky
+
 User-agent: *
 Allow: /
 
+# Point crawlers to the sitemap for fresh URLs
 Sitemap: https://stonetosky.nz/sitemap.xml
