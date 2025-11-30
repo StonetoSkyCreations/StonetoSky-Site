@@ -6,8 +6,8 @@
 
   <!-- Basic SEO -->
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Stone to Sky is the home of Brooke’s branding, artwork, and song – design, illustration, and voice in service to beauty, depth, and the living world. Based in Ōtautahi / Christchurch, Aotearoa New Zealand." />
-  <meta name="keywords" content="Stone to Sky, Brooke, branding, brand design, illustration, artwork, singing, ceremony, Ōtautahi, Christchurch, Aotearoa, New Zealand, herbalist branding, retreat branding, calendars, lunar calendar, moon calendar" />
+  <meta name="description" content="Stone to Sky is Brooke Hayley’s multi-hyphenate studio for branding, artwork, and song – design, illustration, and facilitation for Aotearoa New Zealand, online nationwide and in person in Auckland, Wellington, Christchurch, Hamilton, Tauranga, and Dunedin." />
+  <meta name="keywords" content="Stone to Sky, Brooke Hayley, branding, brand design, illustration, artwork, singer, workshop facilitator, Ōtautahi, Christchurch, Aotearoa, New Zealand, Auckland, Wellington, Hamilton, Tauranga, Dunedin, herbalist branding, retreat branding, soul-led business" />
   <meta name="author" content="Stone to Sky" />
   <meta name="robots" content="index,follow" />
   <link rel="canonical" href="https://stonetosky.nz/" />
@@ -36,28 +36,89 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": ["LocalBusiness", "ProfessionalService"],
-    "name": "Stone to Sky",
-    "url": "https://stonetosky.nz/",
-    "description": "Stone to Sky is the home of Brooke’s branding, artwork, and song – design, illustration, and voice in service to beauty, depth, and the living world.",
-    "image": "/assets/images/og-image.jpg",
-    "email": "brooke@stonetosky.nz",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Ōtautahi / Christchurch",
-      "addressRegion": "Canterbury",
-      "addressCountry": "NZ"
-    },
-    "sameAs": [
-      "https://www.instagram.com/stone.to.sky",
-      "https://www.facebook.com/stonetoskycreations/"
-    ],
-    "serviceType": [
-      "Branding and visual identity design",
-      "Illustration and artwork",
-      "Calendars and lunar maps",
-      "Singing and ceremonial facilitation",
-      "Co-creative Earth-based projects"
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://stonetosky.nz/#brooke",
+        "name": "Brooke Hayley",
+        "url": "https://stonetosky.nz/",
+        "image": "https://stonetosky.nz/assets/images/og-image.jpg",
+        "description": "Designer, artist, singer, and facilitator offering branding, artwork, workshops, and ceremonial song across Aotearoa New Zealand — online nationwide and in person in major centres.",
+        "email": "brooke@stonetosky.nz",
+        "sameAs": [
+          "https://www.instagram.com/stone.to.sky",
+          "https://www.facebook.com/stonetoskycreations/"
+        ],
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Ōtautahi / Christchurch",
+          "addressRegion": "Canterbury",
+          "addressCountry": "NZ"
+        },
+        "areaServed": [
+          {"@type": "Country", "name": "New Zealand"},
+          {"@type": "City", "name": "Auckland"},
+          {"@type": "City", "name": "Wellington"},
+          {"@type": "City", "name": "Ōtautahi / Christchurch"},
+          {"@type": "City", "name": "Hamilton"},
+          {"@type": "City", "name": "Tauranga"},
+          {"@type": "City", "name": "Dunedin"},
+          {"@type": "City", "name": "Queenstown"},
+          {"@type": "City", "name": "Nelson"},
+          {"@type": "City", "name": "New Plymouth"},
+          {"@type": "City", "name": "Palmerston North"},
+          {"@type": "City", "name": "Rotorua"},
+          {"@type": "City", "name": "Whangārei"}
+        ],
+        "hasOccupation": [
+          {"@type": "Occupation", "name": "Brand Designer", "description": "Branding, web and logo design for soulful businesses."},
+          {"@type": "Occupation", "name": "Artist & Illustrator", "description": "Artwork, calendars, and Earth-based illustrations."},
+          {"@type": "Occupation", "name": "Singer & Facilitator", "description": "Workshops, ceremonies, and group voice work."},
+          {"@type": "Occupation", "name": "Creative Collaborator", "description": "Co-creative projects blending design, art, and song."}
+        ],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Stone to Sky Services",
+          "itemListElement": [
+            {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Branding & Web Design", "url": "https://stonetosky.nz/branding.html"}},
+            {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Artwork & Illustration", "url": "https://stonetosky.nz/artwork.html"}},
+            {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Singing & Facilitation", "url": "https://stonetosky.nz/singing.html"}},
+            {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Co-creative Projects", "url": "https://stonetosky.nz/#cocreate"}}
+          ]
+        }
+      },
+      {
+        "@type": "ProfessionalService",
+        "name": "Stone to Sky Creative Studio",
+        "url": "https://stonetosky.nz/",
+        "description": "Branding, illustration, singing, facilitation, and Earth-based creative direction by Brooke Hayley in Ōtautahi / Christchurch, serving Aotearoa New Zealand online and in person in key cities.",
+        "areaServed": [
+          {"@type": "Country", "name": "New Zealand"},
+          {"@type": "City", "name": "Auckland"},
+          {"@type": "City", "name": "Wellington"},
+          {"@type": "City", "name": "Ōtautahi / Christchurch"},
+          {"@type": "City", "name": "Hamilton"},
+          {"@type": "City", "name": "Tauranga"},
+          {"@type": "City", "name": "Dunedin"},
+          {"@type": "City", "name": "Queenstown"},
+          {"@type": "City", "name": "Nelson"},
+          {"@type": "City", "name": "New Plymouth"},
+          {"@type": "City", "name": "Palmerston North"},
+          {"@type": "City", "name": "Rotorua"},
+          {"@type": "City", "name": "Whangārei"}
+        ],
+        "serviceType": [
+          "Branding and visual identity design",
+          "Illustration and artwork",
+          "Singing and ceremonial facilitation",
+          "Co-creative Earth-based projects"
+        ],
+        "provider": {"@id": "https://stonetosky.nz/#brooke"},
+        "sameAs": [
+          "https://www.instagram.com/stone.to.sky",
+          "https://www.facebook.com/stonetoskycreations/"
+        ]
+      }
     ]
   }
   </script>
@@ -229,6 +290,15 @@
     .hero p {
       margin-bottom: 0.85rem;
       font-size: 1.02rem;
+    }
+
+    .snippet {
+      padding: 0.9rem 1rem;
+      margin: 1.25rem 0 0.5rem;
+      border-left: 4px solid var(--accent-dark);
+      background: rgba(122, 75, 42, 0.08);
+      border-radius: 10px;
+      font-size: 1rem;
     }
 
     .hero .btn {
@@ -495,6 +565,7 @@
     <div class="hero-inner">
       <div class="hero-eyebrow">Design · Art · Song</div>
       <h1>Design, art &amp; song rooted in the living world.</h1>
+      <p class="snippet">Brooke Hayley is a multi-hyphenate artist, brand and web designer, singer, and facilitator based in Ōtautahi / Christchurch and serving all of Aotearoa New Zealand. She supports people in Auckland, Wellington, Hamilton, Tauranga, Dunedin, Queenstown, and every town online or in person with soulful branding, bespoke artwork, and voice-led experiences.</p>
       <p>Stone to Sky is the home of Brooke’s branding, art, and song – where design, illustration, and voice come together in service to beauty, depth, and the more-than-human world.</p>
       <p>I support people, projects, and places that are tending to culture, community, and the Earth.</p>
       <a class="btn" href="#contact">Work with me</a>
@@ -604,6 +675,26 @@
     </div>
   </section>
 
+  <section id="faq">
+    <div class="container">
+      <h2>Questions I’m asked most often</h2>
+      <div class="snippet" style="margin-top:0;">
+        I work across Aotearoa New Zealand—online nationwide and in person in major centres—blending brand design, illustration, singing, and facilitation. Below you’ll find quick answers for people seeking support for workshops, retreats, and soul-led businesses.
+      </div>
+      <h3>Can we collaborate online across Aotearoa New Zealand?</h3>
+      <p>Yes. Most branding, web design, and illustration projects happen online with clear milestones and live check-ins. I also travel within New Zealand for key facilitation or filming moments in cities like Auckland, Wellington, Christchurch, Dunedin, and Queenstown.</p>
+
+      <h3>Do you offer one-on-one vocal work or group facilitation?</h3>
+      <p>I hold gentle one-on-one voice sessions and facilitate group singing for retreats, workshops, and community gatherings. Sessions are shaped to match the group’s nervous-system needs and the intention of the space.</p>
+
+      <h3>How do you price branding and website projects?</h3>
+      <p>Branding packages are tiered by depth—from foundations through full visual worlds with web design. Each package includes discovery, strategy, and practical assets, with payment plans available for small businesses and artists.</p>
+
+      <h3>What kinds of earth-based or soul-led brands do you specialise in?</h3>
+      <p>I regularly create for herbalists, retreat leaders, wellness practitioners, artists, and community spaces. The work centres on clarity, sensory storytelling, and visuals that honour the land and people they serve.</p>
+    </div>
+  </section>
+
   <section id="contact">
     <div class="container">
       <h2>Contact</h2>
@@ -656,6 +747,48 @@
 
   // Current year in footer
   document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+<!-- FAQPage structured data for AI Overviews -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can we collaborate online across Aotearoa New Zealand?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Most branding, web design, and illustration projects happen online with clear milestones and live check-ins, and I travel within New Zealand for key facilitation or filming moments in centres such as Auckland, Wellington, Christchurch, Dunedin, and Queenstown."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you offer one-on-one vocal work or group facilitation?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "I hold gentle one-on-one voice sessions and facilitate group singing for retreats, workshops, and community gatherings, tailored to the group’s nervous-system needs and the intention of the space."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you price branding and website projects?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Branding packages are tiered by depth—from foundations through full visual worlds with web design. Each package includes discovery, strategy, and practical assets, with payment plans available for small businesses and artists."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What kinds of earth-based or soul-led brands do you specialise in?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "I regularly create for herbalists, retreat leaders, wellness practitioners, artists, and community spaces, centring clarity, sensory storytelling, and visuals that honour the land and people they serve."
+      }
+    }
+  ]
+}
 </script>
 
 </body>
