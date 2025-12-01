@@ -187,6 +187,21 @@
       padding: 2.5rem 0;
     }
 
+    .section-intro {
+      max-width: 720px;
+      margin-bottom: 1.5rem;
+      color: var(--muted);
+    }
+
+    .section-eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 0.35rem;
+      display: inline-block;
+    }
+
     .package-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -240,6 +255,60 @@
       border-radius: 10px;
       color: var(--muted);
       margin-top: 1.25rem;
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .portfolio-item {
+      background: #fff8f1;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      box-shadow: 0 14px 28px rgba(59, 42, 32, 0.06);
+    }
+
+    .portfolio-frame {
+      position: relative;
+      aspect-ratio: 4 / 3;
+      border-radius: 10px;
+      overflow: hidden;
+      background: linear-gradient(135deg, rgba(123, 75, 42, 0.12), rgba(75, 91, 59, 0.1));
+      border: 1px dashed var(--border);
+      display: grid;
+      place-items: center;
+      color: var(--muted);
+      text-align: center;
+      padding: 0.75rem;
+      font-size: 0.95rem;
+    }
+
+    .portfolio-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 0.75rem;
+    }
+
+    .portfolio-title {
+      font-weight: 600;
+      color: var(--accent-dark);
+    }
+
+    .portfolio-tag {
+      background: var(--pill);
+      color: var(--accent-dark);
+      padding: 0.3rem 0.6rem;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      border: 1px solid var(--border);
     }
 
     footer {
@@ -418,6 +487,43 @@
 
         <p class="package-note">Packages are adaptable and open for change, with the core intention to work together in an emergent, co-creative current.</p>
         <p style="margin-top:1rem;">Ready to start? <a href="mailto:brooke@stonetosky.nz">Email Brooke</a> with your preferred package or questions.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-eyebrow">Branding portfolio</div>
+        <h2>Branding portfolio</h2>
+        <p class="section-intro">A snapshot of recent visual identities, crafted for soulful brands across Aotearoa. This space will expand with full project imagery and write-ups as the gallery grows.</p>
+
+        <div class="portfolio-grid" aria-label="Branding portfolio examples">
+          <article class="portfolio-item">
+            <div class="portfolio-frame">Placeholder for featured project imagery. Final artwork coming soon.</div>
+            <div class="portfolio-meta">
+              <span class="portfolio-title">Retreat identity</span>
+              <span class="portfolio-tag">Brand suite</span>
+            </div>
+            <p class="section-intro" style="margin:0;">Calm, nature-led palette with flexible marks for print and digital touchpoints.</p>
+          </article>
+
+          <article class="portfolio-item">
+            <div class="portfolio-frame">Placeholder for featured project imagery. Final artwork coming soon.</div>
+            <div class="portfolio-meta">
+              <span class="portfolio-title">Artist collection</span>
+              <span class="portfolio-tag">Logo &amp; merch</span>
+            </div>
+            <p class="section-intro" style="margin:0;">Minimal monogram and secondary marks designed for prints, merch, and online galleries.</p>
+          </article>
+
+          <article class="portfolio-item">
+            <div class="portfolio-frame">Placeholder for featured project imagery. Final artwork coming soon.</div>
+            <div class="portfolio-meta">
+              <span class="portfolio-title">Herbal studio</span>
+              <span class="portfolio-tag">Packaging</span>
+            </div>
+            <p class="section-intro" style="margin:0;">Botanical-inspired symbols, colour pairings, and packaging concepts tailored for apothecary launches.</p>
+          </article>
+        </div>
       </div>
     </section>
 
