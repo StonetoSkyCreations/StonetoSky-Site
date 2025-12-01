@@ -279,7 +279,7 @@
       background: #fff8f1;
       border: 1px solid var(--border);
       border-radius: 12px;
-      padding: 1.25rem;
+      padding: 0.75rem 1rem 1rem;
       box-shadow: 0 18px 40px rgba(59, 42, 32, 0.08);
       transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
@@ -289,13 +289,54 @@
       box-shadow: 0 20px 48px rgba(59, 42, 32, 0.12);
     }
 
+    .package-toggle {
+      width: 100%;
+      background: transparent;
+      border: none;
+      text-align: left;
+      padding: 0.25rem 0.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      cursor: pointer;
+    }
+
+    .package-heading {
+      display: grid;
+      gap: 0.2rem;
+    }
+
     .package-card h3 {
-      margin-bottom: 0.6rem;
+      margin: 0;
+      font-size: 1.35rem;
+    }
+
+    .package-summary {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .package-summary .package-price {
+      font-weight: 700;
+      color: var(--accent-dark);
+    }
+
+    .package-toggle-icon {
+      font-size: 1.5rem;
+      color: var(--accent-dark);
+      line-height: 1;
     }
 
     .package-card ul {
-      margin: 0.5rem 0 1rem;
+      margin: 0.5rem 0 0;
       padding-left: 1.2rem;
+      color: var(--muted);
+      display: grid;
+      gap: 0.35rem;
     }
 
     .package-eyebrow {
@@ -303,16 +344,20 @@
       letter-spacing: 0.12em;
       font-size: 0.75rem;
       color: var(--muted);
-      margin-bottom: 0.4rem;
+      margin-bottom: 0.2rem;
+      padding: 0 0.5rem;
     }
 
-    .package-meta {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-top: 0.5rem;
-      color: var(--accent-dark);
-      font-weight: 600;
+    .package-body {
+      border-top: 1px solid var(--border);
+      padding-top: 0.75rem;
+      margin: 0 0.5rem;
+    }
+
+    .package-card.open {
+      background: linear-gradient(135deg, rgba(241, 223, 199, 0.4), rgba(244, 235, 226, 0.7));
+      border-color: var(--accent);
+      box-shadow: 0 20px 48px rgba(59, 42, 32, 0.14);
     }
 
     .package-note {
@@ -416,11 +461,6 @@
         display: block;
       }
 
-      .package-meta {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.3rem;
-      }
     }
   </style>
 </head>
@@ -463,90 +503,118 @@
         <p>These packages are ready to go as-is, and can be refined to suit your project. If you need something tailored, we can blend elements across tiers.</p>
 
         <div class="package-grid">
-          <article class="package-card package-full">
+          <article class="package-card package-logo">
             <div class="package-eyebrow">Brand package pricing</div>
-            <h3>Full brand design</h3>
-            <ul>
-              <li>Research &amp; moodboard (inspiration, target audience, brand positioning)</li>
-              <li>Creation of the main logo (original concept)</li>
-              <li>2 secondary logo variations – original &amp; inverted colour</li>
-              <li>Colour palette (3 variations)</li>
-              <li>Typography (primary &amp; secondary)</li>
-              <li>Sub mark (2 variations)</li>
-              <li>Delivery of files (jpeg, png, pdf)</li>
-              <li>Full usage rights</li>
-              <li>Unlimited revision and version until it is a full yes</li>
-              <li>6 symbols for your social media or website</li>
-              <li>6 Instagram post templates</li>
-              <li>Website – 3–5 pages</li>
-              <li>Business card or flyer</li>
-            </ul>
-            <div class="package-meta">
-              <span class="package-duration">Duration: 8–10 weeks</span>
-              <span class="package-price">$3000</span>
-            </div>
-          </article>
-
-          <article class="package-card package-social">
-            <div class="package-eyebrow">Brand package pricing</div>
-            <h3>Social Media Brand Design</h3>
-            <ul>
-              <li>Research (inspiration, target audience, brand positioning)</li>
-              <li>Moodboard – imagery &amp; visual concepts for social media</li>
-              <li>Creation of the main logo (original concept)</li>
-              <li>1 secondary logo variation</li>
-              <li>Sub mark (2 variations)</li>
-              <li>Typography (primary &amp; secondary)</li>
-              <li>Colour palette (3 variations)</li>
-              <li>Social media guidance, version clarity &amp; highlight symbols (colour option)</li>
-              <li>Social media templates (6 variations for content)</li>
-              <li>Delivery of files (jpeg, png, pdf)</li>
-              <li>Full usage rights</li>
-              <li>Unlimited revision and version until it is a full yes</li>
-            </ul>
-            <div class="package-meta">
-              <span class="package-duration">Duration: 6–8 weeks</span>
-              <span class="package-price">$1800</span>
+            <button class="package-toggle" aria-expanded="false" aria-controls="package-logo-details">
+              <div class="package-heading">
+                <h3>Logo design</h3>
+                <div class="package-summary">
+                  <span class="package-price">$450</span>
+                  <span class="package-duration">Duration: 2 weeks</span>
+                </div>
+              </div>
+              <span class="package-toggle-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="package-body" id="package-logo-details" hidden>
+              <ul>
+                <li>Moodboard – inspiration, values, visual concepts</li>
+                <li>Creation of the main logo (original concept)</li>
+                <li>1 secondary logo variation – inverted colour</li>
+                <li>Colour palette (3 variations)</li>
+                <li>Sub mark (2 variations)</li>
+                <li>Delivery of files (jpeg, png, pdf)</li>
+                <li>Full usage rights</li>
+                <li>Unlimited revision and version until it is a full yes</li>
+              </ul>
             </div>
           </article>
 
           <article class="package-card package-simple">
             <div class="package-eyebrow">Brand package pricing</div>
-            <h3>Simple brand design</h3>
-            <ul>
-              <li>Research (inspiration, target audience, brand positioning)</li>
-              <li>Moodboard – imagery &amp; visual concepts for social media</li>
-              <li>Creation of the main logo (original concept)</li>
-              <li>1 secondary logo variation</li>
-              <li>Sub mark (2 variations)</li>
-              <li>Typography (primary &amp; secondary)</li>
-              <li>Colour palette (full – 6 variations)</li>
-              <li>Delivery of files (jpeg, png, pdf)</li>
-              <li>Full usage rights</li>
-              <li>Unlimited revision and version until it is a full yes</li>
-            </ul>
-            <div class="package-meta">
-              <span class="package-duration">Duration: 4–6 weeks</span>
-              <span class="package-price">$900</span>
+            <button class="package-toggle" aria-expanded="false" aria-controls="package-simple-details">
+              <div class="package-heading">
+                <h3>Simple brand design</h3>
+                <div class="package-summary">
+                  <span class="package-price">$900</span>
+                  <span class="package-duration">Duration: 4–6 weeks</span>
+                </div>
+              </div>
+              <span class="package-toggle-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="package-body" id="package-simple-details" hidden>
+              <ul>
+                <li>Research (inspiration, target audience, brand positioning)</li>
+                <li>Moodboard – imagery &amp; visual concepts for social media</li>
+                <li>Creation of the main logo (original concept)</li>
+                <li>1 secondary logo variation</li>
+                <li>Sub mark (2 variations)</li>
+                <li>Typography (primary &amp; secondary)</li>
+                <li>Colour palette (full – 6 variations)</li>
+                <li>Delivery of files (jpeg, png, pdf)</li>
+                <li>Full usage rights</li>
+                <li>Unlimited revision and version until it is a full yes</li>
+              </ul>
             </div>
           </article>
 
-          <article class="package-card package-logo">
+          <article class="package-card package-social">
             <div class="package-eyebrow">Brand package pricing</div>
-            <h3>Logo design</h3>
-            <ul>
-              <li>Moodboard – inspiration, values, visual concepts</li>
-              <li>Creation of the main logo (original concept)</li>
-              <li>1 secondary logo variation – inverted colour</li>
-              <li>Colour palette (3 variations)</li>
-              <li>Sub mark (2 variations)</li>
-              <li>Delivery of files (jpeg, png, pdf)</li>
-              <li>Full usage rights</li>
-              <li>Unlimited revision and version until it is a full yes</li>
-            </ul>
-            <div class="package-meta">
-              <span class="package-duration">Duration: 2 weeks</span>
-              <span class="package-price">$450</span>
+            <button class="package-toggle" aria-expanded="false" aria-controls="package-social-details">
+              <div class="package-heading">
+                <h3>Social Media Brand Design</h3>
+                <div class="package-summary">
+                  <span class="package-price">$1800</span>
+                  <span class="package-duration">Duration: 6–8 weeks</span>
+                </div>
+              </div>
+              <span class="package-toggle-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="package-body" id="package-social-details" hidden>
+              <ul>
+                <li>Research (inspiration, target audience, brand positioning)</li>
+                <li>Moodboard – imagery &amp; visual concepts for social media</li>
+                <li>Creation of the main logo (original concept)</li>
+                <li>1 secondary logo variation</li>
+                <li>Sub mark (2 variations)</li>
+                <li>Typography (primary &amp; secondary)</li>
+                <li>Colour palette (3 variations)</li>
+                <li>Social media guidance, version clarity &amp; highlight symbols (colour option)</li>
+                <li>Social media templates (6 variations for content)</li>
+                <li>Delivery of files (jpeg, png, pdf)</li>
+                <li>Full usage rights</li>
+                <li>Unlimited revision and version until it is a full yes</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="package-card package-full">
+            <div class="package-eyebrow">Brand package pricing</div>
+            <button class="package-toggle" aria-expanded="false" aria-controls="package-full-details">
+              <div class="package-heading">
+                <h3>Full brand design</h3>
+                <div class="package-summary">
+                  <span class="package-price">$3000</span>
+                  <span class="package-duration">Duration: 8–10 weeks</span>
+                </div>
+              </div>
+              <span class="package-toggle-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="package-body" id="package-full-details" hidden>
+              <ul>
+                <li>Research &amp; moodboard (inspiration, target audience, brand positioning)</li>
+                <li>Creation of the main logo (original concept)</li>
+                <li>2 secondary logo variations – original &amp; inverted colour</li>
+                <li>Colour palette (3 variations)</li>
+                <li>Typography (primary &amp; secondary)</li>
+                <li>Sub mark (2 variations)</li>
+                <li>Delivery of files (jpeg, png, pdf)</li>
+                <li>Full usage rights</li>
+                <li>Unlimited revision and version until it is a full yes</li>
+                <li>6 symbols for your social media or website</li>
+                <li>6 Instagram post templates</li>
+                <li>Website – 3–5 pages</li>
+                <li>Business card or flyer</li>
+              </ul>
             </div>
           </article>
         </div>
@@ -657,6 +725,23 @@
   </footer>
 
   <script>
+    const packageToggles = document.querySelectorAll('.package-toggle');
+
+    packageToggles.forEach((toggle) => {
+      const detailsId = toggle.getAttribute('aria-controls');
+      const details = document.getElementById(detailsId);
+
+      toggle.addEventListener('click', () => {
+        const expanded = toggle.getAttribute('aria-expanded') === 'true';
+        const nextState = !expanded;
+
+        toggle.setAttribute('aria-expanded', String(nextState));
+        details.hidden = !nextState;
+        toggle.closest('.package-card').classList.toggle('open', nextState);
+        toggle.querySelector('.package-toggle-icon').textContent = nextState ? '–' : '+';
+      });
+    });
+
     const menuToggle = document.querySelector('.menu-toggle');
     const navLinks = document.querySelector('.nav-links');
 
