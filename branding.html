@@ -318,15 +318,18 @@
       font-size: 1.35rem;
     }
 
-    .package-summary {
+    .package-meta {
       display: flex;
       gap: 0.75rem;
       flex-wrap: wrap;
       color: var(--muted);
       font-size: 0.95rem;
+      margin-top: 0.85rem;
+      padding-top: 0.75rem;
+      border-top: 1px solid var(--border);
     }
 
-    .package-summary .package-price {
+    .package-meta .package-price {
       font-weight: 700;
       color: var(--accent-dark);
     }
@@ -343,15 +346,6 @@
       color: var(--muted);
       display: grid;
       gap: 0.35rem;
-    }
-
-    .package-eyebrow {
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      font-size: 0.75rem;
-      color: var(--muted);
-      margin-bottom: 0.2rem;
-      padding: 0 0.5rem;
     }
 
     .package-body {
@@ -510,14 +504,9 @@
 
         <div class="package-grid">
           <article class="package-card package-logo">
-            <div class="package-eyebrow">Brand package pricing</div>
             <button class="package-toggle" aria-expanded="false" aria-controls="package-logo-details">
               <div class="package-heading">
                 <h3>Logo design</h3>
-                <div class="package-summary">
-                  <span class="package-price">$450</span>
-                  <span class="package-duration">Duration: 2 weeks</span>
-                </div>
               </div>
               <span class="package-toggle-icon" aria-hidden="true">+</span>
             </button>
@@ -532,18 +521,17 @@
                 <li>Full usage rights</li>
                 <li>Unlimited revision and version until it is a full yes</li>
               </ul>
+              <div class="package-meta">
+                <span class="package-price">$450</span>
+                <span class="package-duration">Duration: 2 weeks</span>
+              </div>
             </div>
           </article>
 
           <article class="package-card package-simple">
-            <div class="package-eyebrow">Brand package pricing</div>
             <button class="package-toggle" aria-expanded="false" aria-controls="package-simple-details">
               <div class="package-heading">
                 <h3>Simple brand design</h3>
-                <div class="package-summary">
-                  <span class="package-price">$900</span>
-                  <span class="package-duration">Duration: 4–6 weeks</span>
-                </div>
               </div>
               <span class="package-toggle-icon" aria-hidden="true">+</span>
             </button>
@@ -560,18 +548,17 @@
                 <li>Full usage rights</li>
                 <li>Unlimited revision and version until it is a full yes</li>
               </ul>
+              <div class="package-meta">
+                <span class="package-price">$900</span>
+                <span class="package-duration">Duration: 4–6 weeks</span>
+              </div>
             </div>
           </article>
 
           <article class="package-card package-social">
-            <div class="package-eyebrow">Brand package pricing</div>
             <button class="package-toggle" aria-expanded="false" aria-controls="package-social-details">
               <div class="package-heading">
                 <h3>Social Media Brand Design</h3>
-                <div class="package-summary">
-                  <span class="package-price">$1800</span>
-                  <span class="package-duration">Duration: 6–8 weeks</span>
-                </div>
               </div>
               <span class="package-toggle-icon" aria-hidden="true">+</span>
             </button>
@@ -590,18 +577,17 @@
                 <li>Full usage rights</li>
                 <li>Unlimited revision and version until it is a full yes</li>
               </ul>
+              <div class="package-meta">
+                <span class="package-price">$1800</span>
+                <span class="package-duration">Duration: 6–8 weeks</span>
+              </div>
             </div>
           </article>
 
           <article class="package-card package-full">
-            <div class="package-eyebrow">Brand package pricing</div>
             <button class="package-toggle" aria-expanded="false" aria-controls="package-full-details">
               <div class="package-heading">
                 <h3>Full brand design</h3>
-                <div class="package-summary">
-                  <span class="package-price">$3000</span>
-                  <span class="package-duration">Duration: 8–10 weeks</span>
-                </div>
               </div>
               <span class="package-toggle-icon" aria-hidden="true">+</span>
             </button>
@@ -621,6 +607,10 @@
                 <li>Website – 3–5 pages</li>
                 <li>Business card or flyer</li>
               </ul>
+              <div class="package-meta">
+                <span class="package-price">$3000</span>
+                <span class="package-duration">Duration: 8–10 weeks</span>
+              </div>
             </div>
           </article>
         </div>
