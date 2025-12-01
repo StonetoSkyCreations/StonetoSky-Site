@@ -190,6 +190,76 @@
       color: var(--muted);
     }
 
+    .faq-panel {
+      margin-top: 1.5rem;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: linear-gradient(135deg, rgba(241, 223, 199, 0.35), rgba(244, 235, 226, 0.6));
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(75, 43, 22, 0.04);
+    }
+
+    .faq-toggle {
+      width: 100%;
+      text-align: left;
+      background: transparent;
+      border: none;
+      padding: 1.2rem 1.1rem;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      cursor: pointer;
+    }
+
+    .faq-toggle:hover {
+      background: rgba(233, 216, 198, 0.4);
+    }
+
+    .faq-toggle .faq-icon {
+      width: 24px;
+      height: 24px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      color: var(--accent-dark);
+      background: #fffaf4;
+      transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
+    }
+
+    .faq-panel.open .faq-toggle .faq-icon {
+      transform: rotate(45deg);
+      background: rgba(123, 75, 42, 0.06);
+      color: var(--accent);
+    }
+
+    .faq-list {
+      border-top: 1px solid var(--border);
+      padding: 1rem 1.1rem 1.2rem;
+    }
+
+    .faq-item + .faq-item {
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .faq-item h3 {
+      font-size: 1rem;
+      margin-bottom: 0.45rem;
+    }
+
+    .faq-item p {
+      color: var(--muted);
+      margin: 0;
+    }
+
     .section-eyebrow {
       text-transform: uppercase;
       letter-spacing: 0.12em;
@@ -529,15 +599,53 @@
         <div class="snippet" style="margin-top:0;">
           Quick answers for founders, facilitators, and artists across Aotearoa New Zealand who need branding, websites, and messaging that feel true to their work—online nationwide or in person in major cities.
         </div>
+        <div class="faq-panel">
+          <button class="faq-toggle" aria-expanded="false" aria-controls="faq-content">
+            <span>View frequently asked questions</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-list" id="faq-content" role="list" hidden>
+            <div class="faq-item" role="listitem">
+              <h3>What makes your process helpful for soul-led brands?</h3>
+              <p>We begin with a call to make sure there’s resonance and alignment. From there, I use a toolset designed to draw your vision into deeper clarity and coherence. Together, we shape the visual worlds that will carry your story. Each package includes practical assets and rollout guidance so you can bring the brand to life with confidence and consistency.</p>
+            </div>
 
-        <h3>Do you work with clients outside Ōtautahi / Christchurch?</h3>
-        <p>Yes. Most projects happen online with collaborative workshops. Travel can be arranged for key shoots or facilitation moments across Aotearoa, including Auckland, Wellington, Hamilton, Tauranga, Dunedin, Queenstown, and nearby towns.</p>
+            <div class="faq-item" role="listitem">
+              <h3>Do you work with clients outside Ōtautahi / Christchurch?</h3>
+              <p>Yes. Most projects happen online with collaborative workshops. Travel can be arranged for key shoots or facilitation across New Zealand and Australia.</p>
+            </div>
 
-        <h3>Can branding and website design happen together?</h3>
-        <p>Absolutely. The Full and Social packages include web design guidance or full builds, ensuring the visual identity, copy, and user flow stay aligned from logo to launch.</p>
+            <div class="faq-item" role="listitem">
+              <h3>Can branding and website design happen together?</h3>
+              <p>Absolutely. The Full and Social packages include web design guidance or full builds, ensuring the visual identity, copy, and user flow stay aligned from logo to launch.</p>
+            </div>
 
-        <h3>What makes your process helpful for soul-led brands?</h3>
-        <p>We start with deep listening and audience clarity, then move into visual worlds that carry your story. Each package includes practical assets plus rollout guidance so your team can sustain the brand with confidence.</p>
+            <div class="faq-item" role="listitem">
+              <h3>How long does a branding or website project take?</h3>
+              <p>Most branding projects take 3–6 weeks depending on the package. Website design typically unfolds over 4–8 weeks, including copy refinement, layout, and testing. Timelines are mapped clearly at the start so you always know what’s next.</p>
+            </div>
+
+            <div class="faq-item" role="listitem">
+              <h3>What do I need to prepare before we start?</h3>
+              <p>A clear intention is enough to begin. During our first call, we explore your story, values, audience, and long-term vision. If you already have copy, imagery, or existing brand assets, I’ll help you refine or rebuild them as needed.</p>
+            </div>
+
+            <div class="faq-item" role="listitem">
+              <h3>Can you redesign an existing brand or website?</h3>
+              <p>Yes. Whether your current visual identity feels outdated, inconsistent, or no longer aligned with who you are becoming, I can refresh or fully reimagine it. We’ll clarify what stays, what evolves, and what new direction wants to emerge.</p>
+            </div>
+
+            <div class="faq-item" role="listitem">
+              <h3>Do you offer ongoing support after the design is complete?</h3>
+              <p>Absolutely. Each package includes handover guidance, tutorials, and support so you feel confident using your brand and website. Ongoing creative or technical support can be added if you want continued collaboration.</p>
+            </div>
+
+            <div class="faq-item" role="listitem">
+              <h3>Which platforms do you design on?</h3>
+              <p>I primarily design on Squarespace, Wix, WordPress, and static websites depending on your goals, budget, and future scalability. We’ll choose the platform that best supports your aesthetic, functionality needs, and long-term vision.</p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   </main>
@@ -563,6 +671,20 @@
     });
 
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    const faqToggle = document.querySelector('.faq-toggle');
+    const faqContent = document.getElementById('faq-content');
+    const faqPanel = document.querySelector('.faq-panel');
+
+    faqToggle.addEventListener('click', () => {
+      const expanded = faqToggle.getAttribute('aria-expanded') === 'true';
+      const nextState = !expanded;
+
+      faqToggle.setAttribute('aria-expanded', String(nextState));
+      faqContent.hidden = !nextState;
+      faqPanel.classList.toggle('open', nextState);
+      faqToggle.querySelector('.faq-icon').textContent = nextState ? '–' : '+';
+    });
   </script>
 
   <!-- FAQPage structured data for branding -->
@@ -573,10 +695,18 @@
     "mainEntity": [
       {
         "@type": "Question",
+        "name": "What makes your process helpful for soul-led brands?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We begin with a call to make sure there’s resonance and alignment. From there, I use a toolset designed to draw your vision into deeper clarity and coherence. Together, we shape the visual worlds that will carry your story. Each package includes practical assets and rollout guidance so you can bring the brand to life with confidence and consistency."
+        }
+      },
+      {
+        "@type": "Question",
         "name": "Do you work with clients outside Ōtautahi / Christchurch?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. Most projects happen online with collaborative workshops. Travel can be arranged for key shoots or facilitation moments across Aotearoa, including Auckland, Wellington, Hamilton, Tauranga, Dunedin, Queenstown, and nearby towns."
+          "text": "Yes. Most projects happen online with collaborative workshops. Travel can be arranged for key shoots or facilitation across New Zealand and Australia."
         }
       },
       {
@@ -589,10 +719,42 @@
       },
       {
         "@type": "Question",
-        "name": "What makes your process helpful for soul-led brands?",
+        "name": "How long does a branding or website project take?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "We start with deep listening and audience clarity, then move into visual worlds that carry your story. Each package includes practical assets plus rollout guidance so your team can sustain the brand with confidence."
+          "text": "Most branding projects take 3–6 weeks depending on the package. Website design typically unfolds over 4–8 weeks, including copy refinement, layout, and testing. Timelines are mapped clearly at the start so you always know what’s next."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What do I need to prepare before we start?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A clear intention is enough to begin. During our first call, we explore your story, values, audience, and long-term vision. If you already have copy, imagery, or existing brand assets, I’ll help you refine or rebuild them as needed."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can you redesign an existing brand or website?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Whether your current visual identity feels outdated, inconsistent, or no longer aligned with who you are becoming, I can refresh or fully reimagine it. We’ll clarify what stays, what evolves, and what new direction wants to emerge."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you offer ongoing support after the design is complete?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Absolutely. Each package includes handover guidance, tutorials, and support so you feel confident using your brand and website. Ongoing creative or technical support can be added if you want continued collaboration."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which platforms do you design on?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "I primarily design on Squarespace, Wix, WordPress, and static websites depending on your goals, budget, and future scalability. We’ll choose the platform that best supports your aesthetic, functionality needs, and long-term vision."
         }
       }
     ]
