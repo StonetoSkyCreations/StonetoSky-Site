@@ -423,13 +423,25 @@
       position: relative;
       aspect-ratio: 4 / 3;
       display: grid;
-      place-items: center;
+      grid-template-rows: 1fr auto;
+      align-items: stretch;
       color: var(--accent-dark);
       padding: 1rem;
       margin: 0;
       background: radial-gradient(circle at 20% 30%, rgba(75, 91, 59, 0.12), transparent 45%),
                   radial-gradient(circle at 80% 70%, rgba(123, 75, 42, 0.12), transparent 48%),
                   linear-gradient(135deg, rgba(244, 235, 226, 0.95), rgba(241, 223, 199, 0.9));
+    }
+
+    .slide-image {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 0.75rem;
+      box-shadow: 0 10px 24px rgba(59, 42, 32, 0.06);
     }
 
     .slide figcaption {
@@ -741,18 +753,25 @@
             <h3>Mumma Marama</h3>
             <span class="portfolio-tag">Logo &amp; brand essence</span>
             <p>A collaboration honouring womb wisdom, birth rites, somatic embodiment, and voice. The mark was shaped to hold the currents of the earth mother and moon-tide waters that nourish new life.</p>
-            <p>Working alongside Rebecca Bee Gunson, we translated her vision into a calm, tidal brand world with space for ceremony, voice, and nurturing support. Images are uploading soon—use the arrows to preview the flow of the gallery.</p>
+            <p>Working alongside Rebecca, we translated her vision into a calm, tidal brand world with space for ceremony, voice, and nurturing support.</p>
           </div>
 
           <div class="slider" aria-label="Mumma Marama gallery" data-slider>
             <div class="slides">
               <figure class="slide" aria-hidden="false">
+                <img class="slide-image" src="assets/images/MummaMarama-logo.png" alt="Mumma Marama primary logo" />
                 <figcaption>Logo mark direction — oceanic curves cradling the womb space.</figcaption>
               </figure>
               <figure class="slide" aria-hidden="true">
+                <img class="slide-image" src="assets/images/MummaMarama-flower.png" alt="Mumma Marama floral brand symbol" />
                 <figcaption>Brand symbols &amp; moon-tide rhythms held within protective circles.</figcaption>
               </figure>
               <figure class="slide" aria-hidden="true">
+                <img class="slide-image" src="assets/images/MummaMarama-Branding.png" alt="Mumma Marama branding elements" />
+                <figcaption>Brand suite direction — typography, marks, and layout references.</figcaption>
+              </figure>
+              <figure class="slide" aria-hidden="true">
+                <img class="slide-image" src="assets/images/MummaMarama- ColorPallet-MoodBoard.jpg" alt="Mumma Marama colour palette and moodboard" />
                 <figcaption>Moodboard palette — sacred waters, lunar light, and grounded earth tones.</figcaption>
               </figure>
             </div>
