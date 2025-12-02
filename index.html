@@ -301,6 +301,76 @@
       font-size: 1rem;
     }
 
+    .faq-panel {
+      margin-top: 1.5rem;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: linear-gradient(135deg, rgba(241, 223, 199, 0.35), rgba(244, 235, 226, 0.6));
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(75, 43, 22, 0.04);
+    }
+
+    .faq-toggle {
+      width: 100%;
+      text-align: left;
+      background: transparent;
+      border: none;
+      padding: 1.2rem 1.1rem;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      cursor: pointer;
+    }
+
+    .faq-toggle:hover {
+      background: rgba(233, 216, 198, 0.4);
+    }
+
+    .faq-toggle .faq-icon {
+      width: 24px;
+      height: 24px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      color: var(--accent-dark);
+      background: #fffaf4;
+      transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
+    }
+
+    .faq-panel.open .faq-toggle .faq-icon {
+      transform: rotate(45deg);
+      background: rgba(123, 75, 42, 0.06);
+      color: var(--accent);
+    }
+
+    .faq-list {
+      border-top: 1px solid var(--border);
+      padding: 1rem 1.1rem 1.2rem;
+    }
+
+    .faq-item + .faq-item {
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .faq-item h3 {
+      font-size: 1rem;
+      margin-bottom: 0.45rem;
+    }
+
+    .faq-item p {
+      color: var(--muted);
+      margin: 0;
+    }
+
     .hero .btn {
       display: inline-block;
       margin-top: 1.2rem;
@@ -676,21 +746,65 @@
 
   <section id="faq">
     <div class="container">
-      <h2>Questions I’m asked most often</h2>
-      <div class="snippet" style="margin-top:0;">
-        I work across Aotearoa New Zealand—online nationwide and in person in major centres—blending brand design, illustration, singing, and facilitation. Below you’ll find quick answers for people seeking support for workshops, retreats, and soul-led businesses.
+      <h2>Frequently asked questions</h2>
+
+      <div class="faq-panel">
+        <button class="faq-toggle" aria-expanded="false" aria-controls="faq-list">
+          <span>View frequently asked questions</span>
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-list" id="faq-list" role="list" hidden>
+          <div class="faq-item" role="listitem">
+            <h3>What kinds of projects do you take on?</h3>
+            <p>Branding, illustration, and simple websites for soul-led businesses, plus vocal sessions and facilitation for retreats, gatherings, and community spaces.</p>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <h3>Do you work with clients outside Christchurch?</h3>
+            <p>Yes. Most creative projects happen online with clear check-ins. Travel within New Zealand and Australia can be arranged for facilitation, filming, or key project moments.</p>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <h3>Can branding, illustration, and web design be bundled together?</h3>
+            <p>Yes. Many clients mix offerings—brand identity, art, and a simple website—to create a cohesive visual world from start to finish.</p>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <h3>Do you offer one-on-one voice or creativity sessions?</h3>
+            <p>Yes. I hold gentle sessions focused on nervous-system safety, vocal expression, and reconnecting with your natural voice.</p>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <h3>Can you support my retreat or workshop?</h3>
+            <p>I offer group singing, ceremony support, and visual design for event materials. Each space is shaped around the group’s intention and capacity.</p>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <h3>How do you price your creative work?</h3>
+            <p>Projects are quoted based on depth and scope. Branding and web packages are tiered; artworks and illustrations are priced individually. Payment plans are available. If there&apos;s resonance, I want to work with you!</p>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <h3>What style of brands do you work best with?</h3>
+            <p>Earth-based, soulful, nature-aligned projects—herbalists, facilitators, artists, wellness practitioners, and community-led ventures.</p>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <h3>Can you create custom illustrations or artwork for my project?</h3>
+            <p>Yes. I design one-off illustrations, botanical drawings, and symbolic pieces for brands, websites, packaging, and personal commissions.</p>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <h3>How does the collaboration process work?</h3>
+            <p>We start with a call to confirm alignment, then move through discovery, concepts, and refinement with clear milestones and shared folders to keep everything organised.</p>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <h3>Can you help if I’m still clarifying my idea or offering?</h3>
+            <p>Absolutely. Many clients come with a seed of an idea. I help shape language, visuals, and structure so your offering feels grounded, coherent, and true to you.</p>
+          </div>
+        </div>
       </div>
-      <h3>Can we collaborate online across Aotearoa New Zealand?</h3>
-      <p>Yes. Most branding, web design, and illustration projects happen online with clear milestones and live check-ins. I also travel within New Zealand for key facilitation or filming moments in cities like Auckland, Wellington, Christchurch, Dunedin, and Queenstown.</p>
-
-      <h3>Do you offer one-on-one vocal work or group facilitation?</h3>
-      <p>I hold gentle one-on-one voice sessions and facilitate group singing for retreats, workshops, and community gatherings. Sessions are shaped to match the group’s nervous-system needs and the intention of the space.</p>
-
-      <h3>How do you price branding and website projects?</h3>
-      <p>Branding packages are tiered by depth—from foundations through full visual worlds with web design. Each package includes discovery, strategy, and practical assets, with payment plans available for small businesses and artists.</p>
-
-      <h3>What kinds of earth-based or soul-led brands do you specialise in?</h3>
-      <p>I regularly create for herbalists, retreat leaders, wellness practitioners, artists, and community spaces. The work centres on clarity, sensory storytelling, and visuals that honour the land and people they serve.</p>
     </div>
   </section>
 
@@ -744,6 +858,23 @@
     }
   });
 
+  // FAQ dropdown toggle
+  const faqToggle = document.querySelector('.faq-toggle');
+  const faqList = document.getElementById('faq-list');
+  const faqPanel = document.querySelector('.faq-panel');
+
+  if (faqToggle && faqList && faqPanel) {
+    faqToggle.addEventListener('click', () => {
+      const expanded = faqToggle.getAttribute('aria-expanded') === 'true';
+      const nextState = !expanded;
+
+      faqToggle.setAttribute('aria-expanded', String(nextState));
+      faqList.hidden = !nextState;
+      faqPanel.classList.toggle('open', nextState);
+      faqToggle.querySelector('.faq-icon').textContent = nextState ? '–' : '+';
+    });
+  }
+
   // Current year in footer
   document.getElementById('year').textContent = new Date().getFullYear();
 </script>
@@ -756,34 +887,82 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Can we collaborate online across Aotearoa New Zealand?",
+      "name": "What kinds of projects do you take on?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. Most branding, web design, and illustration projects happen online with clear milestones and live check-ins, and I travel within New Zealand for key facilitation or filming moments in centres such as Auckland, Wellington, Christchurch, Dunedin, and Queenstown."
+        "text": "Branding, illustration, and simple websites for soul-led businesses, plus vocal sessions and facilitation for retreats, gatherings, and community spaces."
       }
     },
     {
       "@type": "Question",
-      "name": "Do you offer one-on-one vocal work or group facilitation?",
+      "name": "Do you work with clients outside Christchurch?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "I hold gentle one-on-one voice sessions and facilitate group singing for retreats, workshops, and community gatherings, tailored to the group’s nervous-system needs and the intention of the space."
+        "text": "Yes. Most creative projects happen online with clear check-ins. Travel within New Zealand and Australia can be arranged for facilitation, filming, or key project moments."
       }
     },
     {
       "@type": "Question",
-      "name": "How do you price branding and website projects?",
+      "name": "Can branding, illustration, and web design be bundled together?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Branding packages are tiered by depth—from foundations through full visual worlds with web design. Each package includes discovery, strategy, and practical assets, with payment plans available for small businesses and artists."
+        "text": "Yes. Many clients mix offerings—brand identity, art, and a simple website—to create a cohesive visual world from start to finish."
       }
     },
     {
       "@type": "Question",
-      "name": "What kinds of earth-based or soul-led brands do you specialise in?",
+      "name": "Do you offer one-on-one voice or creativity sessions?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "I regularly create for herbalists, retreat leaders, wellness practitioners, artists, and community spaces, centring clarity, sensory storytelling, and visuals that honour the land and people they serve."
+        "text": "Yes. I hold gentle sessions focused on nervous-system safety, vocal expression, and reconnecting with your natural voice."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you support my retreat or workshop?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "I offer group singing, ceremony support, and visual design for event materials. Each space is shaped around the group’s intention and capacity."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you price your creative work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Projects are quoted based on depth and scope. Branding and web packages are tiered; artworks and illustrations are priced individually. Payment plans are available. If there's resonance, I want to work with you!"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What style of brands do you work best with?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Earth-based, soulful, nature-aligned projects—herbalists, facilitators, artists, wellness practitioners, and community-led ventures."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you create custom illustrations or artwork for my project?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. I design one-off illustrations, botanical drawings, and symbolic pieces for brands, websites, packaging, and personal commissions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does the collaboration process work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We start with a call to confirm alignment, then move through discovery, concepts, and refinement with clear milestones and shared folders to keep everything organised."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you help if I’m still clarifying my idea or offering?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Absolutely. Many clients come with a seed of an idea. I help shape language, visuals, and structure so your offering feels grounded, coherent, and true to you."
       }
     }
   ]
