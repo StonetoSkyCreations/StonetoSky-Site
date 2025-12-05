@@ -126,191 +126,541 @@
   }
   </script>
 
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
   <style>
-    /* ---------- Colour palette ---------- */
     :root {
-      --bg: #f4ebe2;          /* soft parchment */
-      --bg-alt: #eee0d2;      /* slightly deeper beige */
-      --bg-deeper: #e1cfb7;   /* warm sand */
-      --text: #3b2a20;        /* deep brown */
-      --muted: #8e7b6a;       /* soft taupe */
-      --accent: #7b4b2a;      /* warm brown */
-      --accent-dark: #4a2b16; /* dark cacao */
-      --green: #4b5b3b;       /* moss green */
-      --border: #d9c4ad;      /* light border */
-      --pill: #f1dfc7;        /* chip background */
+      --bg: #f6f1e8;
+      --bg-alt: #efe4d6;
+      --bg-deep: #e0d2c1;
+      --ink: #3c3128;
+      --ink-soft: #5a4a3d;
+      --accent: #c8a37a;
+      --accent-strong: #a1794f;
+      --line: #ddc8b1;
+      --pill: #f0e3d5;
+      --radius-lg: 18px;
+      --radius-xl: 28px;
+      --shadow-soft: 0 18px 40px rgba(40, 32, 24, 0.1);
     }
 
-    /* Basic reset */
     * {
       box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      margin: 0;
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
       line-height: 1.7;
-      color: var(--text);
+      color: var(--ink-soft);
       background: var(--bg);
+      -webkit-font-smoothing: antialiased;
     }
 
-    h1, h2 {
-      font-family: "Georgia", "Times New Roman", serif;
-      letter-spacing: 0.04em;
+    h1, h2, h3 {
+      font-family: 'Cormorant Garamond', serif;
+      color: var(--ink);
+      margin: 0 0 10px;
+      font-weight: 500;
     }
 
     a {
-      color: var(--accent);
+      color: inherit;
       text-decoration: none;
     }
 
-    a:hover {
-      text-decoration: underline;
+    img {
+      max-width: 100%;
+      display: block;
     }
 
-    /* ---------- Layout ---------- */
-    .container {
-      max-width: 960px;
+    ul {
+      margin: 0 0 12px 18px;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 6px;
+    }
+
+    .wrap {
+      max-width: 1080px;
       margin: 0 auto;
-      padding: 0 1.5rem;
+      padding: 0 20px;
     }
 
-    header {
+    /* Header */
+    .site-header {
       position: sticky;
       top: 0;
-      z-index: 20;
-      background: rgba(244, 235, 226, 0.96);
-      border-bottom: 1px solid var(--border);
-      backdrop-filter: blur(8px);
+      z-index: 30;
+      backdrop-filter: blur(14px);
+      background: linear-gradient(to bottom, rgba(246, 241, 232, 0.96), rgba(246, 241, 232, 0.86));
+      border-bottom: 1px solid rgba(221, 200, 177, 0.9);
     }
 
     .nav {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0.75rem 0;
+      padding: 12px 0;
+      gap: 18px;
     }
 
-    .logo {
-  display: flex;
-  align-items: center;
-}
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
 
-.logo-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.1rem;
-  text-decoration: none;
-}
+    .brand-logo {
+      height: 42px;
+      width: auto;
+      display: block;
+    }
 
-.logo-image {
-  height: 42px; /* adjust to make the header logo bigger/smaller */
-  width: auto;
-  display: block;
-}
+    .brand-circle {
+      width: 40px;
+      height: 40px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 20%, #fff9f0, #d6b592);
+      border: 1px solid rgba(199, 167, 130, 0.7);
+      box-shadow: 0 8px 18px rgba(72, 54, 34, 0.3);
+      transform: translateY(0);
+      transition: transform 0.35s ease-out;
+    }
 
-.logo-text {
-  font-weight: 600;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  font-size: 0.9rem;
-  color: var(--accent-dark);
-  white-space: nowrap;
-}
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      letter-spacing: 0.08em;
+    }
 
+    .brand-title {
+      font-size: 20px;
+      text-transform: uppercase;
+    }
+
+    .brand-sub {
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      opacity: 0.92;
+    }
 
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 1.5rem;
-      font-size: 0.9rem;
+      gap: 14px;
+      font-size: 13px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
     }
 
     .nav-links a {
-      position: relative;
-      padding-bottom: 0.15rem;
+      padding: 7px 12px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      transition: all 0.15s ease-out;
+      opacity: 0.9;
     }
 
-    .nav-links a::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 0;
-      height: 1px;
-      background: var(--accent);
-      transition: width 0.2s ease;
+    .nav-links a:hover {
+      border-color: var(--line);
+      background: rgba(239, 228, 214, 0.9);
+      opacity: 1;
     }
 
-    .nav-links a:hover::after {
-      width: 100%;
+    .nav-cta {
+      border: 1px solid var(--accent);
+      background: linear-gradient(to right, #e9d3bc, #d9b996);
+      box-shadow: 0 10px 24px rgba(96, 70, 38, 0.25);
     }
 
-    /* Hamburger (mobile) */
     .menu-toggle {
       display: none;
-      border: none;
-      background: none;
-      cursor: pointer;
-      padding: 0.25rem;
+      flex-direction: column;
+      gap: 4px;
+      border: 1px solid var(--line);
+      background: rgba(246, 241, 232, 0.9);
+      border-radius: 10px;
+      padding: 8px;
     }
 
     .menu-toggle span {
-      display: block;
       width: 22px;
       height: 2px;
-      background: var(--accent-dark);
-      margin: 4px 0;
-      transition: transform 0.2s ease, opacity 0.2s ease;
+      background: var(--ink);
+      display: block;
     }
 
-    /* ---------- Hero ---------- */
+    /* Hero */
     .hero {
-      padding: 4rem 1.5rem 3.5rem;
-      background: radial-gradient(circle at top, var(--bg-deeper) 0, var(--bg) 52%);
+      padding: 76px 0 60px;
+      position: relative;
+      overflow: hidden;
+      background: radial-gradient(circle at 18% 0%, rgba(255, 248, 237, 0.95), transparent 52%);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: -90px -70px auto;
+      background: radial-gradient(circle at 20% 0%, rgba(255, 248, 237, 0.75), transparent 60%);
+      pointer-events: none;
+      transform: translateY(var(--hero-glow-offset, 0px));
+      transition: transform 0.2s linear;
     }
 
     .hero-inner {
-      max-width: 720px;
-      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 36px;
+      align-items: center;
     }
 
     .hero-eyebrow {
+      font-size: 12px;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
-      letter-spacing: 0.18em;
-      font-size: 0.7rem;
-      color: var(--muted);
-      margin-bottom: 0.6rem;
+      color: var(--ink-soft);
+      margin-bottom: 10px;
     }
 
     .hero h1 {
-      font-size: 2.25rem;
-      margin-bottom: 1rem;
-      color: var(--accent-dark);
+      font-size: clamp(34px, 5vw, 46px);
+      line-height: 1.05;
+      color: var(--ink);
+      margin-bottom: 12px;
     }
 
     .hero p {
-      margin-bottom: 0.85rem;
-      font-size: 1.02rem;
+      font-size: 16px;
+      margin: 0 0 16px;
     }
 
-    .snippet {
-      padding: 0.9rem 1rem;
-      margin: 1.25rem 0 0.5rem;
-      border-left: 4px solid var(--accent-dark);
-      background: rgba(122, 75, 42, 0.08);
-      border-radius: 10px;
-      font-size: 1rem;
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 8px 0 18px;
     }
 
+    .pill {
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: var(--pill);
+      border: 1px solid var(--line);
+      color: var(--ink-soft);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 18px;
+      border-radius: 999px;
+      border: 1px solid var(--accent);
+      background: linear-gradient(to right, #e9d4bc, #d6b18a);
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ink);
+      cursor: pointer;
+      box-shadow: 0 12px 26px rgba(84, 63, 41, 0.25);
+      transition: transform 0.12s ease-out, box-shadow 0.12s ease-out, filter 0.12s ease-out;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 16px 32px rgba(84, 63, 41, 0.26);
+      filter: brightness(1.02);
+    }
+
+    .btn:active {
+      transform: translateY(0);
+      box-shadow: 0 10px 22px rgba(84, 63, 41, 0.22);
+    }
+
+    .hero-card {
+      background: radial-gradient(circle at 12% 0%, #fff9f2, #efe4d6);
+      border-radius: var(--radius-xl);
+      padding: 24px;
+      border: 1px solid rgba(208, 184, 154, 0.9);
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 80% 0%, rgba(255, 255, 255, 0.65), transparent 60%);
+      pointer-events: none;
+    }
+
+    .hero-card-title {
+      font-size: 22px;
+      margin-bottom: 4px;
+    }
+
+    .hero-card-sub {
+      font-size: 13px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      opacity: 0.9;
+      margin-bottom: 14px;
+    }
+
+    .hero-card-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      font-size: 14px;
+    }
+
+    .hero-card-list li {
+      display: flex;
+      gap: 8px;
+      align-items: flex-start;
+      margin-bottom: 8px;
+    }
+
+    .hero-card-list li::before {
+      content: "•";
+      font-size: 16px;
+      line-height: 1;
+      padding-top: 1px;
+    }
+
+    /* Sections */
+    section {
+      padding: 44px 0;
+      border-top: 1px solid rgba(221, 200, 177, 0.8);
+    }
+
+    section.alt {
+      background: var(--bg-alt);
+    }
+
+    section.deeper {
+      background: var(--bg-deep);
+    }
+
+    .section-heading {
+      font-size: 13px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      margin-bottom: 6px;
+    }
+
+    .section-intro {
+      max-width: 640px;
+      font-size: 15px;
+      margin-bottom: 20px;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 18px;
+    }
+
+    .service-card {
+      background: rgba(246, 241, 232, 0.96);
+      border-radius: var(--radius-lg);
+      padding: 20px 18px 18px;
+      border: 1px solid var(--line);
+      box-shadow: 0 12px 24px rgba(60, 49, 40, 0.06);
+      transition: transform 0.15s ease-out, box-shadow 0.15s ease-out;
+    }
+
+    .service-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 18px 34px rgba(60, 49, 40, 0.1);
+    }
+
+    .service-title {
+      font-size: 20px;
+      margin-bottom: 6px;
+    }
+
+    .service-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--ink-soft);
+      opacity: 0.9;
+      margin-bottom: 10px;
+    }
+
+    .service-text {
+      font-size: 14px;
+      margin-bottom: 12px;
+    }
+
+    /* Artwork scrollytelling */
+    .posters-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+      gap: 24px;
+      align-items: flex-start;
+    }
+
+    .posters-panels {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .poster-panel {
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(210, 187, 158, 0.9);
+      padding: 14px 14px 12px;
+      background: linear-gradient(135deg, #f7efe3, #ecdac4);
+      box-shadow: 0 14px 30px rgba(84, 63, 41, 0.16);
+      position: relative;
+      overflow: hidden;
+      cursor: default;
+      transform-origin: center;
+      transition: transform 0.18s ease-out, box-shadow 0.18s ease-out;
+    }
+
+    .poster-panel:hover {
+      transform: translateY(-2px) scale(1.01);
+      box-shadow: 0 20px 40px rgba(84, 63, 41, 0.2);
+    }
+
+    .poster-tag {
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+      color: var(--ink-soft);
+    }
+
+    .poster-title {
+      font-size: 19px;
+      margin-bottom: 4px;
+    }
+
+    .poster-text {
+      font-size: 13px;
+    }
+
+    .poster-gallery-frame {
+      position: relative;
+      border-radius: var(--radius-xl);
+      border: 1px solid rgba(210, 187, 158, 0.95);
+      background: radial-gradient(circle at 20% 0%, #fdf5ea, #dec4a1);
+      box-shadow: var(--shadow-soft);
+      padding: 20px 18px 18px;
+      min-height: 260px;
+      overflow: hidden;
+    }
+
+    .poster-gallery-label {
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      margin-bottom: 8px;
+    }
+
+    .poster-gallery-stage {
+      position: relative;
+      height: 220px;
+    }
+
+    .poster-image-placeholder {
+      position: absolute;
+      inset: 0;
+      margin: auto;
+      max-width: 82%;
+      border-radius: 18px;
+      border: 1px solid rgba(198, 171, 142, 0.9);
+      background: linear-gradient(145deg, #f6ede0, #d8c1a5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px;
+      text-align: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 16px;
+      color: var(--ink-soft);
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+    }
+
+    .poster-image-placeholder.is-active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* About */
+    .about-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+      gap: 26px;
+      align-items: flex-start;
+    }
+
+    .about-sticky {
+      position: sticky;
+      top: 110px;
+      align-self: flex-start;
+      display: grid;
+      gap: 14px;
+    }
+
+    .about-note {
+      font-size: 14px;
+      margin: 0;
+    }
+
+    .about-box {
+      background: rgba(247, 239, 229, 0.9);
+      padding: 20px 18px;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--line);
+      font-size: 13px;
+      box-shadow: 0 12px 24px rgba(60, 49, 40, 0.06);
+    }
+
+    .small-heading {
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      margin-bottom: 6px;
+    }
+
+    /* FAQ */
     .faq-panel {
-      margin-top: 1.5rem;
-      border: 1px solid var(--border);
-      border-radius: 12px;
+      margin-top: 16px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
       background: linear-gradient(135deg, rgba(241, 223, 199, 0.35), rgba(244, 235, 226, 0.6));
       overflow: hidden;
-      box-shadow: 0 10px 30px rgba(75, 43, 22, 0.04);
+      box-shadow: 0 10px 30px rgba(75, 43, 22, 0.06);
     }
 
     .faq-toggle {
@@ -321,7 +671,7 @@
       padding: 1.2rem 1.1rem;
       font-size: 1rem;
       font-weight: 700;
-      color: var(--text);
+      color: var(--ink);
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -337,12 +687,12 @@
       width: 24px;
       height: 24px;
       border-radius: 999px;
-      border: 1px solid var(--border);
+      border: 1px solid var(--line);
       display: inline-flex;
       align-items: center;
       justify-content: center;
       font-size: 1.1rem;
-      color: var(--accent-dark);
+      color: var(--accent-strong);
       background: #fffaf4;
       transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
     }
@@ -354,14 +704,14 @@
     }
 
     .faq-list {
-      border-top: 1px solid var(--border);
+      border-top: 1px solid var(--line);
       padding: 1rem 1.1rem 1.2rem;
     }
 
     .faq-item + .faq-item {
       margin-top: 1rem;
       padding-top: 1rem;
-      border-top: 1px solid var(--border);
+      border-top: 1px solid var(--line);
     }
 
     .faq-item h3 {
@@ -370,221 +720,154 @@
     }
 
     .faq-item p {
-      color: var(--muted);
+      color: var(--ink-soft);
       margin: 0;
+      font-size: 14px;
     }
 
-    .btn {
-      display: inline-block;
-      padding: 0.75rem 1.6rem;
-      border-radius: 999px;
-      background: var(--accent-dark);
-      color: var(--bg);
-      font-size: 0.95rem;
-      border: 1px solid var(--accent-dark);
+    /* Contact & social */
+    .contact-card {
+      background: rgba(246, 241, 232, 0.96);
+      border-radius: var(--radius-xl);
+      padding: 22px 20px 20px;
+      border: 1px solid rgba(212, 188, 160, 0.9);
+      box-shadow: var(--shadow-soft);
     }
 
-    .btn:hover {
-      background: transparent;
-      color: var(--accent-dark);
-      text-decoration: none;
-    }
-
-    .hero .btn {
-      margin-top: 1.2rem;
-    }
-
-    /* ---------- Sections ---------- */
-    section {
-      padding: 3.25rem 1.5rem;
-      border-top: 1px solid var(--border);
-    }
-
-    section:nth-of-type(odd):not(.hero) {
-      background: var(--bg-alt);
-    }
-
-    section:nth-of-type(even) {
-      background: var(--bg);
-    }
-
-    section h2 {
-      font-size: 1.6rem;
-      margin-bottom: 1rem;
-      color: var(--accent-dark);
-    }
-
-    section p {
-      margin-bottom: 0.75rem;
-      font-size: 0.98rem;
-    }
-
-    .two-col {
+    .contact-grid {
       display: grid;
-      grid-template-columns: 2fr 1.3fr;
-      gap: 2.25rem;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+      gap: 20px;
+      align-items: flex-start;
     }
 
-    ul {
-      margin-left: 1.2rem;
-      margin-bottom: 0.75rem;
+    .contact-card label {
+      display: block;
+      font-size: 13px;
+      margin-bottom: 4px;
+      color: var(--ink-soft);
     }
 
-    li {
-      margin-bottom: 0.35rem;
+    .contact-card input,
+    .contact-card textarea {
+      width: 100%;
+      font-family: inherit;
+      font-size: 14px;
+      padding: 9px 10px;
+      margin-bottom: 12px;
+      border-radius: 10px;
+      border: 1px solid var(--line);
+      background: rgba(252, 247, 240, 0.9);
+      outline: none;
+      transition: border-color 0.12s ease-out, box-shadow 0.12s ease-out;
     }
 
-    /* Pills for “ideal for” lists etc. */
-    .pill-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
-      margin: 0.75rem 0 0.3rem;
+    .contact-card input:focus,
+    .contact-card textarea:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 1px rgba(200, 163, 122, 0.5);
     }
 
-    .pill {
-      background: var(--pill);
-      color: var(--text);
-      border-radius: 999px;
-      padding: 0.25rem 0.9rem;
-      font-size: 0.78rem;
-      letter-spacing: 0.03em;
-      text-transform: uppercase;
-    }
-
-    /* Brand package layout */
-    .package-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.25rem;
-      margin: 1.25rem 0 0.25rem;
-    }
-
-    .package-card {
-      position: relative;
-      padding: 1.4rem 1.2rem 1.2rem;
-      border-radius: 16px;
-      overflow: hidden;
-      color: #f8f3ed;
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
-    }
-
-    .package-card h3 {
-      margin: 0 0 0.5rem;
-      color: #fff;
-      font-size: 1.1rem;
-      letter-spacing: 0.05em;
-      text-transform: lowercase;
-    }
-
-    .package-eyebrow {
-      text-transform: uppercase;
-      letter-spacing: 0.2em;
-      font-size: 0.68rem;
-      color: rgba(248, 243, 237, 0.85);
-      margin-bottom: 0.1rem;
-    }
-
-    .package-card ul {
-      margin-left: 1.1rem;
-      color: rgba(248, 243, 237, 0.92);
-    }
-
-    .package-card li {
-      margin-bottom: 0.3rem;
-    }
-
-    .package-meta {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-top: 0.8rem;
-      font-weight: 600;
-      letter-spacing: 0.02em;
-    }
-
-    .package-duration {
-      font-size: 0.9rem;
-      color: rgba(248, 243, 237, 0.95);
-    }
-
-    .package-price {
-      padding: 0.25rem 0.8rem;
-      border-radius: 999px;
-      border: 1px solid rgba(248, 243, 237, 0.65);
-      font-size: 0.95rem;
-    }
-
-    .package-note {
-      font-size: 0.9rem;
-      color: var(--muted);
-      margin-top: 1rem;
-    }
-
-    .package-full { background: linear-gradient(145deg, rgba(68, 92, 62, 0.96), rgba(26, 46, 34, 0.9)); }
-    .package-social { background: linear-gradient(145deg, rgba(151, 99, 70, 0.95), rgba(95, 52, 33, 0.9)); }
-    .package-simple { background: linear-gradient(145deg, rgba(23, 102, 104, 0.95), rgba(14, 63, 75, 0.9)); }
-    .package-logo { background: linear-gradient(145deg, rgba(172, 135, 112, 0.96), rgba(127, 89, 70, 0.92)); }
-
-    /* Social section */
-    .social {
-      text-align: center;
-    }
-
-    .social p {
-      max-width: 520px;
-      margin: 0 auto 1.25rem;
+    .contact-card textarea {
+      min-height: 120px;
+      resize: vertical;
     }
 
     .btn-outline {
-      display: inline-block;
-      padding: 0.65rem 1.4rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 9px 16px;
       border-radius: 999px;
-      border: 1px solid var(--accent-dark);
-      color: var(--accent-dark);
-      font-size: 0.95rem;
+      border: 1px solid var(--accent-strong);
+      background: transparent;
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ink);
+      gap: 8px;
+      transition: background 0.15s ease-out, color 0.15s ease-out, box-shadow 0.12s ease-out;
     }
 
     .btn-outline:hover {
-      background: var(--accent-dark);
-      color: var(--bg);
-      text-decoration: none;
+      background: rgba(233, 212, 188, 0.4);
+      box-shadow: 0 10px 24px rgba(96, 70, 38, 0.15);
     }
 
+    .contact-meta {
+      font-size: 14px;
+      color: var(--ink-soft);
+    }
+
+    .contact-meta a {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .social-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 12px;
+    }
+
+    /* Footer */
     footer {
-      text-align: center;
-      padding: 2rem 1.5rem 3rem;
-      font-size: 0.85rem;
-      color: var(--muted);
-      background: var(--bg-deeper);
-      border-top: 1px solid var(--border);
+      padding: 18px 0 24px;
+      border-top: 1px solid rgba(221, 200, 177, 0.8);
+      font-size: 12px;
+      color: var(--ink-soft);
+      background: var(--bg);
     }
 
-    footer a {
-      color: var(--green);
+    footer .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: space-between;
+      align-items: center;
     }
 
-    /* ---------- Responsive ---------- */
-    @media (max-width: 768px) {
-      .nav {
-        padding: 0.55rem 0;
+    /* Animations */
+    [data-animate] {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    [data-animate].is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    [data-animate="fade-up-delayed"] {
+      transition-delay: 0.2s;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .hero-inner,
+      .posters-layout,
+      .about-layout,
+      .contact-grid {
+        grid-template-columns: minmax(0, 1fr);
       }
 
-      .menu-toggle {
-        display: block;
+      .about-sticky {
+        position: static;
+        top: auto;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .nav {
+        flex-wrap: wrap;
+        gap: 12px;
       }
 
       .nav-links {
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 100%;
-        background: rgba(244, 235, 226, 0.98);
-        border-bottom: 1px solid var(--border);
-        flex-direction: column;
-        padding: 0.75rem 1.5rem 1rem;
-        gap: 0.75rem;
+        width: 100%;
+        justify-content: flex-start;
+        flex-wrap: wrap;
         display: none;
       }
 
@@ -592,388 +875,550 @@
         display: flex;
       }
 
+      .menu-toggle {
+        display: flex;
+      }
+    }
+
+    @media (max-width: 520px) {
       .hero {
-        padding-top: 3.25rem;
+        padding-top: 54px;
       }
 
-      .hero h1 {
-        font-size: 1.9rem;
-      }
-
-      .two-col {
-        grid-template-columns: 1fr;
+      .hero-card {
+        border-radius: 22px;
       }
     }
   </style>
 </head>
 <body>
-
-<header>
-  <div class="container nav">
-    <div class="logo">
-      <a href="#top" class="logo-link">
-        <img src="/assets/images/logo-stone-to-sky.png" alt="Stone to Sky logo" class="logo-image" />
-        <span class="logo-text">STONE TO SKY</span>
+  <header class="site-header">
+    <div class="wrap nav">
+      <a href="#top" class="brand" aria-label="Stone to Sky home">
+        <div class="brand-circle"></div>
+        <img src="/assets/images/logo-stone-to-sky.png" alt="Stone to Sky logo" class="brand-logo" />
+        <div class="brand-text">
+          <span class="brand-title">Stone to Sky</span>
+          <span class="brand-sub">Design · Art · Song</span>
+        </div>
       </a>
+
+      <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#branding">Branding</a>
+        <a href="#artwork">Artwork</a>
+        <a href="#singing">Singing</a>
+        <a href="#cocreate">Co-creation</a>
+        <a href="#contact" class="nav-cta">Contact</a>
+        <a href="#social">Socials</a>
+      </nav>
     </div>
+  </header>
 
-    <button class="menu-toggle" aria-label="Toggle navigation">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
+  <main id="top">
+    <section class="hero">
+      <div class="wrap">
+        <div class="hero-inner" data-animate="fade-up">
+          <div>
+            <div class="hero-eyebrow">Design · Art · Song</div>
+            <h1>Design, art &amp; song rooted in the living world.</h1>
+            <p>Stone to Sky is the home of my branding, art, and song – where design, illustration, and voice come together in service to beauty, depth, and the more-than-human world.</p>
+            <div class="hero-tags">
+              <span class="pill">Branding &amp; design</span>
+              <span class="pill">Artwork &amp; illustration</span>
+              <span class="pill">Singing &amp; facilitation</span>
+              <span class="pill">Co-creative projects</span>
+            </div>
+            <a class="btn" href="#contact">Work With Me</a>
+          </div>
 
-    <nav class="nav-links" aria-label="Main navigation">
-      <a href="#about">About</a>
-      <a href="#branding">Branding</a>
-      <a href="#artwork">Artwork</a>
-      <a href="#singing">Singing</a>
-      <a href="#cocreate">Co-creation</a>
-      <a href="#contact">Contact</a>
-      <a href="#social">Socials</a>
-    </nav>
-  </div>
-</header>
-
-
-<main id="top">
-  <section class="hero">
-    <div class="hero-inner">
-      <div class="hero-eyebrow">Design · Art · Song</div>
-      <h1>Design, art &amp; song rooted in the living world.</h1>
-      <p>Stone to Sky is the home of my branding, art, and song – where design, illustration, and voice come together in service to beauty, depth, and the more-than-human world.</p>
-      <a class="btn" href="#contact">Work With Me</a>
-    </div>
-  </section>
-
-  <section id="branding">
-    <div class="container">
-      <h2>Branding &amp; Design</h2>
-      <p>I create visual identities and design assets for people and projects that care about beauty, integrity, and the Earth.</p>
-      <p><strong>What I offer:</strong></p>
-      <ul>
-        <li>Brand discovery and visual direction</li>
-        <li>Logos and illustration</li>
-        <li>Colour palettes and typography</li>
-        <li>Layout and design for posters, calendars, and print pieces</li>
-        <li>Simple websites and social media (in collaboration where needed)</li>
-      </ul>
-      <p style="margin-top:1.5rem;">
-        <a class="btn" href="branding.html">Dive Deeper</a>
-      </p>
-    </div>
-  </section>
-
-  <section id="artwork">
-    <div class="container">
-      <h2>Artwork &amp; Illustration</h2>
-      <p>My artwork is an ongoing conversation with the seasons, the body, and the subtle world.</p>
-      <p>I create:</p>
-      <ul>
-        <li>Original pieces and illustrated collections</li>
-        <li>Seasonal calendars and lunar maps</li>
-        <li>Botanical and symbolic illustrations</li>
-        <li>Custom pieces for homes, books, and spaces</li>
-      </ul>
-      <p style="margin-top:1rem;">
-        <a class="btn" href="artwork.html">Browse Artwork</a>
-      </p>
-    </div>
-  </section>
-
-  <section id="singing">
-    <div class="container">
-      <h2>Singing &amp; Facilitation</h2>
-      <p>My voice work lives in circles, ceremonies, and small gatherings where people come to soften, listen, and reconnect.</p>
-      <p>I offer:</p>
-      <ul>
-        <li>Singing and sound in ceremony and ritual spaces</li>
-        <li>Co-facilitation of retreats and workshops</li>
-        <li>Gentle guided practices that weave song, presence, and grounding</li>
-      </ul>
-      <p style="margin-top:1rem;">
-        <a class="btn" href="singing.html">Sing With Me</a>
-      </p>
-    </div>
-  </section>
-
-  <section id="cocreate">
-    <div class="container">
-      <h2>Co-Creative Projects</h2>
-      <p>Some of the most alive work happens in the overlap – where design, art, and song come together around a shared intention.</p>
-      <p>I’m open to collaboration on:</p>
-      <ul>
-        <li>Visual worlds and storytelling for creative projects</li>
-        <li>Offerings that blend artwork, song, and ritual</li>
-        <li>Seasonal and Earth-based projects that need both design and facilitation</li>
-        <li>Quiet, long-term creative partnerships with aligned people and places</li>
-      </ul>
-      <p>If you feel a resonance, you’re welcome to write and share the seed of your idea.</p>
-      <p><a href="#contact">Share a project idea &raquo;</a></p>
-    </div>
-  </section>
-
-  <section id="about">
-    <div class="container two-col">
-      <div>
-        <h2>About Me</h2>
-        <p>I’m a designer, artist, singer, and facilitator based in Ōtautahi / Christchurch, working with clients and communities across Aotearoa New Zealand. My work moves between worlds — digital and natural, creative and ceremonial, personal and collective — held by a steady devotion to beauty, clarity, and the rhythms of the Earth.</p>
-        <p>At the heart of my practice is a simple intention:<br />
-          to help people create offerings, spaces, and stories that feel alive, grounded, and true.</p>
-
-        <p><strong>What I weave</strong></p>
-        <p>My work rests on three strands that continually inform one another:</p>
-        <ul>
-          <li>Branding &amp; design for soul-led projects, small businesses, and community ventures</li>
-          <li>Artwork &amp; illustration that honour the seasons, the land, and the subtle intelligence of nature</li>
-          <li>Singing &amp; facilitation in circles, retreats, and ceremonial spaces</li>
-        </ul>
-        <p>Stone to Sky is where these threads meet — a home for design and creativity shaped with presence, earth-conscious values, and an eye for the sacred woven into the everyday.</p>
-
-        <p><strong>My deeper roots</strong></p>
-        <p>Beyond my creative work, I’m a ceremonial facilitator, earth keeper, and student of the sacred medicine paths. My connection with nature runs through everything I create. I tend gardens as living temples, learn from plants as teachers, and carry songs from traditions that have guided my own healing.</p>
-        <p>My musical offerings — voice, guitar, drum, and ethereal soundscapes — share stories from my journey of opening, remembering, and learning from the elements and the plant world. I’ve sung with Ora.Vida.Life, contributed to sound-healing projects around Aotearoa, supported retreats as a ceremonial musician, and offered backing vocals for other artists.</p>
-
-        <p><strong>What guides me</strong></p>
-        <p>My work is grounded in service:<br />
-          to the land, to the beauty way, and to the creative spark that moves through all things.<br />
-          I create spaces, visually and energetically, where people can slow down, reconnect, and remember their inherent relationship with nature and their own expression.</p>
-        <p>My allies are the trees.<br />
-          My teachers are the plants.<br />
-          My devotion is to life, in all its visible and invisible forms.</p>
+          <aside class="hero-card" data-animate="fade-up-delayed">
+            <div class="hero-card-title">What I offer</div>
+            <div class="hero-card-sub">A few threads</div>
+            <ul class="hero-card-list">
+              <li>Brand discovery and visual direction</li>
+              <li>Logos and illustration</li>
+              <li>Colour palettes and typography</li>
+              <li>Layout and design for posters, calendars, and print pieces</li>
+              <li>Simple websites and social media (in collaboration where needed)</li>
+            </ul>
+          </aside>
+        </div>
       </div>
-      <div>
-        <p style="color:var(--muted); font-size:0.9rem;">
-          “There is a creative flame that has burned and flourished throughout my life. It’s taken many forms and continues to evolve as I do. My work is a devoted prayer to the Earth, to beauty, and to the cycles that hold us.”
-        </p>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="faq">
-    <div class="container">
-      <h2>Frequently asked questions</h2>
+    <section id="branding" class="alt">
+      <div class="wrap">
+        <div class="section-heading" data-animate="fade-up">Branding</div>
+        <h2 data-animate="fade-up-delayed">Branding &amp; Design</h2>
+        <p class="section-intro" data-animate="fade-up-delayed">I create visual identities and design assets for people and projects that care about beauty, integrity, and the Earth.</p>
 
-      <div class="faq-panel">
-        <button class="faq-toggle" aria-expanded="false" aria-controls="faq-list">
-          <span>View frequently asked questions</span>
-          <span class="faq-icon" aria-hidden="true">+</span>
-        </button>
-        <div class="faq-list" id="faq-list" role="list" hidden>
-          <div class="faq-item" role="listitem">
-            <h3>What kinds of projects do you take on?</h3>
-            <p>Branding, illustration, and simple websites for soul-led businesses, plus vocal sessions and facilitation for retreats, gatherings, and community spaces.</p>
+        <div class="card-grid">
+          <div class="service-card" data-animate="fade-up">
+            <div class="service-title">What I offer</div>
+            <div class="service-label">Branding &amp; Design</div>
+            <p class="service-text">I create visual identities and design assets for people and projects that care about beauty, integrity, and the Earth.</p>
+            <ul>
+              <li>Brand discovery and visual direction</li>
+              <li>Logos and illustration</li>
+              <li>Colour palettes and typography</li>
+              <li>Layout and design for posters, calendars, and print pieces</li>
+              <li>Simple websites and social media (in collaboration where needed)</li>
+            </ul>
+            <a class="btn" href="branding.html">Dive Deeper</a>
           </div>
 
-          <div class="faq-item" role="listitem">
-            <h3>Do you work with clients outside Christchurch?</h3>
-            <p>Yes. Most creative projects happen online with clear check-ins. Travel within New Zealand and Australia can be arranged for facilitation, filming, or key project moments.</p>
-          </div>
-
-          <div class="faq-item" role="listitem">
-            <h3>Can branding, illustration, and web design be bundled together?</h3>
-            <p>Yes. Many clients mix offerings—brand identity, art, and a simple website—to create a cohesive visual world from start to finish.</p>
-          </div>
-
-          <div class="faq-item" role="listitem">
-            <h3>Do you offer one-on-one voice or creativity sessions?</h3>
-            <p>Yes. I hold gentle sessions focused on nervous-system safety, vocal expression, and reconnecting with your natural voice.</p>
-          </div>
-
-          <div class="faq-item" role="listitem">
-            <h3>Can you support my retreat or workshop?</h3>
-            <p>I offer group singing, ceremony support, and visual design for event materials. Each space is shaped around the group’s intention and capacity.</p>
-          </div>
-
-          <div class="faq-item" role="listitem">
-            <h3>How do you price your creative work?</h3>
-            <p>Projects are quoted based on depth and scope. Branding and web packages are tiered; artworks and illustrations are priced individually. Payment plans are available. If there&apos;s resonance, I want to work with you!</p>
-          </div>
-
-          <div class="faq-item" role="listitem">
-            <h3>What style of brands do you work best with?</h3>
-            <p>Earth-based, soulful, nature-aligned projects—herbalists, facilitators, artists, wellness practitioners, and community-led ventures.</p>
-          </div>
-
-          <div class="faq-item" role="listitem">
-            <h3>Can you create custom illustrations or artwork for my project?</h3>
-            <p>Yes. I design one-off illustrations, botanical drawings, and symbolic pieces for brands, websites, packaging, and personal commissions.</p>
-          </div>
-
-          <div class="faq-item" role="listitem">
-            <h3>How does the collaboration process work?</h3>
-            <p>We start with a call to confirm alignment, then move through discovery, concepts, and refinement with clear milestones and shared folders to keep everything organised.</p>
-          </div>
-
-          <div class="faq-item" role="listitem">
-            <h3>Can you help if I’m still clarifying my idea or offering?</h3>
-            <p>Absolutely. Many clients come with a seed of an idea. I help shape language, visuals, and structure so your offering feels grounded, coherent, and true to you.</p>
+          <div class="service-card" data-animate="fade-up-delayed">
+            <div class="service-title">Ideal for</div>
+            <div class="service-label">Soul-led projects</div>
+            <p class="service-text">Design, art, and song come together in service to beauty, depth, and the more-than-human world.</p>
+            <div class="pill" style="display:inline-block; margin-bottom:8px;">Branding</div>
+            <div class="pill" style="display:inline-block; margin-bottom:8px;">Illustration</div>
+            <div class="pill" style="display:inline-block; margin-bottom:8px;">Earth-based design</div>
           </div>
         </div>
       </div>
+    </section>
+
+    <section id="artwork">
+      <div class="wrap">
+        <div class="section-heading" data-animate="fade-up">Artwork</div>
+        <h2 data-animate="fade-up-delayed">Artwork &amp; Illustration</h2>
+        <p class="section-intro" data-animate="fade-up-delayed">My artwork is an ongoing conversation with the seasons, the body, and the subtle world.</p>
+
+        <div class="posters-layout">
+          <div class="posters-panels">
+            <article class="poster-panel" data-animate="fade-up" data-poster="originals">
+              <div class="poster-tag">Collections</div>
+              <div class="poster-title">Original pieces and illustrated collections</div>
+              <p class="poster-text">Original pieces and illustrated collections.</p>
+            </article>
+            <article class="poster-panel" data-animate="fade-up" data-poster="calendars">
+              <div class="poster-tag">Calendars</div>
+              <div class="poster-title">Seasonal calendars and lunar maps</div>
+              <p class="poster-text">Seasonal calendars and lunar maps.</p>
+            </article>
+            <article class="poster-panel" data-animate="fade-up" data-poster="botanical">
+              <div class="poster-tag">Botanical</div>
+              <div class="poster-title">Botanical and symbolic illustrations</div>
+              <p class="poster-text">Botanical and symbolic illustrations.</p>
+            </article>
+            <article class="poster-panel" data-animate="fade-up" data-poster="custom">
+              <div class="poster-tag">Commissions</div>
+              <div class="poster-title">Custom pieces for homes, books, and spaces</div>
+              <p class="poster-text">Custom pieces for homes, books, and spaces.</p>
+            </article>
+          </div>
+
+          <aside class="poster-gallery-frame" data-animate="fade-up-delayed">
+            <div class="poster-gallery-label">Preview</div>
+            <div class="poster-gallery-stage">
+              <div class="poster-image-placeholder is-active" data-poster-image="originals">Original pieces and illustrated collections.</div>
+              <div class="poster-image-placeholder" data-poster-image="calendars">Seasonal calendars and lunar maps.</div>
+              <div class="poster-image-placeholder" data-poster-image="botanical">Botanical and symbolic illustrations.</div>
+              <div class="poster-image-placeholder" data-poster-image="custom">Custom pieces for homes, books, and spaces.</div>
+            </div>
+          </aside>
+        </div>
+
+        <p class="section-intro" data-animate="fade-up-delayed" style="margin-top:18px;">I create:</p>
+        <ul data-animate="fade-up-delayed">
+          <li>Original pieces and illustrated collections</li>
+          <li>Seasonal calendars and lunar maps</li>
+          <li>Botanical and symbolic illustrations</li>
+          <li>Custom pieces for homes, books, and spaces</li>
+        </ul>
+        <a class="btn" href="artwork.html" data-animate="fade-up-delayed">Browse Artwork</a>
+      </div>
+    </section>
+
+    <section id="singing" class="alt">
+      <div class="wrap">
+        <div class="section-heading" data-animate="fade-up">Singing</div>
+        <h2 data-animate="fade-up-delayed">Singing &amp; Facilitation</h2>
+        <p class="section-intro" data-animate="fade-up-delayed">My voice work lives in circles, ceremonies, and small gatherings where people come to soften, listen, and reconnect.</p>
+
+        <div class="card-grid">
+          <div class="service-card" data-animate="fade-up">
+            <div class="service-title">I offer</div>
+            <div class="service-label">Singing &amp; Facilitation</div>
+            <ul>
+              <li>Singing and sound in ceremony and ritual spaces</li>
+              <li>Co-facilitation of retreats and workshops</li>
+              <li>Gentle guided practices that weave song, presence, and grounding</li>
+            </ul>
+            <a class="btn" href="singing.html">Sing With Me</a>
+          </div>
+          <div class="service-card" data-animate="fade-up-delayed">
+            <div class="service-title">Spaces held</div>
+            <p class="service-text">My voice work lives in circles, ceremonies, and small gatherings where people come to soften, listen, and reconnect.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="cocreate">
+      <div class="wrap">
+        <div class="section-heading" data-animate="fade-up">Co-creation</div>
+        <h2 data-animate="fade-up-delayed">Co-Creative Projects</h2>
+        <p class="section-intro" data-animate="fade-up-delayed">Some of the most alive work happens in the overlap – where design, art, and song come together around a shared intention.</p>
+        <p data-animate="fade-up">I’m open to collaboration on:</p>
+        <ul data-animate="fade-up">
+          <li>Visual worlds and storytelling for creative projects</li>
+          <li>Offerings that blend artwork, song, and ritual</li>
+          <li>Seasonal and Earth-based projects that need both design and facilitation</li>
+          <li>Quiet, long-term creative partnerships with aligned people and places</li>
+        </ul>
+        <p data-animate="fade-up">If you feel a resonance, you’re welcome to write and share the seed of your idea.</p>
+        <p data-animate="fade-up"><a href="#contact">Share a project idea &raquo;</a></p>
+      </div>
+    </section>
+
+    <section id="about" class="alt">
+      <div class="wrap">
+        <div class="section-heading" data-animate="fade-up">About</div>
+        <h2 data-animate="fade-up-delayed">About Me</h2>
+        <div class="about-layout">
+          <div class="about-sticky" data-animate="fade-up">
+            <p class="about-note">I’m a designer, artist, singer, and facilitator based in Ōtautahi / Christchurch, working with clients and communities across Aotearoa New Zealand. My work moves between worlds — digital and natural, creative and ceremonial, personal and collective — held by a steady devotion to beauty, clarity, and the rhythms of the Earth.</p>
+            <p class="about-note">At the heart of my practice is a simple intention:<br />
+              to help people create offerings, spaces, and stories that feel alive, grounded, and true.</p>
+
+            <p class="about-note"><strong>What I weave</strong></p>
+            <p class="about-note">My work rests on three strands that continually inform one another:</p>
+            <ul>
+              <li>Branding &amp; design for soul-led projects, small businesses, and community ventures</li>
+              <li>Artwork &amp; illustration that honour the seasons, the land, and the subtle intelligence of nature</li>
+              <li>Singing &amp; facilitation in circles, retreats, and ceremonial spaces</li>
+            </ul>
+            <p class="about-note">Stone to Sky is where these threads meet — a home for design and creativity shaped with presence, earth-conscious values, and an eye for the sacred woven into the everyday.</p>
+
+            <p class="about-note"><strong>My deeper roots</strong></p>
+            <p class="about-note">Beyond my creative work, I’m a ceremonial facilitator, earth keeper, and student of the sacred medicine paths. My connection with nature runs through everything I create. I tend gardens as living temples, learn from plants as teachers, and carry songs from traditions that have guided my own healing.</p>
+            <p class="about-note">My musical offerings — voice, guitar, drum, and ethereal soundscapes — share stories from my journey of opening, remembering, and learning from the elements and the plant world. I’ve sung with Ora.Vida.Life, contributed to sound-healing projects around Aotearoa, supported retreats as a ceremonial musician, and offered backing vocals for other artists.</p>
+
+            <p class="about-note"><strong>What guides me</strong></p>
+            <p class="about-note">My work is grounded in service:<br />
+              to the land, to the beauty way, and to the creative spark that moves through all things.<br />
+              I create spaces, visually and energetically, where people can slow down, reconnect, and remember their inherent relationship with nature and their own expression.</p>
+            <p class="about-note">My allies are the trees.<br />
+              My teachers are the plants.<br />
+              My devotion is to life, in all its visible and invisible forms.</p>
+          </div>
+
+          <aside class="about-box" data-animate="fade-up-delayed">
+            <div class="small-heading">Inspiration</div>
+            <p style="margin:0; color:var(--ink-soft);">“There is a creative flame that has burned and flourished throughout my life. It’s taken many forms and continues to evolve as I do. My work is a devoted prayer to the Earth, to beauty, and to the cycles that hold us.”</p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="wrap">
+        <div class="section-heading" data-animate="fade-up">FAQ</div>
+        <h2 data-animate="fade-up-delayed">Frequently asked questions</h2>
+
+        <div class="faq-panel" data-animate="fade-up">
+          <button class="faq-toggle" aria-expanded="false" aria-controls="faq-list">
+            <span>View frequently asked questions</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-list" id="faq-list" role="list" hidden>
+            <div class="faq-item" role="listitem">
+              <h3>What kinds of projects do you take on?</h3>
+              <p>Branding, illustration, and simple websites for soul-led businesses, plus vocal sessions and facilitation for retreats, gatherings, and community spaces.</p>
+            </div>
+
+            <div class="faq-item" role="listitem">
+              <h3>Do you work with clients outside Christchurch?</h3>
+              <p>Yes. Most creative projects happen online with clear check-ins. Travel within New Zealand and Australia can be arranged for facilitation, filming, or key project moments.</p>
+            </div>
+
+            <div class="faq-item" role="listitem">
+              <h3>Can branding, illustration, and web design be bundled together?</h3>
+              <p>Yes. Many clients mix offerings—brand identity, art, and a simple website—to create a cohesive visual world from start to finish.</p>
+            </div>
+
+            <div class="faq-item" role="listitem">
+              <h3>Do you offer one-on-one voice or creativity sessions?</h3>
+              <p>Yes. I hold gentle sessions focused on nervous-system safety, vocal expression, and reconnecting with your natural voice.</p>
+            </div>
+
+            <div class="faq-item" role="listitem">
+              <h3>Can you support my retreat or workshop?</h3>
+              <p>I offer group singing, ceremony support, and visual design for event materials. Each space is shaped around the group’s intention and capacity.</p>
+            </div>
+
+            <div class="faq-item" role="listitem">
+              <h3>How do you price your creative work?</h3>
+              <p>Projects are quoted based on depth and scope. Branding and web packages are tiered; artworks and illustrations are priced individually. Payment plans are available. If there's resonance, I want to work with you!</p>
+            </div>
+
+            <div class="faq-item" role="listitem">
+              <h3>What style of brands do you work best with?</h3>
+              <p>Earth-based, soulful, nature-aligned projects—herbalists, facilitators, artists, wellness practitioners, and community-led ventures.</p>
+            </div>
+
+            <div class="faq-item" role="listitem">
+              <h3>Can you create custom illustrations or artwork for my project?</h3>
+              <p>Yes. I design one-off illustrations, botanical drawings, and symbolic pieces for brands, websites, packaging, and personal commissions.</p>
+            </div>
+
+            <div class="faq-item" role="listitem">
+              <h3>How does the collaboration process work?</h3>
+              <p>We start with a call to confirm alignment, then move through discovery, concepts, and refinement with clear milestones and shared folders to keep everything organised.</p>
+            </div>
+
+            <div class="faq-item" role="listitem">
+              <h3>Can you help if I’m still clarifying my idea or offering?</h3>
+              <p>Absolutely. Many clients come with a seed of an idea. I help shape language, visuals, and structure so your offering feels grounded, coherent, and true to you.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="deeper">
+      <div class="wrap">
+        <div class="section-heading" data-animate="fade-up">Contact</div>
+        <h2 data-animate="fade-up-delayed">Contact</h2>
+        <p class="section-intro" data-animate="fade-up-delayed">You can reach me directly via email.</p>
+
+        <div class="contact-grid">
+          <div class="contact-card" data-animate="fade-up">
+            <form action="mailto:brooke@stonetosky.nz" method="post" enctype="text/plain">
+              <label for="name">Name</label>
+              <input id="name" name="name" type="text" placeholder="Your name" required />
+
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" placeholder="you@example.com" required />
+
+              <label for="project">What would you like support with?</label>
+              <textarea id="project" name="project" placeholder="A few lines about your project, timing, and what you’re hoping for."></textarea>
+
+              <button type="submit" class="btn">Send enquiry</button>
+            </form>
+          </div>
+
+          <div class="contact-meta" data-animate="fade-up-delayed">
+            <p><strong>Email:</strong> <a href="mailto:brooke@stonetosky.nz">brooke@stonetosky.nz</a></p>
+            <p><strong>Location:</strong> Ōtautahi / Christchurch, Aotearoa New Zealand</p>
+            <p>When you write, you’re welcome to share what you’re dreaming of or needing support with, which strand you’re most drawn to (branding, artwork, singing, or a mix), and any timelines or key dates.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="social">
+      <div class="wrap">
+        <div class="section-heading" data-animate="fade-up">Social</div>
+        <h2 data-animate="fade-up-delayed">See more of my work</h2>
+        <p class="section-intro" data-animate="fade-up-delayed">For current pieces, branding projects, reels, and glimpses behind the scenes, you can find me on Instagram and Facebook.</p>
+
+        <div class="social-grid" data-animate="fade-up">
+          <a class="btn-outline" href="https://www.instagram.com/stone.to.sky" target="_blank" rel="noopener">Instagram</a>
+          <a class="btn-outline" href="https://www.facebook.com/stonetoskycreations/" target="_blank" rel="noopener">Facebook</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <div>&copy; <span id="year"></span> Stone to Sky. All rights reserved.</div>
+      <div>Site by Stone to Sky &amp; Josh.</div>
     </div>
-  </section>
+  </footer>
 
-  <section id="contact">
-    <div class="container">
-      <h2>Contact</h2>
-      <p>You can reach me directly via email.</p>
-      <p><strong>Email:</strong> <a href="mailto:brooke@stonetosky.nz">brooke@stonetosky.nz</a></p>
-      <p><strong>Location:</strong> Ōtautahi / Christchurch, Aotearoa New Zealand</p>
-      <p>When you write, you’re welcome to share what you’re dreaming of or needing support with, which strand you’re most drawn to (branding, artwork, singing, or a mix), and any timelines or key dates.</p>
-    </div>
-  </section>
+  <script>
+    // Mobile nav toggle
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
 
-  <section id="social">
-    <div class="container social">
-      <h2>See more of my work</h2>
-      <p>For current pieces, branding projects, reels, and glimpses behind the scenes, you can find me on Instagram and Facebook.</p>
+    if (menuToggle && navLinks) {
+      menuToggle.addEventListener('click', () => {
+        const isOpen = navLinks.classList.toggle('open');
+        menuToggle.setAttribute('aria-expanded', String(isOpen));
+      });
 
-      <a class="btn-outline" href="https://www.instagram.com/stone.to.sky" target="_blank" rel="noopener">
-        Instagram
-      </a>
-
-      <br /><br />
-
-      <a class="btn-outline" href="https://www.facebook.com/stonetoskycreations/" target="_blank" rel="noopener">
-        Facebook
-      </a>
-    </div>
-  </section>
-</main>
-
-<footer>
-  &copy; <span id="year"></span> Stone to Sky. All rights reserved.
-  &nbsp;&middot;&nbsp;
-  Site by Stone to Sky &amp; Josh.
-</footer>
-
-<script>
-  // Mobile nav toggle
-  const menuToggle = document.querySelector('.menu-toggle');
-  const navLinks = document.querySelector('.nav-links');
-
-  menuToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('open');
-  });
-
-  // Close menu when a link is clicked (mobile)
-  navLinks.addEventListener('click', (e) => {
-    if (e.target.tagName.toLowerCase() === 'a') {
-      navLinks.classList.remove('open');
+      navLinks.addEventListener('click', (e) => {
+        if (e.target.tagName.toLowerCase() === 'a') {
+          navLinks.classList.remove('open');
+          menuToggle.setAttribute('aria-expanded', 'false');
+        }
+      });
     }
-  });
 
-  // FAQ dropdown toggle
-  const faqToggle = document.querySelector('.faq-toggle');
-  const faqList = document.getElementById('faq-list');
-  const faqPanel = document.querySelector('.faq-panel');
+    // FAQ dropdown toggle
+    const faqToggle = document.querySelector('.faq-toggle');
+    const faqList = document.getElementById('faq-list');
+    const faqPanel = document.querySelector('.faq-panel');
 
-  if (faqToggle && faqList && faqPanel) {
-    faqToggle.addEventListener('click', () => {
-      const expanded = faqToggle.getAttribute('aria-expanded') === 'true';
-      const nextState = !expanded;
+    if (faqToggle && faqList && faqPanel) {
+      faqToggle.addEventListener('click', () => {
+        const expanded = faqToggle.getAttribute('aria-expanded') === 'true';
+        const nextState = !expanded;
 
-      faqToggle.setAttribute('aria-expanded', String(nextState));
-      faqList.hidden = !nextState;
-      faqPanel.classList.toggle('open', nextState);
-      faqToggle.querySelector('.faq-icon').textContent = nextState ? '–' : '+';
+        faqToggle.setAttribute('aria-expanded', String(nextState));
+        faqList.hidden = !nextState;
+        faqPanel.classList.toggle('open', nextState);
+        faqToggle.querySelector('.faq-icon').textContent = nextState ? '–' : '+';
+      });
+    }
+
+    // Current year in footer
+    const yearEl = document.getElementById('year');
+    if (yearEl) {
+      yearEl.textContent = new Date().getFullYear();
+    }
+
+    // Scroll reveal using IntersectionObserver
+    const animated = document.querySelectorAll('[data-animate]');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+
+    animated.forEach((el) => observer.observe(el));
+
+    // Artwork scrollytelling
+    const posterPanels = document.querySelectorAll('.poster-panel');
+    const posterImages = document.querySelectorAll('[data-poster-image]');
+
+    function setActivePoster(id) {
+      posterImages.forEach((img) => {
+        img.classList.toggle('is-active', img.getAttribute('data-poster-image') === id);
+      });
+    }
+
+    posterPanels.forEach((panel) => {
+      panel.addEventListener('mouseenter', () => {
+        const id = panel.getAttribute('data-poster');
+        if (id) setActivePoster(id);
+      });
     });
+
+    const posterObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const id = entry.target.getAttribute('data-poster');
+          if (id) setActivePoster(id);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    posterPanels.forEach((panel) => posterObserver.observe(panel));
+
+    // Hero glow parallax
+    window.addEventListener('scroll', () => {
+      const y = window.scrollY || window.pageYOffset;
+      const offset = Math.min(40, y * 0.05);
+      const heroSection = document.querySelector('.hero');
+      if (heroSection) {
+        heroSection.style.setProperty('--hero-glow-offset', offset + 'px');
+      }
+    });
+  </script>
+
+  <!-- FAQPage structured data for AI Overviews -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What kinds of projects do you take on?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Branding, illustration, and simple websites for soul-led businesses, plus vocal sessions and facilitation for retreats, gatherings, and community spaces."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you work with clients outside Christchurch?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Most creative projects happen online with clear check-ins. Travel within New Zealand and Australia can be arranged for facilitation, filming, or key project moments."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can branding, illustration, and web design be bundled together?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Many clients mix offerings—brand identity, art, and a simple website—to create a cohesive visual world from start to finish."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you offer one-on-one voice or creativity sessions?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. I hold gentle sessions focused on nervous-system safety, vocal expression, and reconnecting with your natural voice."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can you support my retreat or workshop?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "I offer group singing, ceremony support, and visual design for event materials. Each space is shaped around the group’s intention and capacity."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do you price your creative work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Projects are quoted based on depth and scope. Branding and web packages are tiered; artworks and illustrations are priced individually. Payment plans are available. If there's resonance, I want to work with you!"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What style of brands do you work best with?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Earth-based, soulful, nature-aligned projects—herbalists, facilitators, artists, wellness practitioners, and community-led ventures."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can you create custom illustrations or artwork for my project?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. I design one-off illustrations, botanical drawings, and symbolic pieces for brands, websites, packaging, and personal commissions."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does the collaboration process work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We start with a call to confirm alignment, then move through discovery, concepts, and refinement with clear milestones and shared folders to keep everything organised."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can you help if I’m still clarifying my idea or offering?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Absolutely. Many clients come with a seed of an idea. I help shape language, visuals, and structure so your offering feels grounded, coherent, and true to you."
+        }
+      }
+    ]
   }
-
-  // Current year in footer
-  document.getElementById('year').textContent = new Date().getFullYear();
-</script>
-
-<!-- FAQPage structured data for AI Overviews -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What kinds of projects do you take on?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Branding, illustration, and simple websites for soul-led businesses, plus vocal sessions and facilitation for retreats, gatherings, and community spaces."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Do you work with clients outside Christchurch?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. Most creative projects happen online with clear check-ins. Travel within New Zealand and Australia can be arranged for facilitation, filming, or key project moments."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can branding, illustration, and web design be bundled together?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. Many clients mix offerings—brand identity, art, and a simple website—to create a cohesive visual world from start to finish."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Do you offer one-on-one voice or creativity sessions?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. I hold gentle sessions focused on nervous-system safety, vocal expression, and reconnecting with your natural voice."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can you support my retreat or workshop?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "I offer group singing, ceremony support, and visual design for event materials. Each space is shaped around the group’s intention and capacity."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How do you price your creative work?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Projects are quoted based on depth and scope. Branding and web packages are tiered; artworks and illustrations are priced individually. Payment plans are available. If there's resonance, I want to work with you!"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What style of brands do you work best with?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Earth-based, soulful, nature-aligned projects—herbalists, facilitators, artists, wellness practitioners, and community-led ventures."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can you create custom illustrations or artwork for my project?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. I design one-off illustrations, botanical drawings, and symbolic pieces for brands, websites, packaging, and personal commissions."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How does the collaboration process work?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "We start with a call to confirm alignment, then move through discovery, concepts, and refinement with clear milestones and shared folders to keep everything organised."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can you help if I’m still clarifying my idea or offering?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Absolutely. Many clients come with a seed of an idea. I help shape language, visuals, and structure so your offering feels grounded, coherent, and true to you."
-      }
-    }
-  ]
-}
-</script>
-
+  </script>
 </body>
 </html>
