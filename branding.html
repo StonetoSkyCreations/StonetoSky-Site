@@ -2,10 +2,10 @@
 <html lang="en-NZ">
 <head>
   <meta charset="UTF-8" />
-  <title>Stone to Sky – Branding Packages &amp; Pricing</title>
+  <title>Stone to Sky – Branding Packages &amp; Design Support</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Branding and web design packages I offer for soul-led businesses in Aotearoa New Zealand. Online nationwide with in-person options in Auckland, Wellington, Christchurch, Hamilton, Tauranga, Dunedin, and Queenstown." />
-  <meta name="keywords" content="Stone to Sky branding, brand design pricing, logo design, web design New Zealand, visual identity, Ōtautahi design, Auckland brand designer, Wellington branding, Christchurch design studio" />
+  <meta name="description" content="Branding packages, visual identities, and simple websites for soul-led projects across Aotearoa." />
+  <meta name="keywords" content="Stone to Sky branding, brand design pricing, logo design, web design New Zealand, visual identity" />
   <meta name="author" content="Stone to Sky" />
   <meta name="robots" content="index,follow" />
   <link rel="icon" type="image/png" href="/assets/images/favicon-512.png" />
@@ -14,189 +14,532 @@
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Stone to Sky – Branding Packages &amp; Pricing" />
-    <meta property="og:description" content="Branding and web design packages I offer for soul-led businesses across Aotearoa New Zealand, offered online or in person in major centres." />
+  <meta property="og:title" content="Stone to Sky – Branding Packages &amp; Design Support" />
+  <meta property="og:description" content="Brand design packages, illustration, and simple websites for soulful businesses." />
   <meta property="og:url" content="https://stonetosky.nz/branding.html" />
   <meta property="og:image" content="https://stonetosky.nz/assets/images/og-image.jpg" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Stone to Sky – Branding Packages &amp; Pricing" />
-    <meta name="twitter:description" content="Branding and web design packages I offer for soul-led businesses across Aotearoa New Zealand, offered online or in person in major centres." />
+  <meta name="twitter:title" content="Stone to Sky – Branding Packages &amp; Design Support" />
+  <meta name="twitter:description" content="Brand design packages, illustration, and simple websites for soulful businesses." />
   <meta name="twitter:image" content="https://stonetosky.nz/assets/images/og-image.jpg" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --bg: #f4ebe2;
-      --bg-alt: #eee0d2;
-      --bg-deeper: #e1cfb7;
-      --text: #3b2a20;
-      --muted: #8e7b6a;
-      --accent: #7b4b2a;
-      --accent-dark: #4a2b16;
-      --green: #4b5b3b;
-      --border: #d9c4ad;
-      --pill: #f1dfc7;
+      --bg: #f6f1e8;
+      --bg-alt: #efe4d6;
+      --bg-deep: #e0d2c1;
+      --ink: #3c3128;
+      --ink-soft: #5a4a3d;
+      --accent: #c8a37a;
+      --accent-strong: #a1794f;
+      --line: #ddc8b1;
+      --pill: #f0e3d5;
+      --radius-lg: 18px;
+      --radius-xl: 28px;
+      --shadow-soft: 0 18px 40px rgba(40, 32, 24, 0.1);
     }
 
     * {
       box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      margin: 0;
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
       line-height: 1.7;
-      color: var(--text);
+      color: var(--ink-soft);
       background: var(--bg);
+      -webkit-font-smoothing: antialiased;
     }
 
     h1, h2, h3 {
-      font-family: "Georgia", "Times New Roman", serif;
-      letter-spacing: 0.04em;
+      font-family: 'Cormorant Garamond', serif;
+      color: var(--ink);
+      margin: 0 0 10px;
+      font-weight: 500;
     }
 
     a {
-      color: var(--accent);
+      color: inherit;
       text-decoration: none;
     }
 
-    a:hover {
-      text-decoration: underline;
+    img {
+      max-width: 100%;
+      display: block;
     }
 
-    .container {
-      max-width: 960px;
+    ul {
+      margin: 0 0 12px 18px;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 6px;
+    }
+
+    .wrap {
+      max-width: 1080px;
       margin: 0 auto;
-      padding: 0 1.5rem;
+      padding: 0 20px;
     }
 
-    header {
+    /* Header */
+    .site-header {
       position: sticky;
       top: 0;
-      z-index: 20;
-      background: rgba(244, 235, 226, 0.96);
-      border-bottom: 1px solid var(--border);
-      backdrop-filter: blur(8px);
+      z-index: 30;
+      backdrop-filter: blur(14px);
+      background: linear-gradient(to bottom, rgba(246, 241, 232, 0.96), rgba(246, 241, 232, 0.86));
+      border-bottom: 1px solid rgba(221, 200, 177, 0.9);
     }
 
     .nav {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0.75rem 0;
+      padding: 12px 0;
+      gap: 18px;
     }
 
-    .logo {
+    .brand {
       display: flex;
       align-items: center;
+      gap: 10px;
     }
 
-    .logo-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.1rem;
-      text-decoration: none;
-    }
-
-    .logo-image {
+    .brand-logo {
       height: 42px;
       width: auto;
       display: block;
     }
 
-    .logo-text {
-      font-weight: 600;
-      letter-spacing: 0.16em;
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      letter-spacing: 0.08em;
+    }
+
+    .brand-title {
+      font-size: 20px;
       text-transform: uppercase;
-      font-size: 0.9rem;
-      color: var(--accent-dark);
-      white-space: nowrap;
     }
 
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 1.5rem;
-      font-size: 0.9rem;
+      gap: 14px;
+      font-size: 13px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
     }
 
     .nav-links a {
-      position: relative;
-      padding-bottom: 0.15rem;
+      padding: 7px 12px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      transition: all 0.15s ease-out;
+      opacity: 0.9;
     }
 
-    .nav-links a::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 0;
-      height: 1px;
-      background: var(--accent);
-      transition: width 0.2s ease;
+    .nav-links a:hover {
+      border-color: var(--line);
+      background: rgba(239, 228, 214, 0.9);
+      opacity: 1;
     }
 
-    .nav-links a:hover::after {
-      width: 100%;
+    .nav-cta {
+      border: 1px solid var(--accent);
+      background: linear-gradient(to right, #e9d3bc, #d9b996);
+      box-shadow: 0 10px 24px rgba(96, 70, 38, 0.25);
     }
 
     .menu-toggle {
       display: none;
-      border: none;
-      background: none;
-      cursor: pointer;
-      padding: 0.25rem;
+      flex-direction: column;
+      gap: 4px;
+      border: 1px solid var(--line);
+      background: rgba(246, 241, 232, 0.9);
+      border-radius: 10px;
+      padding: 8px;
     }
 
     .menu-toggle span {
-      display: block;
       width: 22px;
       height: 2px;
-      background: var(--accent-dark);
-      margin: 4px 0;
+      background: var(--ink);
+      display: block;
     }
 
+    /* Hero */
     .hero {
-      background: radial-gradient(circle at 20% 30%, rgba(123, 75, 42, 0.06), transparent 40%),
-                  radial-gradient(circle at 80% 20%, rgba(75, 91, 59, 0.06), transparent 38%),
-                  linear-gradient(to bottom, #f6ede3, #f4ebe2);
-      padding: 4.5rem 0 3rem;
-      border-bottom: 1px solid var(--border);
+      padding: 76px 0 60px;
+      position: relative;
+      overflow: hidden;
+      background: radial-gradient(circle at 18% 0%, rgba(255, 248, 237, 0.95), transparent 52%);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: -90px -70px auto;
+      background: radial-gradient(circle at 20% 0%, rgba(255, 248, 237, 0.75), transparent 60%);
+      pointer-events: none;
+      transform: translateY(var(--hero-glow-offset, 0px));
+      transition: transform 0.2s linear;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 36px;
+      align-items: center;
+    }
+
+    .hero-eyebrow {
+      font-size: 12px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      margin-bottom: 10px;
     }
 
     .hero h1 {
-      font-size: 2.2rem;
-      margin-bottom: 1rem;
+      font-size: clamp(34px, 5vw, 46px);
+      line-height: 1.05;
+      color: var(--ink);
+      margin-bottom: 12px;
     }
 
     .hero p {
-      max-width: 640px;
-      color: var(--muted);
+      font-size: 16px;
+      margin: 0 0 16px;
     }
 
-    .snippet {
-      margin: 1rem 0 0;
-      color: var(--muted);
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 8px 0 18px;
     }
 
-    main section {
-      padding: 2.5rem 0;
+    .pill {
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: var(--pill);
+      border: 1px solid var(--line);
+      color: var(--ink-soft);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 18px;
+      border-radius: 999px;
+      border: 1px solid var(--accent);
+      background: linear-gradient(to right, #e9d4bc, #d6b18a);
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ink);
+      cursor: pointer;
+      box-shadow: 0 12px 26px rgba(84, 63, 41, 0.25);
+      transition: transform 0.12s ease-out, box-shadow 0.12s ease-out, filter 0.12s ease-out;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 16px 32px rgba(84, 63, 41, 0.26);
+      filter: brightness(1.02);
+    }
+
+    .btn:active {
+      transform: translateY(0);
+      box-shadow: 0 10px 22px rgba(84, 63, 41, 0.22);
+    }
+
+    .hero-card {
+      background: radial-gradient(circle at 12% 0%, #fff9f2, #efe4d6);
+      border-radius: var(--radius-xl);
+      padding: 24px;
+      border: 1px solid rgba(208, 184, 154, 0.9);
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 80% 0%, rgba(255, 255, 255, 0.65), transparent 60%);
+      pointer-events: none;
+    }
+
+    .hero-card-title {
+      font-size: 22px;
+      margin-bottom: 4px;
+    }
+
+    .hero-card-sub {
+      font-size: 13px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      opacity: 0.9;
+      margin-bottom: 14px;
+    }
+
+    .hero-card-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      font-size: 14px;
+    }
+
+    .hero-card-list li {
+      display: flex;
+      gap: 8px;
+      align-items: flex-start;
+      margin-bottom: 8px;
+    }
+
+    .hero-card-list li::before {
+      content: "•";
+      font-size: 16px;
+      line-height: 1;
+      padding-top: 1px;
+    }
+
+    /* Sections */
+    section {
+      padding: 44px 0;
+      border-top: 1px solid rgba(221, 200, 177, 0.8);
+    }
+
+    section.alt {
+      background: var(--bg-alt);
+    }
+
+    section.deeper {
+      background: var(--bg-deep);
+    }
+
+    .section-heading {
+      font-size: 13px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      margin-bottom: 6px;
     }
 
     .section-intro {
-      max-width: 720px;
-      margin-bottom: 1.5rem;
-      color: var(--muted);
+      max-width: 640px;
+      font-size: 15px;
+      margin-bottom: 20px;
     }
 
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 18px;
+    }
+
+    .service-card {
+      background: rgba(246, 241, 232, 0.96);
+      border-radius: var(--radius-lg);
+      padding: 20px 18px 18px;
+      border: 1px solid var(--line);
+      box-shadow: 0 12px 24px rgba(60, 49, 40, 0.06);
+      transition: transform 0.15s ease-out, box-shadow 0.15s ease-out;
+    }
+
+    .service-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 18px 34px rgba(60, 49, 40, 0.1);
+    }
+
+    .service-title {
+      font-size: 20px;
+      margin-bottom: 6px;
+    }
+
+    .service-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--ink-soft);
+      opacity: 0.9;
+      margin-bottom: 10px;
+    }
+
+    .service-text {
+      font-size: 14px;
+      margin-bottom: 12px;
+    }
+
+    /* Artwork scrollytelling */
+    .posters-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+      gap: 24px;
+      align-items: flex-start;
+    }
+
+    .posters-panels {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .poster-panel {
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(210, 187, 158, 0.9);
+      padding: 14px 14px 12px;
+      background: linear-gradient(135deg, #f7efe3, #ecdac4);
+      box-shadow: 0 14px 30px rgba(84, 63, 41, 0.16);
+      position: relative;
+      overflow: hidden;
+      cursor: default;
+      transform-origin: center;
+      transition: transform 0.18s ease-out, box-shadow 0.18s ease-out;
+    }
+
+    .poster-panel:hover {
+      transform: translateY(-2px) scale(1.01);
+      box-shadow: 0 20px 40px rgba(84, 63, 41, 0.2);
+    }
+
+    .poster-tag {
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+      color: var(--ink-soft);
+    }
+
+    .poster-title {
+      font-size: 19px;
+      margin-bottom: 4px;
+    }
+
+    .poster-text {
+      font-size: 13px;
+    }
+
+    .poster-gallery-frame {
+      position: relative;
+      border-radius: var(--radius-xl);
+      border: 1px solid rgba(210, 187, 158, 0.95);
+      background: radial-gradient(circle at 20% 0%, #fdf5ea, #dec4a1);
+      box-shadow: var(--shadow-soft);
+      padding: 20px 18px 18px;
+      min-height: 260px;
+      overflow: hidden;
+    }
+
+    .poster-gallery-label {
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      margin-bottom: 8px;
+    }
+
+    .poster-gallery-stage {
+      position: relative;
+      height: 220px;
+    }
+
+    .poster-image-placeholder {
+      position: absolute;
+      inset: 0;
+      margin: auto;
+      max-width: 82%;
+      border-radius: 18px;
+      border: 1px solid rgba(198, 171, 142, 0.9);
+      background: linear-gradient(145deg, #f6ede0, #d8c1a5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px;
+      text-align: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 16px;
+      color: var(--ink-soft);
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+    }
+
+    .poster-image-placeholder.is-active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* About */
+    .about-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+      gap: 26px;
+      align-items: flex-start;
+    }
+
+    .about-sticky {
+      position: sticky;
+      top: 110px;
+      align-self: flex-start;
+      display: grid;
+      gap: 14px;
+    }
+
+    .about-note {
+      font-size: 14px;
+      margin: 0;
+    }
+
+    .about-box {
+      background: rgba(247, 239, 229, 0.9);
+      padding: 20px 18px;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--line);
+      font-size: 13px;
+      box-shadow: 0 12px 24px rgba(60, 49, 40, 0.06);
+    }
+
+    .small-heading {
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      margin-bottom: 6px;
+    }
+
+    /* FAQ */
     .faq-panel {
-      margin-top: 1.5rem;
-      border: 1px solid var(--border);
-      border-radius: 12px;
+      margin-top: 16px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
       background: linear-gradient(135deg, rgba(241, 223, 199, 0.35), rgba(244, 235, 226, 0.6));
       overflow: hidden;
-      box-shadow: 0 10px 30px rgba(75, 43, 22, 0.04);
+      box-shadow: 0 10px 30px rgba(75, 43, 22, 0.06);
     }
 
     .faq-toggle {
@@ -207,7 +550,7 @@
       padding: 1.2rem 1.1rem;
       font-size: 1rem;
       font-weight: 700;
-      color: var(--text);
+      color: var(--ink);
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -223,12 +566,12 @@
       width: 24px;
       height: 24px;
       border-radius: 999px;
-      border: 1px solid var(--border);
+      border: 1px solid var(--line);
       display: inline-flex;
       align-items: center;
       justify-content: center;
       font-size: 1.1rem;
-      color: var(--accent-dark);
+      color: var(--accent-strong);
       background: #fffaf4;
       transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
     }
@@ -240,14 +583,14 @@
     }
 
     .faq-list {
-      border-top: 1px solid var(--border);
+      border-top: 1px solid var(--line);
       padding: 1rem 1.1rem 1.2rem;
     }
 
     .faq-item + .faq-item {
       margin-top: 1rem;
       padding-top: 1rem;
-      border-top: 1px solid var(--border);
+      border-top: 1px solid var(--line);
     }
 
     .faq-item h3 {
@@ -256,328 +599,155 @@
     }
 
     .faq-item p {
-      color: var(--muted);
+      color: var(--ink-soft);
       margin: 0;
+      font-size: 14px;
     }
 
-    .section-eyebrow {
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      font-size: 0.8rem;
-      color: var(--muted);
-      margin-bottom: 0.35rem;
-      display: inline-block;
+    /* Contact & social */
+    .contact-card {
+      background: rgba(246, 241, 232, 0.96);
+      border-radius: var(--radius-xl);
+      padding: 22px 20px 20px;
+      border: 1px solid rgba(212, 188, 160, 0.9);
+      box-shadow: var(--shadow-soft);
     }
 
-    .package-grid {
+    .contact-grid {
       display: grid;
-      gap: 1rem;
-      grid-template-columns: 1fr;
-      align-items: start;
-      margin-top: 1.5rem;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+      gap: 20px;
+      align-items: flex-start;
     }
 
-    @media (min-width: 720px) {
-      .package-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
+    .contact-card label {
+      display: block;
+      font-size: 13px;
+      margin-bottom: 4px;
+      color: var(--ink-soft);
     }
 
-    .package-card {
-      background: #fff8f1;
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 0.75rem 1rem 1rem;
-      box-shadow: 0 18px 40px rgba(59, 42, 32, 0.08);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .package-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 20px 48px rgba(59, 42, 32, 0.12);
-    }
-
-    .package-toggle {
+    .contact-card input,
+    .contact-card textarea {
       width: 100%;
-      background: transparent;
-      border: none;
-      text-align: left;
-      padding: 0.25rem 0.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-      cursor: pointer;
-      appearance: none;
-      -webkit-appearance: none;
-      color: var(--text);
-      text-decoration: none;
-    }
-
-    .package-heading {
-      display: grid;
-      gap: 0.2rem;
-    }
-
-    .package-card h3 {
-      margin: 0;
-      font-size: 1.35rem;
-      color: var(--text);
-    }
-
-    .package-meta {
-      display: flex;
-      gap: 0.75rem;
-      flex-wrap: wrap;
-      color: var(--muted);
-      font-size: 0.95rem;
-      margin-top: 0.85rem;
-      padding-top: 0.75rem;
-      border-top: 1px solid var(--border);
-    }
-
-    .package-meta .package-price {
-      font-weight: 700;
-      color: var(--accent-dark);
-    }
-
-    .package-toggle-icon {
-      font-size: 1.5rem;
-      color: var(--accent-dark);
-      line-height: 1;
-    }
-
-    .package-card ul {
-      margin: 0.5rem 0 0;
-      padding-left: 1.2rem;
-      color: var(--muted);
-      display: grid;
-      gap: 0.35rem;
-    }
-
-    .package-body {
-      border-top: 1px solid var(--border);
-      padding-top: 0.75rem;
-      margin: 0 0.5rem;
-    }
-
-    .package-card.open {
-      background: linear-gradient(135deg, rgba(241, 223, 199, 0.4), rgba(244, 235, 226, 0.7));
-      border-color: var(--accent);
-      box-shadow: 0 20px 48px rgba(59, 42, 32, 0.14);
-    }
-
-    .package-note {
-      background: var(--bg-alt);
-      border: 1px solid var(--border);
-      padding: 1rem;
+      font-family: inherit;
+      font-size: 14px;
+      padding: 9px 10px;
+      margin-bottom: 12px;
       border-radius: 10px;
-      color: var(--muted);
-      margin-top: 1.25rem;
+      border: 1px solid var(--line);
+      background: rgba(252, 247, 240, 0.9);
+      outline: none;
+      transition: border-color 0.12s ease-out, box-shadow 0.12s ease-out;
     }
 
-    .portfolio-grid {
+    .contact-card input:focus,
+    .contact-card textarea:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 1px rgba(200, 163, 122, 0.5);
+    }
+
+    .contact-card textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 9px 16px;
+      border-radius: 999px;
+      border: 1px solid var(--accent-strong);
+      background: transparent;
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ink);
+      gap: 8px;
+      transition: background 0.15s ease-out, color 0.15s ease-out, box-shadow 0.12s ease-out;
+    }
+
+    .btn-outline:hover {
+      background: rgba(233, 212, 188, 0.4);
+      box-shadow: 0 10px 24px rgba(96, 70, 38, 0.15);
+    }
+
+    .contact-meta {
+      font-size: 14px;
+      color: var(--ink-soft);
+    }
+
+    .contact-meta a {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .social-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1rem;
-      margin-top: 1rem;
+      gap: 12px;
     }
 
-    .portfolio-feature {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      align-items: center;
-      gap: 1.25rem;
-      padding: 1.25rem;
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      background: linear-gradient(135deg, rgba(241, 223, 199, 0.45), rgba(244, 235, 226, 0.8));
-      box-shadow: 0 18px 36px rgba(59, 42, 32, 0.08);
-      margin: 1.5rem 0 0.75rem;
-    }
-
-    .feature-copy h3 {
-      margin-bottom: 0.2rem;
-    }
-
-    .feature-copy .portfolio-tag {
-      display: inline-flex;
-      margin: 0.25rem 0 0.85rem;
-    }
-
-    .feature-copy p {
-      color: var(--muted);
-    }
-
-    .slider {
-      position: relative;
-      overflow: hidden;
-      border-radius: 12px;
-      border: 1px solid var(--border);
-      background: #fff8f1;
-      box-shadow: inset 0 0 0 1px rgba(123, 75, 42, 0.06);
-    }
-
-    .slides {
-      display: flex;
-      transition: transform 0.4s ease;
-    }
-
-    .slide {
-      min-width: 100%;
-      position: relative;
-      aspect-ratio: 4 / 3;
-      display: grid;
-      grid-template-rows: 1fr auto;
-      align-items: stretch;
-      color: var(--accent-dark);
-      padding: 1rem;
-      margin: 0;
-      background: radial-gradient(circle at 20% 30%, rgba(75, 91, 59, 0.12), transparent 45%),
-                  radial-gradient(circle at 80% 70%, rgba(123, 75, 42, 0.12), transparent 48%),
-                  linear-gradient(135deg, rgba(244, 235, 226, 0.95), rgba(241, 223, 199, 0.9));
-    }
-
-    .slide-image {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      background: transparent;
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 0.75rem;
-      box-shadow: 0 10px 24px rgba(59, 42, 32, 0.06);
-    }
-
-    .slide figcaption {
-      background: rgba(255, 255, 255, 0.8);
-      padding: 0.75rem 1rem;
-      border-radius: 10px;
-      border: 1px solid var(--border);
-      box-shadow: 0 12px 28px rgba(59, 42, 32, 0.08);
-      max-width: 80%;
-      text-align: center;
-    }
-
-    .slider-nav {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(255, 255, 255, 0.9);
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      height: 40px;
-      width: 40px;
-      display: grid;
-      place-items: center;
-      color: var(--accent-dark);
-      cursor: pointer;
-      box-shadow: 0 10px 24px rgba(59, 42, 32, 0.14);
-    }
-
-    .slider-nav:hover {
-      background: #fff;
-    }
-
-    .slider-nav.prev { left: 12px; }
-    .slider-nav.next { right: 12px; }
-
-    .slider-dots {
-      display: flex;
-      justify-content: center;
-      gap: 0.4rem;
-      padding: 0.7rem 0.8rem 0.9rem;
-    }
-
-    .slider-dots button {
-      height: 10px;
-      width: 10px;
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      background: #fff;
-      cursor: pointer;
-    }
-
-    .slider-dots button[aria-current="true"] {
-      background: var(--accent);
-      border-color: var(--accent);
-    }
-
-    .portfolio-item {
-      background: #fff8f1;
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 1rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-      box-shadow: 0 14px 28px rgba(59, 42, 32, 0.06);
-    }
-
-    .portfolio-frame {
-      position: relative;
-      aspect-ratio: 4 / 3;
-      border-radius: 10px;
-      overflow: hidden;
-      background: linear-gradient(135deg, rgba(123, 75, 42, 0.12), rgba(75, 91, 59, 0.1));
-      border: 1px dashed var(--border);
-      display: grid;
-      place-items: center;
-      color: var(--muted);
-      text-align: center;
-      padding: 0.75rem;
-      font-size: 0.95rem;
-    }
-
-    .portfolio-meta {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      gap: 0.75rem;
-    }
-
-    .portfolio-title {
-      font-weight: 600;
-      color: var(--accent-dark);
-    }
-
-    .portfolio-tag {
-      background: var(--pill);
-      color: var(--accent-dark);
-      padding: 0.3rem 0.6rem;
-      border-radius: 999px;
-      font-size: 0.8rem;
-      border: 1px solid var(--border);
-    }
-
+    /* Footer */
     footer {
-      text-align: center;
-      padding: 1.5rem 0;
-      color: var(--muted);
-      font-size: 0.9rem;
-      border-top: 1px solid var(--border);
-      background: var(--bg-alt);
+      padding: 18px 0 24px;
+      border-top: 1px solid rgba(221, 200, 177, 0.8);
+      font-size: 12px;
+      color: var(--ink-soft);
+      background: var(--bg);
     }
 
-    @media (max-width: 720px) {
-      .hero {
-        padding: 3.5rem 0 2.5rem;
+    footer .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* Animations */
+    [data-animate] {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    [data-animate].is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    [data-animate="fade-up-delayed"] {
+      transition-delay: 0.2s;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .hero-inner,
+      .posters-layout,
+      .about-layout,
+      .contact-grid {
+        grid-template-columns: minmax(0, 1fr);
       }
 
-      .hero h1 {
-        font-size: 1.9rem;
+      .about-sticky {
+        position: static;
+        top: auto;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .nav {
+        flex-wrap: wrap;
+        gap: 12px;
       }
 
       .nav-links {
+        width: 100%;
+        justify-content: flex-start;
+        flex-wrap: wrap;
         display: none;
-        position: absolute;
-        top: 64px;
-        left: 0;
-        right: 0;
-        flex-direction: column;
-        background: rgba(244, 235, 226, 0.98);
-        padding: 1rem 1.5rem;
-        border-bottom: 1px solid var(--border);
       }
 
       .nav-links.open {
@@ -585,465 +755,303 @@
       }
 
       .menu-toggle {
-        display: block;
+        display: flex;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .hero {
+        padding-top: 54px;
       }
 
+      .hero-card {
+        border-radius: 22px;
+      }
     }
   </style>
+
 </head>
 <body>
-  <header>
-    <div class="container nav">
-      <div class="logo">
-        <a href="index.html#top" class="logo-link">
-          <img src="/assets/images/logo-stone-to-sky.png" alt="Stone to Sky logo" class="logo-image" />
-          <span class="logo-text">STONE TO SKY</span>
-        </a>
-      </div>
+  <header class="site-header">
+    <div class="wrap nav">
+      <a href="/index.html#top" class="brand" aria-label="Stone to Sky home">
+        <img src="/assets/images/logo-stone-to-sky.png" alt="Stone to Sky logo" class="brand-logo" />
+        <div class="brand-text">
+          <span class="brand-title">Stone to Sky</span>
+        </div>
+      </a>
 
-      <button class="menu-toggle" aria-label="Toggle navigation">
+      <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
         <span></span>
         <span></span>
         <span></span>
       </button>
 
       <nav class="nav-links" aria-label="Main navigation">
-        <a href="index.html#branding">Branding overview</a>
-        <a href="index.html#contact">Contact</a>
-        <a href="index.html#social">Socials</a>
+        <a href="/index.html#about">About</a>
+        <a href="/index.html#branding">Home</a>
+        <a href="#packages">Packages</a>
+        <a href="#process">Process</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact" class="nav-cta">Contact</a>
+        <a href="#social">Socials</a>
       </nav>
     </div>
   </header>
 
-  <main>
+  <main id="top">
     <section class="hero">
-      <div class="container">
-        <p class="hero-eyebrow" style="text-transform:uppercase; letter-spacing:0.12em; color:var(--muted); font-size:0.85rem;">Branding packages</p>
-        <h1>Branding &amp; Design</h1>
-        <p class="snippet">Branding, web design and social media for soulful creative projects</p>
-      </div>
-    </section>
-
-    <section>
-      <div class="container">
-        <h2>Packages &amp; pricing</h2>
-        <p>These packages are ready to go as-is, and can be refined to suit your project. If you need something tailored, we can blend elements across tiers.</p>
-
-        <div class="package-grid">
-          <article class="package-card package-logo">
-            <button class="package-toggle" aria-expanded="false" aria-controls="package-logo-details">
-              <div class="package-heading">
-                <h3>Logo design</h3>
-              </div>
-              <span class="package-toggle-icon" aria-hidden="true">+</span>
-            </button>
-            <div class="package-body" id="package-logo-details" hidden>
-              <ul>
-                <li>Moodboard – inspiration, values, visual concepts</li>
-                <li>Creation of the main logo (original concept)</li>
-                <li>1 secondary logo variation – inverted colour</li>
-                <li>Colour palette (3 variations)</li>
-                <li>Sub mark (2 variations)</li>
-                <li>Delivery of files (jpeg, png, pdf)</li>
-                <li>Full usage rights</li>
-                <li>Unlimited revision and version until it is a full yes</li>
-              </ul>
-              <div class="package-meta">
-                <span class="package-price">$450</span>
-                <span class="package-duration">Duration: 2 weeks</span>
-              </div>
+      <div class="wrap">
+        <div class="hero-inner" data-animate="fade-up">
+          <div>
+            <div class="hero-eyebrow">Branding &amp; web</div>
+            <h1>Branding packages rooted in beauty, integrity, and Earth.</h1>
+            <p>I create visual identities, illustration, and simple websites for soul-led businesses and community projects across Aotearoa.</p>
+            <div class="hero-tags">
+              <span class="pill">Logos &amp; brand suites</span>
+              <span class="pill">Illustration</span>
+              <span class="pill">Simple websites</span>
+              <span class="pill">Social templates</span>
             </div>
-          </article>
-
-          <article class="package-card package-simple">
-            <button class="package-toggle" aria-expanded="false" aria-controls="package-simple-details">
-              <div class="package-heading">
-                <h3>Simple brand design</h3>
-              </div>
-              <span class="package-toggle-icon" aria-hidden="true">+</span>
-            </button>
-            <div class="package-body" id="package-simple-details" hidden>
-              <ul>
-                <li>Research (inspiration, target audience, brand positioning)</li>
-                <li>Moodboard – imagery &amp; visual concepts for social media</li>
-                <li>Creation of the main logo (original concept)</li>
-                <li>1 secondary logo variation</li>
-                <li>Sub mark (2 variations)</li>
-                <li>Typography (primary &amp; secondary)</li>
-                <li>Colour palette (full – 6 variations)</li>
-                <li>Delivery of files (jpeg, png, pdf)</li>
-                <li>Full usage rights</li>
-                <li>Unlimited revision and version until it is a full yes</li>
-              </ul>
-              <div class="package-meta">
-                <span class="package-price">$900</span>
-                <span class="package-duration">Duration: 4–6 weeks</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="package-card package-social">
-            <button class="package-toggle" aria-expanded="false" aria-controls="package-social-details">
-              <div class="package-heading">
-                <h3>Social Media Brand Design</h3>
-              </div>
-              <span class="package-toggle-icon" aria-hidden="true">+</span>
-            </button>
-            <div class="package-body" id="package-social-details" hidden>
-              <ul>
-                <li>Research (inspiration, target audience, brand positioning)</li>
-                <li>Moodboard – imagery &amp; visual concepts for social media</li>
-                <li>Creation of the main logo (original concept)</li>
-                <li>1 secondary logo variation</li>
-                <li>Sub mark (2 variations)</li>
-                <li>Typography (primary &amp; secondary)</li>
-                <li>Colour palette (3 variations)</li>
-                <li>Social media guidance, version clarity &amp; highlight symbols (colour option)</li>
-                <li>Social media templates (6 variations for content)</li>
-                <li>Delivery of files (jpeg, png, pdf)</li>
-                <li>Full usage rights</li>
-                <li>Unlimited revision and version until it is a full yes</li>
-              </ul>
-              <div class="package-meta">
-                <span class="package-price">$1800</span>
-                <span class="package-duration">Duration: 6–8 weeks</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="package-card package-full">
-            <button class="package-toggle" aria-expanded="false" aria-controls="package-full-details">
-              <div class="package-heading">
-                <h3>Full brand design</h3>
-              </div>
-              <span class="package-toggle-icon" aria-hidden="true">+</span>
-            </button>
-            <div class="package-body" id="package-full-details" hidden>
-              <ul>
-                <li>Research &amp; moodboard (inspiration, target audience, brand positioning)</li>
-                <li>Creation of the main logo (original concept)</li>
-                <li>2 secondary logo variations – original &amp; inverted colour</li>
-                <li>Colour palette (3 variations)</li>
-                <li>Typography (primary &amp; secondary)</li>
-                <li>Sub mark (2 variations)</li>
-                <li>Delivery of files (jpeg, png, pdf)</li>
-                <li>Full usage rights</li>
-                <li>Unlimited revision and version until it is a full yes</li>
-                <li>6 symbols for your social media or website</li>
-                <li>6 Instagram post templates</li>
-                <li>Website – 3–5 pages</li>
-                <li>Business card or flyer</li>
-              </ul>
-              <div class="package-meta">
-                <span class="package-price">$3000</span>
-                <span class="package-duration">Duration: 8–10 weeks</span>
-              </div>
-            </div>
-          </article>
-        </div>
-
-        <p class="package-note">Packages are adaptable and open for change, with the core intention to work together in an emergent, co-creative current.</p>
-          <p style="margin-top:1rem;">Ready to start? <a href="mailto:brooke@stonetosky.nz">Email me</a> with your preferred package or questions.</p>
-      </div>
-    </section>
-
-    <section>
-      <div class="container">
-        <div class="section-eyebrow">Branding portfolio</div>
-        <h2>Branding portfolio</h2>
-        <p class="section-intro">A snapshot of recent visual identities, crafted for soulful brands across Aotearoa. This space will expand with full project imagery and write-ups as the gallery grows.</p>
-
-        <article class="portfolio-feature">
-          <div class="feature-copy">
-            <h3>Mumma Marama</h3>
-            <span class="portfolio-tag">Logo &amp; brand essence</span>
-            <p>A collaboration honouring womb wisdom, birth rites, somatic embodiment, and voice. The logo was shaped to hold the currents of the earth mother and moon-tide waters that nourish new life.</p>
-            <p>Working alongside Rebecca, we translated her vision into a calm, tidal brand world with space for ceremony, voice, and nurturing support.</p>
+            <a class="btn" href="#contact">Start a project</a>
           </div>
 
-          <div class="slider" aria-label="Mumma Marama gallery" data-slider>
-            <div class="slides">
-              <figure class="slide" aria-hidden="false">
-                <img class="slide-image" src="assets/images/MummaMarama-logoExample.jpg" alt="Mumma Marama logo example" />
-              </figure>
-              <figure class="slide" aria-hidden="true">
-                <img class="slide-image" src="assets/images/MummaMarama-logo.png" alt="Mumma Marama primary logo" />
-              </figure>
-              <figure class="slide" aria-hidden="true">
-                <img class="slide-image" src="assets/images/MummaMarama-flower.png" alt="Mumma Marama floral brand symbol" />
-              </figure>
-              <figure class="slide" aria-hidden="true">
-                <img class="slide-image" src="assets/images/MummaMarama-Branding.png" alt="Mumma Marama branding elements" />
-              </figure>
-              <figure class="slide" aria-hidden="true">
-                <img class="slide-image" src="assets/images/MummaMarama- ColorPallet-MoodBoard.jpg" alt="Mumma Marama colour palette and moodboard" />
-              </figure>
-            </div>
-            <button class="slider-nav prev" type="button" aria-label="Previous image">&#10094;</button>
-            <button class="slider-nav next" type="button" aria-label="Next image">&#10095;</button>
-            <div class="slider-dots" role="tablist" aria-label="Mumma Marama gallery navigation"></div>
-          </div>
-        </article>
-
-        <div class="portfolio-grid" aria-label="Branding portfolio examples">
-          <article class="portfolio-item">
-            <div class="portfolio-frame">Placeholder for featured project imagery. Final artwork coming soon.</div>
-            <div class="portfolio-meta">
-              <span class="portfolio-title">Retreat identity</span>
-              <span class="portfolio-tag">Brand suite</span>
-            </div>
-            <p class="section-intro" style="margin:0;">Calm, nature-led palette with flexible marks for print and digital touchpoints.</p>
-          </article>
-
-          <article class="portfolio-item">
-            <div class="portfolio-frame">Placeholder for featured project imagery. Final artwork coming soon.</div>
-            <div class="portfolio-meta">
-              <span class="portfolio-title">Artist collection</span>
-              <span class="portfolio-tag">Logo &amp; merch</span>
-            </div>
-            <p class="section-intro" style="margin:0;">Minimal monogram and secondary marks designed for prints, merch, and online galleries.</p>
-          </article>
-
-          <article class="portfolio-item">
-            <div class="portfolio-frame">Placeholder for featured project imagery. Final artwork coming soon.</div>
-            <div class="portfolio-meta">
-              <span class="portfolio-title">Herbal studio</span>
-              <span class="portfolio-tag">Packaging</span>
-            </div>
-            <p class="section-intro" style="margin:0;">Botanical-inspired symbols, colour pairings, and packaging concepts tailored for apothecary launches.</p>
-          </article>
+          <aside class="hero-card" data-animate="fade-up-delayed">
+            <div class="hero-card-title">What you can book</div>
+            <div class="hero-card-sub">Tailored options</div>
+            <ul class="hero-card-list">
+              <li>Social media brand suites</li>
+              <li>Full brand identities</li>
+              <li>Illustrated marks and symbols</li>
+              <li>Colour palettes and typography</li>
+              <li>Simple 3–5 page websites</li>
+            </ul>
+          </aside>
         </div>
       </div>
     </section>
 
-    <section>
-      <div class="container">
-        <h2>Branding FAQs</h2>
-        <div class="snippet" style="margin-top:0;">
-          
-        <div class="faq-panel">
-          <button class="faq-toggle" aria-expanded="false" aria-controls="faq-content">
-            <span>View frequently asked questions</span>
-            <span class="faq-icon" aria-hidden="true">+</span>
-          </button>
-          <div class="faq-list" id="faq-content" role="list" hidden>
-            <div class="faq-item" role="listitem">
-              <h3>What makes your process helpful for soul-led brands?</h3>
-              <p>We begin with a call to make sure there’s resonance and alignment. From there, I use a toolset designed to draw your vision into deeper clarity and coherence. Together, we shape the visual worlds that will carry your story. Each package includes practical assets and rollout guidance so you can bring the brand to life with confidence and consistency.</p>
-            </div>
+    <section id="packages" class="alt">
+      <div class="wrap">
+        <div class="section-heading" data-animate="fade-up">Packages</div>
+        <h2 data-animate="fade-up-delayed">Choose a starting place</h2>
+        <p class="section-intro" data-animate="fade-up-delayed">Every package can flex to fit your project. We co-create the right mix of strategy, visuals, and rollout support.</p>
 
-            <div class="faq-item" role="listitem">
-              <h3>Do you work with clients outside Ōtautahi / Christchurch?</h3>
-              <p>Yes. Most projects happen online with collaborative workshops. Travel can be arranged for key shoots or facilitation across New Zealand and Australia.</p>
-            </div>
-
-            <div class="faq-item" role="listitem">
-              <h3>Can branding and website design happen together?</h3>
-              <p>Absolutely. The Full and Social packages include web design guidance or full builds, ensuring the visual identity, copy, and user flow stay aligned from logo to launch.</p>
-            </div>
-
-            <div class="faq-item" role="listitem">
-              <h3>How long does a branding or website project take?</h3>
-              <p>Most branding projects take 3–6 weeks depending on the package. Website design typically unfolds over 4–8 weeks, including copy refinement, layout, and testing. Timelines are mapped clearly at the start so you always know what’s next.</p>
-            </div>
-
-            <div class="faq-item" role="listitem">
-              <h3>What do I need to prepare before we start?</h3>
-              <p>A clear intention is enough to begin. During our first call, we explore your story, values, audience, and long-term vision. If you already have copy, imagery, or existing brand assets, I’ll help you refine or rebuild them as needed.</p>
-            </div>
-
-            <div class="faq-item" role="listitem">
-              <h3>Can you redesign an existing brand or website?</h3>
-              <p>Yes. Whether your current visual identity feels outdated, inconsistent, or no longer aligned with who you are becoming, I can refresh or fully reimagine it. We’ll clarify what stays, what evolves, and what new direction wants to emerge.</p>
-            </div>
-
-            <div class="faq-item" role="listitem">
-              <h3>Do you offer ongoing support after the design is complete?</h3>
-              <p>Absolutely. Each package includes handover guidance, tutorials, and support so you feel confident using your brand and website. Ongoing creative or technical support can be added if you want continued collaboration.</p>
-            </div>
-
-            <div class="faq-item" role="listitem">
-              <h3>Which platforms do you design on?</h3>
-              <p>I primarily design on Squarespace, Wix, WordPress, and static websites depending on your goals, budget, and future scalability. We’ll choose the platform that best supports your aesthetic, functionality needs, and long-term vision.</p>
-            </div>
+        <div class="card-grid">
+          <div class="service-card" data-animate="fade-up">
+            <div class="service-title">Social media brand design</div>
+            <div class="service-label">$1800 · 6–8 weeks</div>
+            <p class="service-text">A focused identity for showing up online with clarity and cohesion.</p>
+            <ul>
+              <li>Moodboard, inspiration, and positioning</li>
+              <li>Main logo plus secondary mark and sub marks</li>
+              <li>Typography and 3 colour palette options</li>
+              <li>Highlight symbols and six content templates</li>
+              <li>Full usage rights and revisions until it’s a yes</li>
+            </ul>
           </div>
+
+          <div class="service-card" data-animate="fade-up-delayed">
+            <div class="service-title">Full brand design</div>
+            <div class="service-label">$3000 · 8–10 weeks</div>
+            <p class="service-text">A complete suite for print, digital, and in-person touchpoints.</p>
+            <ul>
+              <li>Discovery, moodboards, and brand direction</li>
+              <li>Main logo with two secondary variations</li>
+              <li>Sub marks, typography, and colour palette</li>
+              <li>Social symbols and six post templates</li>
+              <li>Simple 3–5 page website and a print piece</li>
+            </ul>
+          </div>
+
+          <div class="service-card" data-animate="fade-up">
+            <div class="service-title">Website &amp; ongoing support</div>
+            <div class="service-label">Custom scope</div>
+            <p class="service-text">Need a website refresh, extra illustrations, or rollout help? We’ll shape a bespoke plan.</p>
+            <ul>
+              <li>Collaborative site builds and handover</li>
+              <li>Illustrated assets for packaging or print</li>
+              <li>Content guidance and launch support</li>
+              <li>Payment plans available</li>
+            </ul>
+            <a class="btn" href="#contact">Book a call</a>
+          </div>
+        </div>
+
+        <p class="section-intro" style="margin-top:20px;" data-animate="fade-up">Packages are adaptable and open for change, with the core intention to work together in an emergent, co-creative current.</p>
+      </div>
+    </section>
+
+    <section id="process">
+      <div class="wrap">
+        <div class="section-heading" data-animate="fade-up">Process</div>
+        <h2 data-animate="fade-up-delayed">How we’ll work together</h2>
+        <div class="card-grid">
+          <div class="service-card" data-animate="fade-up">
+            <div class="service-title">Discovery &amp; alignment</div>
+            <p class="service-text">We meet to understand your story, audience, and needs. From there, we set a rhythm and milestones.</p>
+            <ul>
+              <li>Clarify your offer and voice</li>
+              <li>Agree on scope and timelines</li>
+              <li>Shared folders for smooth collaboration</li>
+            </ul>
+          </div>
+          <div class="service-card" data-animate="fade-up-delayed">
+            <div class="service-title">Design &amp; refinement</div>
+            <p class="service-text">Concepts flow into logos, palettes, and layouts. We iterate together until it feels like a full-body yes.</p>
+            <ul>
+              <li>Drafts and refinements</li>
+              <li>Illustration and typography choices</li>
+              <li>Guidance on application and usage</li>
+            </ul>
+          </div>
+          <div class="service-card" data-animate="fade-up">
+            <div class="service-title">Delivery &amp; launch</div>
+            <p class="service-text">You receive organised files, launch templates, and the option for web build support.</p>
+            <ul>
+              <li>Exported assets in all needed formats</li>
+              <li>Lightweight brand notes</li>
+              <li>Options for website creation and support</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="portfolio" class="alt">
+      <div class="wrap">
+        <div class="section-heading" data-animate="fade-up">Portfolio</div>
+        <h2 data-animate="fade-up-delayed">Recent brand snapshots</h2>
+        <p class="section-intro" data-animate="fade-up-delayed">A glimpse of visual identities crafted for soulful, nature-aligned projects.</p>
+
+        <div class="card-grid">
+          <div class="service-card" data-animate="fade-up">
+            <img src="assets/images/MummaMarama-logoExample.jpg" alt="Mumma Marama logo example" style="border-radius:16px; margin-bottom:14px;" />
+            <div class="service-title">Mumma Marama</div>
+            <p class="service-text">Logo, brand essence, and tidal palette for a birthkeeper weaving embodiment and ceremony.</p>
+          </div>
+          <div class="service-card" data-animate="fade-up-delayed">
+            <img src="assets/images/MummaMarama- ColorPallet-MoodBoard.jpg" alt="Mumma Marama colour palette and moodboard" style="border-radius:16px; margin-bottom:14px;" />
+            <div class="service-title">Moodboard &amp; colour</div>
+            <p class="service-text">Earthy, moonlit tones with organic forms, setting the visual direction for digital and print touchpoints.</p>
+          </div>
+          <div class="service-card" data-animate="fade-up">
+            <div class="service-title">More coming soon</div>
+            <p class="service-text">This gallery will expand with full project imagery and write-ups as the portfolio grows.</p>
+            <a class="btn-outline" href="https://www.instagram.com/stone.to.sky" target="_blank" rel="noopener">See current work</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="deeper">
+      <div class="wrap">
+        <div class="section-heading" data-animate="fade-up">Contact</div>
+        <h2 data-animate="fade-up-delayed">Contact</h2>
+        <p class="section-intro" data-animate="fade-up-delayed">You can reach me directly via email.</p>
+
+        <div class="contact-grid">
+          <div class="contact-card" data-animate="fade-up">
+            <form action="mailto:brooke@stonetosky.nz" method="post" enctype="text/plain">
+              <label for="name">Name</label>
+              <input id="name" name="name" type="text" placeholder="Your name" required />
+
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" placeholder="you@example.com" required />
+
+              <label for="project">What would you like support with?</label>
+              <textarea id="project" name="project" placeholder="Share a few lines about your project, timing, and what you’re hoping for."></textarea>
+
+              <button type="submit" class="btn">Send enquiry</button>
+            </form>
+          </div>
+
+          <div class="contact-meta" data-animate="fade-up-delayed">
+            <p><strong>Email:</strong> <a href="mailto:brooke@stonetosky.nz">brooke@stonetosky.nz</a></p>
+            <p><strong>Location:</strong> Ōtautahi / Christchurch, Aotearoa New Zealand</p>
+            <p>When you write, you’re welcome to share what you’re dreaming of or needing support with, which strand you’re most drawn to, and any timelines or key dates.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="social">
+      <div class="wrap">
+        <div class="section-heading" data-animate="fade-up">Social</div>
+        <h2 data-animate="fade-up-delayed">See more of my work</h2>
+        <p class="section-intro" data-animate="fade-up-delayed">For current pieces, branding projects, reels, and glimpses behind the scenes, you can find me on Instagram and Facebook.</p>
+
+        <div class="social-grid" data-animate="fade-up">
+          <a class="btn-outline" href="https://www.instagram.com/stone.to.sky" target="_blank" rel="noopener">Instagram</a>
+          <a class="btn-outline" href="https://www.facebook.com/stonetoskycreations/" target="_blank" rel="noopener">Facebook</a>
         </div>
       </div>
     </section>
   </main>
 
   <footer>
-    &copy; <span id="year"></span> Stone to Sky. All rights reserved.
-    &nbsp;&middot;&nbsp;
-    Site by Stone to Sky &amp; Josh.
+    <div class="wrap footer-inner">
+      <div>&copy; <span id="year"></span> Stone to Sky. All rights reserved.</div>
+      <div>Site by Stone to Sky &amp; Josh.</div>
+    </div>
   </footer>
 
   <script>
-    const sliders = document.querySelectorAll('[data-slider]');
-
-    sliders.forEach((slider) => {
-      const track = slider.querySelector('.slides');
-      const slides = Array.from(slider.querySelectorAll('.slide'));
-      const prev = slider.querySelector('.slider-nav.prev');
-      const next = slider.querySelector('.slider-nav.next');
-      const dotsContainer = slider.querySelector('.slider-dots');
-      let current = 0;
-
-      const update = (index) => {
-        if (!slides.length) return;
-        current = (index + slides.length) % slides.length;
-        track.style.transform = `translateX(-${current * 100}%)`;
-
-        slides.forEach((slide, idx) => {
-          slide.setAttribute('aria-hidden', idx === current ? 'false' : 'true');
-        });
-
-        if (dotsContainer) {
-          dotsContainer.querySelectorAll('button').forEach((dot, idx) => {
-            dot.setAttribute('aria-current', idx === current ? 'true' : 'false');
-          });
-        }
-      };
-
-      slides.forEach((_, idx) => {
-        const dot = document.createElement('button');
-        dot.type = 'button';
-        dot.setAttribute('aria-label', `Show slide ${idx + 1}`);
-        dot.setAttribute('role', 'tab');
-        dot.addEventListener('click', () => update(idx));
-        dotsContainer.appendChild(dot);
-      });
-
-      if (prev) {
-        prev.addEventListener('click', () => update(current - 1));
-      }
-
-      if (next) {
-        next.addEventListener('click', () => update(current + 1));
-      }
-
-      update(0);
-    });
-
-    const packageToggles = document.querySelectorAll('.package-toggle');
-
-    packageToggles.forEach((toggle) => {
-      const detailsId = toggle.getAttribute('aria-controls');
-      const details = document.getElementById(detailsId);
-
-      toggle.addEventListener('click', () => {
-        const expanded = toggle.getAttribute('aria-expanded') === 'true';
-        const nextState = !expanded;
-
-        toggle.setAttribute('aria-expanded', String(nextState));
-        details.hidden = !nextState;
-        toggle.closest('.package-card').classList.toggle('open', nextState);
-        toggle.querySelector('.package-toggle-icon').textContent = nextState ? '–' : '+';
-      });
-    });
-
+    // Mobile nav toggle
     const menuToggle = document.querySelector('.menu-toggle');
     const navLinks = document.querySelector('.nav-links');
 
-    menuToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('open');
+    if (menuToggle && navLinks) {
+      menuToggle.addEventListener('click', () => {
+        const isOpen = navLinks.classList.toggle('open');
+        menuToggle.setAttribute('aria-expanded', String(isOpen));
+      });
+
+      navLinks.addEventListener('click', (e) => {
+        if (e.target.tagName.toLowerCase() === 'a') {
+          navLinks.classList.remove('open');
+          menuToggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+    }
+
+    // Scroll reveal using IntersectionObserver
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -10% 0px'
     });
 
-    navLinks.addEventListener('click', (e) => {
-      if (e.target.tagName.toLowerCase() === 'a') {
-        navLinks.classList.remove('open');
-      }
-    });
+    document.querySelectorAll('[data-animate]').forEach((el) => observer.observe(el));
 
-    document.getElementById('year').textContent = new Date().getFullYear();
+    // Poster tilt effect (if present)
+    const poster = document.querySelector('.poster');
+    if (poster) {
+      poster.addEventListener('mousemove', (e) => {
+        const rect = poster.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const rotateY = ((x / rect.width) - 0.5) * 6;
+        const rotateX = ((y / rect.height) - 0.5) * -6;
+        poster.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+      });
 
-    const faqToggle = document.querySelector('.faq-toggle');
-    const faqContent = document.getElementById('faq-content');
-    const faqPanel = document.querySelector('.faq-panel');
+      poster.addEventListener('mouseleave', () => {
+        poster.style.transform = 'rotateX(0deg) rotateY(0deg)';
+      });
+    }
 
-    faqToggle.addEventListener('click', () => {
-      const expanded = faqToggle.getAttribute('aria-expanded') === 'true';
-      const nextState = !expanded;
-
-      faqToggle.setAttribute('aria-expanded', String(nextState));
-      faqContent.hidden = !nextState;
-      faqPanel.classList.toggle('open', nextState);
-      faqToggle.querySelector('.faq-icon').textContent = nextState ? '–' : '+';
-    });
-  </script>
-
-  <!-- FAQPage structured data for branding -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "What makes your process helpful for soul-led brands?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "We begin with a call to make sure there’s resonance and alignment. From there, I use a toolset designed to draw your vision into deeper clarity and coherence. Together, we shape the visual worlds that will carry your story. Each package includes practical assets and rollout guidance so you can bring the brand to life with confidence and consistency."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Do you work with clients outside Ōtautahi / Christchurch?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes. Most projects happen online with collaborative workshops. Travel can be arranged for key shoots or facilitation across New Zealand and Australia."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Can branding and website design happen together?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Absolutely. The Full and Social packages include web design guidance or full builds, ensuring the visual identity, copy, and user flow stay aligned from logo to launch."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How long does a branding or website project take?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Most branding projects take 3–6 weeks depending on the package. Website design typically unfolds over 4–8 weeks, including copy refinement, layout, and testing. Timelines are mapped clearly at the start so you always know what’s next."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What do I need to prepare before we start?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "A clear intention is enough to begin. During our first call, we explore your story, values, audience, and long-term vision. If you already have copy, imagery, or existing brand assets, I’ll help you refine or rebuild them as needed."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Can you redesign an existing brand or website?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes. Whether your current visual identity feels outdated, inconsistent, or no longer aligned with who you are becoming, I can refresh or fully reimagine it. We’ll clarify what stays, what evolves, and what new direction wants to emerge."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Do you offer ongoing support after the design is complete?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Absolutely. Each package includes handover guidance, tutorials, and support so you feel confident using your brand and website. Ongoing creative or technical support can be added if you want continued collaboration."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Which platforms do you design on?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "I primarily design on Squarespace, Wix, WordPress, and static websites depending on your goals, budget, and future scalability. We’ll choose the platform that best supports your aesthetic, functionality needs, and long-term vision."
-        }
-      }
-    ]
-  }
+    // Set year in footer
+    const yearEl = document.getElementById('year');
+    if (yearEl) {
+      yearEl.textContent = new Date().getFullYear();
+    }
   </script>
 </body>
 </html>
