@@ -464,6 +464,18 @@
       gap: 18px;
     }
 
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
     .service-card {
       background: rgba(246, 241, 232, 0.96);
       border-radius: var(--radius-lg);
@@ -940,16 +952,9 @@
             </ul>
             <a class="btn" href="branding.html">Dive Deeper</a>
           </div>
-
-          <div class="service-card" data-animate="fade-up-delayed">
-            <div class="service-title">Ideal for</div>
-            <div class="service-label">Soul-led projects</div>
-            <p class="service-text">Design, art, and song come together in service to beauty, depth, and the more-than-human world.</p>
-            <div class="pill" style="display:inline-block; margin-bottom:8px;">Branding</div>
-            <div class="pill" style="display:inline-block; margin-bottom:8px;">Illustration</div>
-            <div class="pill" style="display:inline-block; margin-bottom:8px;">Earth-based design</div>
-          </div>
         </div>
+
+        <p class="visually-hidden">Ideal for soul-led projects where design, art, and song come together in service to beauty, depth, and the more-than-human world, including branding, illustration, and earth-based design.</p>
       </div>
     </section>
 
