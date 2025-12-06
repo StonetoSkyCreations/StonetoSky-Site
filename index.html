@@ -456,12 +456,52 @@
       background: var(--bg-alt);
     }
 
-    #branding {
-      background: linear-gradient(rgba(246, 241, 232, 0.9), rgba(246, 241, 232, 0.9)),
-        url('/assets/images/sand%20background.JPG');
+    .sand-section {
+      position: relative;
+      background: var(--bg-alt);
+      overflow: hidden;
+    }
+
+    .sand-section::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: linear-gradient(rgba(246, 241, 232, 0.85), rgba(246, 241, 232, 0.82)),
+        url('/assets/images/sand-background.jpg');
       background-size: cover;
       background-position: center;
-      padding: 60px 20px;
+      opacity: 0.7;
+      transform: scaleY(var(--sand-flip, 1));
+      transform-origin: center;
+      z-index: 0;
+    }
+
+    .sand-section > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    #branding,
+    #artwork,
+    #singing,
+    #cocreate {
+      padding: 60px 0;
+    }
+
+    #branding {
+      --sand-flip: 1;
+    }
+
+    #artwork {
+      --sand-flip: -1;
+    }
+
+    #singing {
+      --sand-flip: 1;
+    }
+
+    #cocreate {
+      --sand-flip: -1;
     }
 
     section.deeper {
@@ -845,18 +885,21 @@
     }
 
     /* Animations */
-    [data-animate] {
+    [data-animate],
+    .reveal-on-scroll {
       opacity: 0;
       transform: translateY(24px);
       transition: opacity 0.6s ease-out, transform 0.6s ease-out;
     }
 
-    [data-animate].is-visible {
+    [data-animate].is-visible,
+    .reveal-on-scroll.is-visible {
       opacity: 1;
       transform: translateY(0);
     }
 
-    [data-animate="fade-up-delayed"] {
+    [data-animate="fade-up-delayed"],
+    .reveal-on-scroll.delay-1 {
       transition-delay: 0.2s;
     }
 
@@ -939,7 +982,7 @@
   <main id="top">
     <section class="hero">
       <div class="wrap">
-        <div class="hero-inner" data-animate="fade-up">
+        <div class="hero-inner reveal-on-scroll" data-animate="fade-up">
           <div>
             <div class="hero-eyebrow">Design · Art · Song</div>
             <h1>Design, art &amp; song rooted in the living world.</h1>
@@ -950,13 +993,13 @@
       </div>
     </section>
 
-    <section id="branding" class="alt">
+    <section id="branding" class="alt sand-section">
       <div class="wrap">
-        <h2 data-animate="fade-up-delayed">Branding &amp; Design</h2>
-        <p class="section-intro" data-animate="fade-up-delayed">I create visual identities and design assets for people and projects that care about beauty, integrity, and the Earth.</p>
+        <h2 class="reveal-on-scroll" data-animate="fade-up-delayed">Branding &amp; Design</h2>
+        <p class="section-intro reveal-on-scroll delay-1" data-animate="fade-up-delayed">I create visual identities and design assets for people and projects that care about beauty, integrity, and the Earth.</p>
 
         <div class="card-grid">
-          <div class="service-card" data-animate="fade-up">
+          <div class="service-card reveal-on-scroll" data-animate="fade-up">
             <div class="service-title">What I offer</div>
             <div class="service-label">Branding &amp; Design</div>
             <p class="service-text">A range of design and branding packages, supporting creatives, artists, businesses and projects to bring their authentic vision to life</p>
@@ -975,29 +1018,29 @@
       </div>
     </section>
 
-    <section id="artwork">
+    <section id="artwork" class="sand-section">
       <div class="wrap">
-        <h2 data-animate="fade-up-delayed">Artwork &amp; Illustration</h2>
-        <p class="section-intro" data-animate="fade-up-delayed">My artwork reflects an intimate relationship with nature, the body and the subtle world</p>
+        <h2 class="reveal-on-scroll" data-animate="fade-up-delayed">Artwork &amp; Illustration</h2>
+        <p class="section-intro reveal-on-scroll delay-1" data-animate="fade-up-delayed">My artwork reflects an intimate relationship with nature, the body and the subtle world</p>
 
-        <p class="section-intro" data-animate="fade-up-delayed" style="margin-top:18px;">I create:</p>
-        <ul data-animate="fade-up-delayed">
+        <p class="section-intro reveal-on-scroll delay-1" data-animate="fade-up-delayed" style="margin-top:18px;">I create:</p>
+        <ul class="reveal-on-scroll" data-animate="fade-up-delayed">
           <li>Original pieces and illustrated collections</li>
           <li>Seasonal calendars and lunar maps</li>
           <li>Botanical and symbolic illustrations</li>
           <li>Custom pieces for homes, books, and spaces</li>
         </ul>
-        <a class="btn" href="artwork.html" data-animate="fade-up-delayed">Browse Artwork</a>
+        <a class="btn reveal-on-scroll delay-1" href="artwork.html" data-animate="fade-up-delayed">Browse Artwork</a>
       </div>
     </section>
 
-    <section id="singing" class="alt">
+    <section id="singing" class="alt sand-section">
       <div class="wrap">
-        <h2 data-animate="fade-up-delayed">Singing &amp; Facilitation</h2>
-        <p class="section-intro" data-animate="fade-up-delayed">My voice work lives in circles, ceremonies, and small gatherings where people come to soften, listen, and reconnect.</p>
+        <h2 class="reveal-on-scroll" data-animate="fade-up-delayed">Singing &amp; Facilitation</h2>
+        <p class="section-intro reveal-on-scroll delay-1" data-animate="fade-up-delayed">My voice work lives in circles, ceremonies, and small gatherings where people come to soften, listen, and reconnect.</p>
 
         <div class="card-grid">
-          <div class="service-card" data-animate="fade-up">
+          <div class="service-card reveal-on-scroll" data-animate="fade-up">
             <div class="service-title">I offer</div>
             <div class="service-label">Singing &amp; Facilitation</div>
             <ul>
@@ -1011,19 +1054,19 @@
       </div>
     </section>
 
-    <section id="cocreate">
+    <section id="cocreate" class="sand-section">
       <div class="wrap">
-        <h2 data-animate="fade-up-delayed">Co-Creative Projects</h2>
-        <p class="section-intro" data-animate="fade-up-delayed">Some of the most alive work happens in the overlap – where design, art, and song come together around a shared intention.</p>
-        <p data-animate="fade-up">I’m open to collaboration on:</p>
-        <ul data-animate="fade-up">
+        <h2 class="reveal-on-scroll" data-animate="fade-up-delayed">Co-Creative Projects</h2>
+        <p class="section-intro reveal-on-scroll delay-1" data-animate="fade-up-delayed">Some of the most alive work happens in the overlap – where design, art, and song come together around a shared intention.</p>
+        <p class="reveal-on-scroll" data-animate="fade-up">I’m open to collaboration on:</p>
+        <ul class="reveal-on-scroll" data-animate="fade-up">
           <li>Visual worlds and storytelling for creative projects</li>
           <li>Offerings that blend artwork, song, and ritual</li>
           <li>Seasonal and Earth-based projects that need both design and facilitation</li>
           <li>Quiet, long-term creative partnerships with aligned people and places</li>
         </ul>
-        <p data-animate="fade-up">If you feel a resonance, you’re welcome to write and share the seed of your idea.</p>
-        <p data-animate="fade-up"><a href="#contact">Share a project idea &raquo;</a></p>
+        <p class="reveal-on-scroll" data-animate="fade-up">If you feel a resonance, you’re welcome to write and share the seed of your idea.</p>
+        <p class="reveal-on-scroll" data-animate="fade-up"><a href="#contact">Share a project idea &raquo;</a></p>
       </div>
     </section>
 
@@ -1227,7 +1270,7 @@
     }
 
     // Scroll reveal using IntersectionObserver
-    const animated = document.querySelectorAll('[data-animate]');
+    const animated = document.querySelectorAll('[data-animate], .reveal-on-scroll');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
