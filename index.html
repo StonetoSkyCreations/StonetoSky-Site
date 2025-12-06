@@ -292,7 +292,11 @@
       padding: 76px 0 60px;
       position: relative;
       overflow: hidden;
-      background: radial-gradient(circle at 18% 0%, rgba(255, 248, 237, 0.95), transparent 52%);
+      background: linear-gradient(0deg, rgba(246, 241, 232, 0.8), rgba(246, 241, 232, 0.76)),
+        url('assets/images/spiral-of-life-background.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
     }
 
     .hero::before {
@@ -303,6 +307,16 @@
       pointer-events: none;
       transform: translateY(var(--hero-glow-offset, 0px));
       transition: transform 0.2s linear;
+      z-index: 0;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(246, 241, 232, 0.78), rgba(246, 241, 232, 0.72));
+      pointer-events: none;
+      z-index: 0;
     }
 
     .hero-inner {
@@ -922,12 +936,6 @@
             <div class="hero-eyebrow">Design · Art · Song</div>
             <h1>Design, art &amp; song rooted in the living world.</h1>
             <p>Stone to Sky is the home of my branding, art, and song – where design, illustration, and voice come together in service to beauty, depth, and the more-than-human world.</p>
-            <div class="hero-tags">
-              <em class="hero-highlight">Branding &amp; design</em>
-              <em class="hero-highlight">Artwork &amp; illustration</em>
-              <em class="hero-highlight">Singing &amp; facilitation</em>
-              <em class="hero-highlight">Co-creative projects</em>
-            </div>
             <a class="btn" href="#contact">Work With Me</a>
           </div>
         </div>
