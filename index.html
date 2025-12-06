@@ -337,19 +337,18 @@
     .hero-tags {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
+      gap: 12px;
       margin: 8px 0 18px;
+      font-style: italic;
+      color: var(--ink);
     }
 
-    .pill {
-      font-size: 11px;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      padding: 7px 12px;
-      border-radius: 999px;
-      background: var(--pill);
-      border: 1px solid var(--line);
-      color: var(--ink-soft);
+    .hero-highlight {
+      font-size: 15px;
+      padding: 0 6px 4px;
+      background: linear-gradient(180deg, rgba(240, 227, 213, 0) 0%, rgba(240, 227, 213, 0) 58%, rgba(240, 227, 213, 0.9) 58%, rgba(240, 227, 213, 0.7) 100%);
+      border-radius: 6px;
+      line-height: 1.5;
     }
 
     .btn {
@@ -924,10 +923,10 @@
             <h1>Design, art &amp; song rooted in the living world.</h1>
             <p>Stone to Sky is the home of my branding, art, and song – where design, illustration, and voice come together in service to beauty, depth, and the more-than-human world.</p>
             <div class="hero-tags">
-              <span class="pill">Branding &amp; design</span>
-              <span class="pill">Artwork &amp; illustration</span>
-              <span class="pill">Singing &amp; facilitation</span>
-              <span class="pill">Co-creative projects</span>
+              <em class="hero-highlight">Branding &amp; design</em>
+              <em class="hero-highlight">Artwork &amp; illustration</em>
+              <em class="hero-highlight">Singing &amp; facilitation</em>
+              <em class="hero-highlight">Co-creative projects</em>
             </div>
             <a class="btn" href="#contact">Work With Me</a>
           </div>
