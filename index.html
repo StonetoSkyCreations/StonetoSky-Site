@@ -161,24 +161,14 @@
       line-height: 1.7;
       color: var(--ink-soft);
       background-color: var(--bg);
+      background-image: url('assets/images/sand-background.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-position: center top;
       position: relative;
       min-height: 100vh;
       -webkit-font-smoothing: antialiased;
-    }
-
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background-image:
-        linear-gradient(180deg, rgba(255, 251, 244, 0.7) 0%, rgba(236, 221, 205, 0.9) 100%),
-        url('assets/images/sand-background.jpg');
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center top;
-      z-index: 0;
-      pointer-events: none;
-      transform: translateZ(0);
     }
 
     h1, h2, h3 {
@@ -470,11 +460,11 @@
     }
 
     section:nth-of-type(odd):not(.hero) {
-      background: rgba(239, 228, 214, 0.9);
+      background: rgba(239, 228, 214, 0.88);
     }
 
     section:nth-of-type(even) {
-      background: rgba(246, 241, 232, 0.9);
+      background: rgba(246, 241, 232, 0.88);
     }
 
     #branding,
@@ -485,7 +475,7 @@
     }
 
     section.deeper {
-      background: var(--bg-deep);
+      background: rgba(224, 210, 193, 0.9);
     }
 
     .section-heading {
