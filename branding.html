@@ -441,6 +441,10 @@
       margin-bottom: 10px;
     }
 
+    .project-gallery-wrapper {
+      position: relative;
+    }
+
     .project-gallery {
       position: relative;
       z-index: 1;
@@ -467,6 +471,45 @@
     .project-gallery::-webkit-scrollbar-thumb {
       background: rgba(171, 139, 105, 0.7);
       border-radius: 999px;
+    }
+
+    .gallery-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      border: 1px solid rgba(171, 139, 105, 0.4);
+      background: rgba(247, 239, 227, 0.4);
+      color: #4b3728;
+      font-size: 22px;
+      cursor: pointer;
+      transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+      z-index: 2;
+      backdrop-filter: blur(6px);
+    }
+
+    .gallery-nav:hover,
+    .gallery-nav:focus-visible {
+      background: rgba(247, 239, 227, 0.65);
+      border-color: rgba(171, 139, 105, 0.7);
+      transform: translateY(-50%) scale(1.02);
+      outline: none;
+    }
+
+    .gallery-nav:active {
+      transform: translateY(-50%) scale(0.98);
+    }
+
+    .gallery-nav.prev {
+      left: 8px;
+    }
+
+    .gallery-nav.next {
+      right: 8px;
     }
 
     .project-frame {
@@ -1026,19 +1069,26 @@
               <div class="service-title">Mumma Marama</div>
               <p class="service-text">Co-created a logo suite, symbols, and a tidal palette for a birthkeeper weaving embodiment and ceremony.</p>
             </div>
-            <div class="project-gallery">
-              <figure class="project-frame">
-                <img src="assets/images/MummaMarama-logoExample.jpg" alt="Mumma Marama primary logo on textured background" />
-              </figure>
-              <figure class="project-frame">
-                <img src="assets/images/MummaMarama-logo.png" alt="Mumma Marama stacked logo option" />
-              </figure>
-              <figure class="project-frame">
-                <img src="assets/images/MummaMarama-Branding.png" alt="Mumma Marama branding sheet with palette" />
-              </figure>
-              <figure class="project-frame">
-                <img src="assets/images/MummaMarama-flower.png" alt="Mumma Marama floral mark" />
-              </figure>
+            <div class="project-gallery-wrapper">
+              <button class="gallery-nav prev" aria-label="Previous Mumma Marama image" type="button">&#8249;</button>
+              <div class="project-gallery">
+                <figure class="project-frame">
+                  <img src="assets/images/MummaMarama-logoExample.jpg" alt="Mumma Marama primary logo on textured background" />
+                </figure>
+                <figure class="project-frame">
+                  <img src="assets/images/MummaMarama-logo.png" alt="Mumma Marama stacked logo option" />
+                </figure>
+                <figure class="project-frame">
+                  <img src="assets/images/MummaMarama-Branding.png" alt="Mumma Marama branding sheet with palette" />
+                </figure>
+                <figure class="project-frame">
+                  <img src="assets/images/MummaMarama-flower.png" alt="Mumma Marama floral mark" />
+                </figure>
+                <figure class="project-frame">
+                  <img src="assets/images/MummaMarama- ColorPallet-MoodBoard.jpg" alt="Mumma Marama colour palette and mood board" />
+                </figure>
+              </div>
+              <button class="gallery-nav next" aria-label="Next Mumma Marama image" type="button">&#8250;</button>
             </div>
           </article>
 
@@ -1048,16 +1098,20 @@
               <div class="service-title">Bee &amp; Ocean</div>
               <p class="service-text">Partnered on packaging-friendly marks, typography, and label applications for a honey and apothecary range inspired by ocean rhythms.</p>
             </div>
-            <div class="project-gallery">
-              <figure class="project-frame">
-                <img src="assets/images/BEE%20(8%20x%205%20cm).zip%20-%2013.PNG" alt="Bee &amp; Ocean label mockup on glass jar" />
-              </figure>
-              <figure class="project-frame">
-                <img src="assets/images/Bee%20%26%20Ocean%20black%20logo%20-%204.PNG" alt="Bee &amp; Ocean black line logo" />
-              </figure>
-              <figure class="project-frame">
-                <img src="assets/images/Bee%20%26%20Ocean%20font%20with%20logoPNG.PNG" alt="Bee &amp; Ocean wordmark with illustrated logo" />
-              </figure>
+            <div class="project-gallery-wrapper">
+              <button class="gallery-nav prev" aria-label="Previous Bee &amp; Ocean image" type="button">&#8249;</button>
+              <div class="project-gallery">
+                <figure class="project-frame">
+                  <img src="assets/images/BEE%20(8%20x%205%20cm).zip%20-%2013.PNG" alt="Bee &amp; Ocean label mockup on glass jar" />
+                </figure>
+                <figure class="project-frame">
+                  <img src="assets/images/Bee%20%26%20Ocean%20black%20logo%20-%204.PNG" alt="Bee &amp; Ocean black line logo" />
+                </figure>
+                <figure class="project-frame">
+                  <img src="assets/images/Bee%20%26%20Ocean%20font%20with%20logoPNG.PNG" alt="Bee &amp; Ocean wordmark with illustrated logo" />
+                </figure>
+              </div>
+              <button class="gallery-nav next" aria-label="Next Bee &amp; Ocean image" type="button">&#8250;</button>
             </div>
           </article>
         </div>
@@ -1149,6 +1203,23 @@
     });
 
     document.querySelectorAll('[data-animate]').forEach((el) => observer.observe(el));
+
+    // Gallery navigation buttons
+    document.querySelectorAll('.project-gallery-wrapper').forEach((wrapper) => {
+      const gallery = wrapper.querySelector('.project-gallery');
+      const prevBtn = wrapper.querySelector('.gallery-nav.prev');
+      const nextBtn = wrapper.querySelector('.gallery-nav.next');
+
+      if (!gallery || !prevBtn || !nextBtn) return;
+
+      const scrollGallery = (direction) => {
+        const scrollAmount = gallery.clientWidth * 0.9;
+        gallery.scrollBy({ left: scrollAmount * direction, behavior: 'smooth' });
+      };
+
+      prevBtn.addEventListener('click', () => scrollGallery(-1));
+      nextBtn.addEventListener('click', () => scrollGallery(1));
+    });
 
     // Poster tilt effect (if present)
     const poster = document.querySelector('.poster');
