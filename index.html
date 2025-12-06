@@ -161,10 +161,14 @@
       line-height: 1.7;
       color: var(--ink-soft);
       background-color: var(--bg);
-      background-image: url('assets/images/sand-background.jpg');
+      background-image:
+        linear-gradient(rgba(210, 180, 140, 0.55), rgba(222, 194, 158, 0.55)),
+        url('assets/images/sand-background.jpg');
+      background-blend-mode: multiply;
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center top;
+      background-attachment: fixed;
       -webkit-font-smoothing: antialiased;
     }
 
