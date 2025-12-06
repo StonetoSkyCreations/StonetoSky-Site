@@ -160,7 +160,11 @@
       font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
       line-height: 1.7;
       color: var(--ink-soft);
-      background: var(--bg);
+      background-color: var(--bg);
+      background-image: url('assets/images/sand-background.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center top;
       -webkit-font-smoothing: antialiased;
     }
 
@@ -452,33 +456,12 @@
       border-top: 1px solid rgba(221, 200, 177, 0.8);
     }
 
-    section.alt {
-      background: var(--bg-alt);
+    section:nth-of-type(odd):not(.hero) {
+      background: rgba(239, 228, 214, 0.9);
     }
 
-    .sand-section {
-      position: relative;
-      background: var(--bg-alt);
-      overflow: hidden;
-    }
-
-    .sand-section::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background-image: linear-gradient(rgba(246, 241, 232, 0.85), rgba(246, 241, 232, 0.82)),
-        url('/assets/images/sand-background.jpg');
-      background-size: cover;
-      background-position: center;
-      opacity: 0.7;
-      transform: scaleY(var(--sand-flip, 1));
-      transform-origin: center;
-      z-index: 0;
-    }
-
-    .sand-section > * {
-      position: relative;
-      z-index: 1;
+    section:nth-of-type(even) {
+      background: rgba(246, 241, 232, 0.9);
     }
 
     #branding,
@@ -486,22 +469,6 @@
     #singing,
     #cocreate {
       padding: 60px 0;
-    }
-
-    #branding {
-      --sand-flip: 1;
-    }
-
-    #artwork {
-      --sand-flip: -1;
-    }
-
-    #singing {
-      --sand-flip: 1;
-    }
-
-    #cocreate {
-      --sand-flip: -1;
     }
 
     section.deeper {
