@@ -4,10 +4,11 @@
   <meta charset="UTF-8" />
   <title>Stone to Sky – Branding Packages &amp; Design Support</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Branding packages, visual identities, and simple websites for soul-led projects across Aotearoa." />
+  <meta name="description" content="Brand design, illustration, and simple websites for community-led projects across Aotearoa. Explore packages, process, and portfolio by Stone to Sky." />
   <meta name="keywords" content="Stone to Sky branding, brand design pricing, logo design, web design New Zealand, visual identity" />
   <meta name="author" content="Stone to Sky" />
   <meta name="robots" content="index,follow" />
+  <meta name="theme-color" content="#c27a4f" />
   <link rel="icon" type="image/png" href="/assets/images/favicon-512.png" />
   <link rel="apple-touch-icon" href="/assets/images/favicon-512.png" />
   <link rel="canonical" href="https://stonetosky.nz/branding.html" />
@@ -29,20 +30,47 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Stone to Sky",
+      "url": "https://stonetosky.nz/",
+      "logo": "https://stonetosky.nz/assets/images/logo-stone-to-sky.png",
+      "sameAs": [
+        "https://www.instagram.com/stone.to.sky",
+        "https://www.facebook.com/stonetoskycreations/"
+      ],
+      "description": "Brand design, illustration, and simple websites for community-led projects across Aotearoa.",
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "contactType": "customer service",
+          "email": "brooke@stonetosky.nz",
+          "areaServed": "Aotearoa New Zealand",
+          "availableLanguage": [
+            "en-NZ",
+            "en"
+          ]
+        }
+      ],
+      "areaServed": "Aotearoa New Zealand"
+    }
+  </script>
   <style>
     :root {
-      --bg: #f6f1e8;
-      --bg-alt: #efe4d6;
-      --bg-deep: #e0d2c1;
-      --ink: #3c3128;
-      --ink-soft: #5a4a3d;
-      --accent: #c8a37a;
-      --accent-strong: #a1794f;
+      --bg: #f4eee6;
+      --bg-alt: #ede3d7;
+      --bg-deep: #e0d3c2;
+      --ink: #2f251c;
+      --ink-soft: #4a3b30;
+      --accent: #c27a4f;
+      --accent-strong: #9e5d34;
       --line: #ddc8b1;
-      --pill: #f0e3d5;
+      --pill: #f1e6d8;
       --radius-lg: 18px;
       --radius-xl: 28px;
-      --shadow-soft: 0 18px 40px rgba(40, 32, 24, 0.1);
+      --shadow-soft: 0 18px 40px rgba(36, 28, 22, 0.12);
     }
 
     * {
@@ -94,6 +122,25 @@
       max-width: 1080px;
       margin: 0 auto;
       padding: 0 20px;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: -999px;
+      top: 10px;
+      background: var(--accent);
+      color: var(--ink);
+      padding: 10px 14px;
+      border-radius: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 12px;
+      z-index: 100;
+    }
+
+    .skip-link:focus {
+      left: 16px;
+      outline: 2px solid var(--ink);
     }
 
     /* Header */
@@ -187,56 +234,134 @@
 
     /* Hero */
     .hero {
-      padding: 76px 0 60px;
+      padding: 90px 0 70px;
       position: relative;
       overflow: hidden;
-      background: radial-gradient(circle at 18% 0%, rgba(255, 248, 237, 0.95), transparent 52%);
+      background: linear-gradient(180deg, #f9f4ec 0%, #efe1d1 70%, #ead8c4 100%);
     }
 
-    .hero::before {
+    .hero::before,
+    .hero::after {
       content: "";
       position: absolute;
-      inset: -90px -70px auto;
-      background: radial-gradient(circle at 20% 0%, rgba(255, 248, 237, 0.75), transparent 60%);
+      inset: 0;
       pointer-events: none;
-      transform: translateY(var(--hero-glow-offset, 0px));
-      transition: transform 0.2s linear;
+      background: radial-gradient(circle at 20% 10%, rgba(255, 255, 255, 0.8), transparent 35%),
+                  radial-gradient(circle at 80% 0%, rgba(255, 237, 218, 0.7), transparent 30%);
+      mix-blend-mode: multiply;
+    }
+
+    .hero::after {
+      background: radial-gradient(circle at 70% 30%, rgba(194, 122, 79, 0.1), transparent 45%);
     }
 
     .hero-inner {
       position: relative;
       z-index: 1;
       display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-      gap: 36px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 32px;
       align-items: center;
     }
 
-    .hero-eyebrow {
-      font-size: 12px;
-      letter-spacing: 0.2em;
+    .hero-tagline {
+      font-size: 13px;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
-      color: var(--ink-soft);
-      margin-bottom: 10px;
+      color: var(--accent-strong);
+      margin-bottom: 16px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .hero-tagline::before {
+      content: "";
+      width: 32px;
+      height: 1px;
+      background: var(--accent-strong);
     }
 
     .hero h1 {
-      font-size: clamp(34px, 5vw, 46px);
+      font-size: clamp(34px, 5vw, 48px);
       line-height: 1.05;
       color: var(--ink);
-      margin-bottom: 12px;
+      margin-bottom: 16px;
+    }
+
+    .hero-copy {
+      max-width: 620px;
     }
 
     .hero p {
       font-size: 16px;
-      margin: 0 0 16px;
+      margin: 0 0 18px;
     }
 
-    .hero-tags {
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin: 20px 0 10px;
+    }
+
+    .hero-meta {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
-      margin: 8px 0 18px;
+      font-size: 13px;
+      color: var(--ink-soft);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .hero-visual {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.75), rgba(255, 245, 235, 0.85));
+      border: 1px solid rgba(200, 163, 122, 0.5);
+      border-radius: var(--radius-xl);
+      padding: 18px;
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-visual::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 80% 20%, rgba(194, 122, 79, 0.12), transparent 40%);
+      pointer-events: none;
+    }
+
+    .hero-visual h3 {
+      font-size: 18px;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .hero-visual p {
+      margin-bottom: 12px;
+      font-size: 14px;
+    }
+
+    .hero-visual .pill {
+      background: rgba(255, 255, 255, 0.7);
+      border-color: rgba(200, 163, 122, 0.6);
+    }
+
+    .hero-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 10px 0 12px;
+    }
+
+    .hero-note {
+      font-size: 13px;
+      color: var(--ink-soft);
+      margin: 0;
+    }
     }
 
     .pill {
@@ -276,6 +401,27 @@
     .btn:active {
       transform: translateY(0);
       box-shadow: 0 10px 22px rgba(84, 63, 41, 0.22);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 18px;
+      border-radius: 999px;
+      border: 1px solid var(--ink);
+      background: transparent;
+      font-size: 12px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--ink);
+      gap: 8px;
+      transition: background 0.15s ease-out, color 0.15s ease-out, box-shadow 0.12s ease-out;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(47, 37, 28, 0.08);
+      box-shadow: 0 10px 22px rgba(47, 37, 28, 0.18);
     }
 
     .hero-card {
@@ -335,6 +481,7 @@
     section {
       padding: 44px 0;
       border-top: 1px solid rgba(221, 200, 177, 0.8);
+      scroll-margin-top: 110px;
     }
 
     section.alt {
@@ -362,7 +509,7 @@
     .card-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 18px;
+      gap: 22px;
     }
 
     .service-card {
@@ -372,6 +519,16 @@
       border: 1px solid var(--line);
       box-shadow: 0 12px 24px rgba(60, 49, 40, 0.06);
       transition: transform 0.15s ease-out, box-shadow 0.15s ease-out;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 10% 0%, rgba(255, 255, 255, 0.45), transparent 40%);
+      pointer-events: none;
     }
 
     .service-card:hover {
@@ -726,6 +883,11 @@
     .faq-list {
       border-top: 1px solid var(--line);
       padding: 1rem 1.1rem 1.2rem;
+      display: none;
+    }
+
+    .faq-panel.open .faq-list {
+      display: block;
     }
 
     .faq-item + .faq-item {
@@ -913,6 +1075,7 @@
 
 </head>
 <body>
+  <a href="#main" class="skip-link">Skip to content</a>
   <header class="site-header">
     <div class="wrap nav">
       <a href="/index.html#top" class="brand" aria-label="Stone to Sky home">
@@ -922,36 +1085,56 @@
         </div>
       </a>
 
-      <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-navigation">
         <span></span>
         <span></span>
         <span></span>
       </button>
 
-      <nav class="nav-links" aria-label="Main navigation">
-        <a href="/index.html#about">About</a>
-        <a href="/index.html#branding">Home</a>
-        <a href="#packages">Packages</a>
+      <nav class="nav-links" id="primary-navigation" aria-label="Main navigation">
+        <a href="/index.html#top">Home</a>
+        <a href="#packages" aria-current="page">Packages</a>
         <a href="#process">Process</a>
         <a href="#portfolio">Portfolio</a>
+        <a href="#faq">FAQ</a>
         <a href="#contact" class="nav-cta">Contact</a>
         <a href="#social">Socials</a>
       </nav>
     </div>
   </header>
 
-  <main id="top">
+  <main id="main">
     <section class="hero">
       <div class="wrap">
         <div class="hero-inner" data-animate="fade-up">
-          <div>
+          <div class="hero-copy">
+            <div class="hero-tagline">Earth-led design support</div>
             <h1>Branding packages rooted in beauty, integrity, and Earth.</h1>
             <p>I create visual identities, illustration, and simple websites for soul-led businesses and community projects across Aotearoa.</p>
+            <div class="hero-actions">
+              <a class="btn" href="#packages">View packages</a>
+              <a class="btn-secondary" href="#portfolio">See recent work</a>
+            </div>
+            <div class="hero-meta">
+              <span>Ōtautahi based</span>
+              <span>Co-creative process</span>
+              <span>Guided collaboration</span>
+            </div>
+          </div>
+
+          <div class="hero-visual">
+            <h3>Design support</h3>
+            <p>Strategy, visuals, and rollout for brands that nourish community—crafted with care and grounded storytelling.</p>
+            <div class="hero-pills">
+              <span class="pill">Brand identities</span>
+              <span class="pill">Illustrated assets</span>
+              <span class="pill">Lightweight web builds</span>
+            </div>
+            <p class="hero-note">Available for collaborations across Aotearoa.</p>
           </div>
         </div>
       </div>
     </section>
-
     <section id="packages" class="alt">
       <div class="wrap">
         <div class="section-heading" data-animate="fade-up">Packages</div>
@@ -1060,6 +1243,66 @@
               <li>Lightweight brand notes</li>
               <li>Options for website creation and support</li>
             </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="wrap">
+        <div class="section-heading" data-animate="fade-up">FAQ</div>
+        <h2 data-animate="fade-up-delayed">Answers to common questions</h2>
+        <p class="section-intro" data-animate="fade-up-delayed">A quick overview of timelines, collaboration, and how we’ll work together on your brand.</p>
+
+        <div class="faq-panel" data-animate="fade-up">
+          <button class="faq-toggle" type="button" aria-expanded="false">
+            <span>How long do projects take?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-list">
+            <div class="faq-item">
+              <h3>How long do projects take?</h3>
+              <p>Logo design runs about 2 weeks, the essential brand setup is 2–4 weeks, social suites are 6–8 weeks, and full branding is 8–10 weeks. We’ll confirm milestones together before we begin.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-panel" data-animate="fade-up-delayed">
+          <button class="faq-toggle" type="button" aria-expanded="false">
+            <span>How collaborative is the process?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-list">
+            <div class="faq-item">
+              <h3>How collaborative is the process?</h3>
+              <p>It’s co-creative. We begin with discovery, moodboards, and brand story work, then move through rounds of feedback until it feels like a full yes.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-panel" data-animate="fade-up">
+          <button class="faq-toggle" type="button" aria-expanded="false">
+            <span>Do you work with remote teams?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-list">
+            <div class="faq-item">
+              <h3>Do you work with remote teams?</h3>
+              <p>Yes. Most projects are remote, with check-ins via email and video. If you’re local to Ōtautahi we can also meet in person.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-panel" data-animate="fade-up-delayed">
+          <button class="faq-toggle" type="button" aria-expanded="false">
+            <span>How do we start?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-list">
+            <div class="faq-item">
+              <h3>How do we start?</h3>
+              <p>Send a note through the contact form with your timeline and what you need support with. I’ll reply with a fit-check, proposed scope, and next steps.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -1213,6 +1456,47 @@
     </section>
   </main>
 
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How long do projects take?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Logo design typically takes 2 weeks, the essential brand setup is 2–4 weeks, social suites are 6–8 weeks, and full branding runs 8–10 weeks depending on scope."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How collaborative is the process?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The process is co-creative with discovery, moodboards, and brand story work followed by feedback rounds until it feels like a full yes."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you work with remote teams?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Most projects are remote with check-ins via email and video, with in-person options in Ōtautahi when helpful."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do we start?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Share your timeline and needs via the contact form and you'll receive a fit-check, proposed scope, and next steps."
+          }
+        }
+      ]
+    }
+  </script>
+
   <footer>
     <div class="wrap footer-inner">
       <div>&copy; <span id="year"></span> Stone to Sky. All rights reserved.</div>
@@ -1238,6 +1522,16 @@
         }
       });
     }
+
+    // FAQ accordions
+    document.querySelectorAll('.faq-panel').forEach((panel) => {
+      const toggle = panel.querySelector('.faq-toggle');
+      if (!toggle) return;
+      toggle.addEventListener('click', () => {
+        const isOpen = panel.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', String(isOpen));
+      });
+    });
 
     // Scroll reveal using IntersectionObserver
     const observer = new IntersectionObserver((entries) => {
