@@ -605,31 +605,96 @@
       position: relative;
     }
 
-    .project-media-grid {
+    .project-gallery {
       position: relative;
-      z-index: 1;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      gap: 12px;
-      margin-top: 10px;
-    }
-
-    .project-frame {
       background: linear-gradient(145deg, #f7efe2, #ead9c6);
-      border-radius: var(--radius-lg);
+      border-radius: var(--radius-xl);
       border: 1px solid rgba(200, 163, 122, 0.5);
       box-shadow: 0 14px 28px rgba(60, 49, 40, 0.09);
       overflow: hidden;
-      position: relative;
+      min-height: 320px;
       display: grid;
       place-items: center;
-      min-height: 200px;
+    }
+
+    .project-slide {
+      width: 100%;
+      height: 100%;
+      display: none;
+    }
+
+    .project-slide.is-active {
+      display: grid;
+    }
+
+    .project-frame {
+      width: 100%;
+      height: 100%;
+      aspect-ratio: 4 / 3;
+      display: grid;
+      place-items: center;
+      padding: 12px;
+      background: radial-gradient(circle at 80% 0%, rgba(255, 255, 255, 0.65), transparent 55%);
     }
 
     .project-frame img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain;
+      display: block;
+    }
+
+    .gallery-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      border: 1px solid rgba(171, 139, 105, 0.4);
+      background: rgba(247, 239, 227, 0.78);
+      color: #4b3728;
+      font-size: 22px;
+      cursor: pointer;
+      transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+      z-index: 2;
+      backdrop-filter: blur(6px);
+    }
+
+    .gallery-nav:hover,
+    .gallery-nav:focus-visible {
+      background: rgba(247, 239, 227, 0.9);
+      border-color: rgba(171, 139, 105, 0.7);
+      transform: translateY(-50%) scale(1.02);
+      outline: none;
+    }
+
+    .gallery-nav:active {
+      transform: translateY(-50%) scale(0.98);
+    }
+
+    .gallery-nav.prev {
+      left: 10px;
+    }
+
+    .gallery-nav.next {
+      right: 10px;
+    }
+
+    .gallery-counter {
+      position: absolute;
+      right: 14px;
+      bottom: 12px;
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(246, 241, 232, 0.9);
+      border: 1px solid rgba(200, 163, 122, 0.5);
+      color: var(--ink-soft);
     }
 
     /* Artwork scrollytelling */
@@ -1260,28 +1325,47 @@
               <div class="service-title">Mumma Marama</div>
               <p class="service-text">Co-created a logo suite, symbols, and a tidal palette for a birthkeeper weaving embodiment and ceremony.</p>
             </div>
-            <div class="project-media-grid">
-              <figure class="project-frame">
-                <img src="assets/images/MummaMarama-logoExample.jpg" alt="Mumma Marama primary logo on textured background" loading="lazy" />
-              </figure>
-              <figure class="project-frame">
-                <img src="assets/images/MummaMarama-Branding.png" alt="Mumma Marama branding sheet with palette" loading="lazy" />
-              </figure>
-              <figure class="project-frame">
-                <img src="assets/images/mumma%20marama%20light%20logo.PNG" alt="Mumma Marama light logo variant" loading="lazy" />
-              </figure>
-              <figure class="project-frame">
-                <img src="assets/images/mumma%20marama%20ocean%20logo.PNG" alt="Mumma Marama ocean logo variation" loading="lazy" />
-              </figure>
-              <figure class="project-frame">
-                <img src="assets/images/MummaMarama-logo.png" alt="Mumma Marama stacked logo option" loading="lazy" />
-              </figure>
-              <figure class="project-frame">
-                <img src="assets/images/mumma%20marama%20logo%20red%20flower.PNG" alt="Mumma Marama red flower logo" loading="lazy" />
-              </figure>
-              <figure class="project-frame">
-                <img src="assets/images/MummaMarama-%20ColorPallet-MoodBoard.jpg" alt="Mumma Marama colour palette and mood board" loading="lazy" />
-              </figure>
+            <div class="project-gallery-wrapper">
+              <button class="gallery-nav prev" aria-label="Previous Mumma Marama image" type="button">&#8249;</button>
+              <div class="project-gallery">
+                <figure class="project-slide is-active">
+                  <div class="project-frame">
+                    <img src="assets/images/MummaMarama-logoExample.jpg" alt="Mumma Marama primary logo on textured background" loading="lazy" />
+                  </div>
+                </figure>
+                <figure class="project-slide">
+                  <div class="project-frame">
+                    <img src="assets/images/MummaMarama-Branding.png" alt="Mumma Marama branding sheet with palette" loading="lazy" />
+                  </div>
+                </figure>
+                <figure class="project-slide">
+                  <div class="project-frame">
+                    <img src="assets/images/MummaMarama-logo.png" alt="Mumma Marama stacked logo option" loading="lazy" />
+                  </div>
+                </figure>
+                <figure class="project-slide">
+                  <div class="project-frame">
+                    <img src="assets/images/mumma%20marama%20ocean%20logo.PNG" alt="Mumma Marama ocean logo variation" loading="lazy" />
+                  </div>
+                </figure>
+                <figure class="project-slide">
+                  <div class="project-frame">
+                    <img src="assets/images/mumma%20marama%20light%20logo.PNG" alt="Mumma Marama light logo variant" loading="lazy" />
+                  </div>
+                </figure>
+                <figure class="project-slide">
+                  <div class="project-frame">
+                    <img src="assets/images/MummaMarama-%20ColorPallet-MoodBoard.jpg" alt="Mumma Marama colour palette and mood board" loading="lazy" />
+                  </div>
+                </figure>
+                <figure class="project-slide">
+                  <div class="project-frame">
+                    <img src="assets/images/mumma%20marama%20logo%20red%20flower.PNG" alt="Mumma Marama red flower logo" loading="lazy" />
+                  </div>
+                </figure>
+              </div>
+              <div class="gallery-counter" aria-live="polite">1/7</div>
+              <button class="gallery-nav next" aria-label="Next Mumma Marama image" type="button">&#8250;</button>
             </div>
           </article>
 
@@ -1291,28 +1375,47 @@
               <div class="service-title">Bee &amp; Ocean</div>
               <p class="service-text">Packaging-friendly marks, typography, and social templates for a honey and apothecary range inspired by ocean rhythms.</p>
             </div>
-            <div class="project-media-grid">
-              <figure class="project-frame">
-                <img src="assets/images/BEE%20(8%20x%205%20cm).zip%20-%2013.PNG" alt="Bee &amp; Ocean label mockup on glass jar" loading="lazy" />
-              </figure>
-              <figure class="project-frame">
-                <img src="assets/images/Bee%20%26%20Ocean%20font%20with%20logoPNG.PNG" alt="Bee &amp; Ocean wordmark with illustrated logo" loading="lazy" />
-              </figure>
-              <figure class="project-frame">
-                <img src="assets/images/Bee%20%26%20Ocean%20logo.PNG" alt="Bee &amp; Ocean primary logo on light background" loading="lazy" />
-              </figure>
-              <figure class="project-frame">
-                <img src="assets/images/Bee%20%26%20Ocean.%204%20colour%20palettePNG.PNG" alt="Bee &amp; Ocean colour palette options" loading="lazy" />
-              </figure>
-              <figure class="project-frame">
-                <img src="assets/images/bee%20%26%20ocean%20labels.PNG" alt="Bee &amp; Ocean product label designs" loading="lazy" />
-              </figure>
-              <figure class="project-frame">
-                <img src="assets/images/Bee%20%26%20Ocean%20honey%20and%20ocean%20social%20media%2022.PNG" alt="Bee &amp; Ocean social media template example" loading="lazy" />
-              </figure>
-              <figure class="project-frame">
-                <img src="assets/images/Bee%20%26%20Ocean%20logo%20submark%20PNG.PNG" alt="Bee &amp; Ocean submark on beige" loading="lazy" />
-              </figure>
+            <div class="project-gallery-wrapper">
+              <button class="gallery-nav prev" aria-label="Previous Bee &amp; Ocean image" type="button">&#8249;</button>
+              <div class="project-gallery">
+                <figure class="project-slide is-active">
+                  <div class="project-frame">
+                    <img src="assets/images/BEE%20(8%20x%205%20cm).zip%20-%2013.PNG" alt="Bee &amp; Ocean label mockup on glass jar" loading="lazy" />
+                  </div>
+                </figure>
+                <figure class="project-slide">
+                  <div class="project-frame">
+                    <img src="assets/images/Bee%20%26%20Ocean%20font%20with%20logoPNG.PNG" alt="Bee &amp; Ocean wordmark with illustrated logo" loading="lazy" />
+                  </div>
+                </figure>
+                <figure class="project-slide">
+                  <div class="project-frame">
+                    <img src="assets/images/Bee%20%26%20Ocean%20logo.PNG" alt="Bee &amp; Ocean primary logo on light background" loading="lazy" />
+                  </div>
+                </figure>
+                <figure class="project-slide">
+                  <div class="project-frame">
+                    <img src="assets/images/Bee%20%26%20Ocean.%204%20colour%20palettePNG.PNG" alt="Bee &amp; Ocean colour palette options" loading="lazy" />
+                  </div>
+                </figure>
+                <figure class="project-slide">
+                  <div class="project-frame">
+                    <img src="assets/images/bee%20%26%20ocean%20labels.PNG" alt="Bee &amp; Ocean product label designs" loading="lazy" />
+                  </div>
+                </figure>
+                <figure class="project-slide">
+                  <div class="project-frame">
+                    <img src="assets/images/Bee%20%26%20Ocean%20honey%20and%20ocean%20social%20media%2022.PNG" alt="Bee &amp; Ocean social media template example" loading="lazy" />
+                  </div>
+                </figure>
+                <figure class="project-slide">
+                  <div class="project-frame">
+                    <img src="assets/images/Bee%20%26%20Ocean%20logo%20submark%20PNG.PNG" alt="Bee &amp; Ocean submark on beige" loading="lazy" />
+                  </div>
+                </figure>
+              </div>
+              <div class="gallery-counter" aria-live="polite">1/7</div>
+              <button class="gallery-nav next" aria-label="Next Bee &amp; Ocean image" type="button">&#8250;</button>
             </div>
           </article>
 
@@ -1322,31 +1425,52 @@
               <div class="service-title">Homegrown</div>
               <p class="service-text">Community-led project turning surplus produce into meals for the community, paired with social templates that keep the story cohesive.</p>
             </div>
-            <div class="project-media-grid">
-              <figure class="project-frame">
-                <img src="assets/images/Homegrown%20brand%20template.zip%20-%2043.PNG" alt="Homegrown social brand template layout" loading="lazy" />
-              </figure>
-              <figure class="project-frame">
-                <img src="assets/images/Homegrown%20branding%20s.zip%20-%2044.PNG" alt="Homegrown branding sheet with typography and imagery" loading="lazy" />
-              </figure>
-              <figure class="project-frame">
-                <img src="assets/images/Homegrown%20poster%20design.zip%20-%2037.PNG" alt="Homegrown poster design showcasing community message" loading="lazy" />
-              </figure>
-              <figure class="project-frame">
-                <img src="assets/images/Homegrown%20scoal%20media%20template.zip%20-%2045.PNG" alt="Homegrown social media template with produce imagery" loading="lazy" />
-              </figure>
-              <figure class="project-frame">
-                <img src="assets/images/Homegrown%20social%20media%20template%20.zip%20-%2038.PNG" alt="Homegrown social tile example" loading="lazy" />
-              </figure>
-              <figure class="project-frame">
-                <img src="assets/images/Homegrown%20colour%20palette%20zip%20-%2022.PNG" alt="Homegrown colour palette with swatches" loading="lazy" />
-              </figure>
-              <figure class="project-frame">
-                <img src="assets/images/homegrown%20colour%20palette.jpg.JPG" alt="Homegrown printed colour palette" loading="lazy" />
-              </figure>
-              <figure class="project-frame">
-                <img src="assets/images/homegrown%20logo%20(A3).zip%20-%2015.PNG" alt="Homegrown logo mark and wordmark" loading="lazy" />
-              </figure>
+            <div class="project-gallery-wrapper">
+              <button class="gallery-nav prev" aria-label="Previous Homegrown image" type="button">&#8249;</button>
+              <div class="project-gallery">
+                <figure class="project-slide is-active">
+                  <div class="project-frame">
+                    <img src="assets/images/Homegrown%20brand%20template.zip%20-%2043.PNG" alt="Homegrown social brand template layout" loading="lazy" />
+                  </div>
+                </figure>
+                <figure class="project-slide">
+                  <div class="project-frame">
+                    <img src="assets/images/Homegrown%20branding%20s.zip%20-%2044.PNG" alt="Homegrown branding sheet with typography and imagery" loading="lazy" />
+                  </div>
+                </figure>
+                <figure class="project-slide">
+                  <div class="project-frame">
+                    <img src="assets/images/Homegrown%20poster%20design.zip%20-%2037.PNG" alt="Homegrown poster design showcasing community message" loading="lazy" />
+                  </div>
+                </figure>
+                <figure class="project-slide">
+                  <div class="project-frame">
+                    <img src="assets/images/Homegrown%20scoal%20media%20template.zip%20-%2045.PNG" alt="Homegrown social media template with produce imagery" loading="lazy" />
+                  </div>
+                </figure>
+                <figure class="project-slide">
+                  <div class="project-frame">
+                    <img src="assets/images/Homegrown%20social%20media%20template%20.zip%20-%2038.PNG" alt="Homegrown social tile example" loading="lazy" />
+                  </div>
+                </figure>
+                <figure class="project-slide">
+                  <div class="project-frame">
+                    <img src="assets/images/Homegrown%20colour%20palette%20zip%20-%2022.PNG" alt="Homegrown colour palette with swatches" loading="lazy" />
+                  </div>
+                </figure>
+                <figure class="project-slide">
+                  <div class="project-frame">
+                    <img src="assets/images/homegrown%20colour%20palette.jpg.JPG" alt="Homegrown printed colour palette" loading="lazy" />
+                  </div>
+                </figure>
+                <figure class="project-slide">
+                  <div class="project-frame">
+                    <img src="assets/images/homegrown%20logo%20(A3).zip%20-%2015.PNG" alt="Homegrown logo mark and wordmark" loading="lazy" />
+                  </div>
+                </figure>
+              </div>
+              <div class="gallery-counter" aria-live="polite">1/8</div>
+              <button class="gallery-nav next" aria-label="Next Homegrown image" type="button">&#8250;</button>
             </div>
           </article>
 
@@ -1356,22 +1480,37 @@
               <div class="service-title">Cacao Rituals</div>
               <p class="service-text">Handcrafted cacao brand with earthy iconography, submarks, and packaging visuals for ritual-ready offerings.</p>
             </div>
-            <div class="project-media-grid">
-              <figure class="project-frame">
-                <img src="assets/images/Cacao%20branding%20logo%20dark%20background(2551%20x%203950%20px).zip%20-%207.jpg" alt="Cacao logo on dark background with gold detailing" loading="lazy" />
-              </figure>
-              <figure class="project-frame">
-                <img src="assets/images/cacao%20logo%20brand%20submark.PNG" alt="Cacao submark on parchment texture" loading="lazy" />
-              </figure>
-              <figure class="project-frame">
-                <img src="assets/images/logo%20cacao.JPG" alt="Cacao hand-drawn logo sketch" loading="lazy" />
-              </figure>
-              <figure class="project-frame">
-                <img src="assets/images/cacao-logo.JPG" alt="Cacao logo on kraft paper" loading="lazy" />
-              </figure>
-              <figure class="project-frame">
-                <img src="assets/images/logo%20image%20brown%20and%20gold.JPG" alt="Cacao gold foil logo variation" loading="lazy" />
-              </figure>
+            <div class="project-gallery-wrapper">
+              <button class="gallery-nav prev" aria-label="Previous Cacao Rituals image" type="button">&#8249;</button>
+              <div class="project-gallery">
+                <figure class="project-slide is-active">
+                  <div class="project-frame">
+                    <img src="assets/images/Cacao%20branding%20logo%20dark%20background(2551%20x%203950%20px).zip%20-%207.jpg" alt="Cacao logo on dark background with gold detailing" loading="lazy" />
+                  </div>
+                </figure>
+                <figure class="project-slide">
+                  <div class="project-frame">
+                    <img src="assets/images/cacao%20logo%20brand%20submark.PNG" alt="Cacao submark on parchment texture" loading="lazy" />
+                  </div>
+                </figure>
+                <figure class="project-slide">
+                  <div class="project-frame">
+                    <img src="assets/images/logo%20cacao.JPG" alt="Cacao hand-drawn logo sketch" loading="lazy" />
+                  </div>
+                </figure>
+                <figure class="project-slide">
+                  <div class="project-frame">
+                    <img src="assets/images/cacao-logo.JPG" alt="Cacao logo on kraft paper" loading="lazy" />
+                  </div>
+                </figure>
+                <figure class="project-slide">
+                  <div class="project-frame">
+                    <img src="assets/images/logo%20image%20brown%20and%20gold.JPG" alt="Cacao gold foil logo variation" loading="lazy" />
+                  </div>
+                </figure>
+              </div>
+              <div class="gallery-counter" aria-live="polite">1/5</div>
+              <button class="gallery-nav next" aria-label="Next Cacao Rituals image" type="button">&#8250;</button>
             </div>
           </article>
         </div>
@@ -1517,19 +1656,23 @@
 
     // Gallery navigation buttons
     document.querySelectorAll('.project-gallery-wrapper').forEach((wrapper) => {
-      const gallery = wrapper.querySelector('.project-gallery');
+      const slides = wrapper.querySelectorAll('.project-slide');
       const prevBtn = wrapper.querySelector('.gallery-nav.prev');
       const nextBtn = wrapper.querySelector('.gallery-nav.next');
+      const counter = wrapper.querySelector('.gallery-counter');
 
-      if (!gallery || !prevBtn || !nextBtn) return;
+      if (!slides.length || !prevBtn || !nextBtn) return;
 
-      const scrollGallery = (direction) => {
-        const scrollAmount = gallery.clientWidth * 0.9;
-        gallery.scrollBy({ left: scrollAmount * direction, behavior: 'smooth' });
+      let index = 0;
+      const showSlide = (nextIndex) => {
+        index = (nextIndex + slides.length) % slides.length;
+        slides.forEach((slide, i) => slide.classList.toggle('is-active', i === index));
+        if (counter) counter.textContent = `${index + 1}/${slides.length}`;
       };
 
-      prevBtn.addEventListener('click', () => scrollGallery(-1));
-      nextBtn.addEventListener('click', () => scrollGallery(1));
+      showSlide(0);
+      prevBtn.addEventListener('click', () => showSlide(index - 1));
+      nextBtn.addEventListener('click', () => showSlide(index + 1));
     });
 
     // Poster tilt effect (if present)
