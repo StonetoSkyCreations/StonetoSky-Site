@@ -605,75 +605,16 @@
       position: relative;
     }
 
-    .project-gallery {
+    .project-media-grid {
       position: relative;
       z-index: 1;
       display: grid;
-      grid-auto-flow: column;
-      grid-auto-columns: minmax(100%, 1fr);
-      gap: 14px;
-      overflow-x: auto;
-      padding: 6px 6px 10px 6px;
-      scroll-snap-type: x mandatory;
-      scrollbar-width: thin;
-      scrollbar-color: rgba(171, 139, 105, 0.7) rgba(246, 241, 232, 0.6);
-    }
-
-    .project-gallery::-webkit-scrollbar {
-      height: 8px;
-    }
-
-    .project-gallery::-webkit-scrollbar-track {
-      background: rgba(246, 241, 232, 0.7);
-      border-radius: 999px;
-    }
-
-    .project-gallery::-webkit-scrollbar-thumb {
-      background: rgba(171, 139, 105, 0.7);
-      border-radius: 999px;
-    }
-
-    .gallery-nav {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 42px;
-      height: 42px;
-      display: grid;
-      place-items: center;
-      border-radius: 50%;
-      border: 1px solid rgba(171, 139, 105, 0.4);
-      background: rgba(247, 239, 227, 0.4);
-      color: #4b3728;
-      font-size: 22px;
-      cursor: pointer;
-      transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
-      z-index: 2;
-      backdrop-filter: blur(6px);
-    }
-
-    .gallery-nav:hover,
-    .gallery-nav:focus-visible {
-      background: rgba(247, 239, 227, 0.65);
-      border-color: rgba(171, 139, 105, 0.7);
-      transform: translateY(-50%) scale(1.02);
-      outline: none;
-    }
-
-    .gallery-nav:active {
-      transform: translateY(-50%) scale(0.98);
-    }
-
-    .gallery-nav.prev {
-      left: 8px;
-    }
-
-    .gallery-nav.next {
-      right: 8px;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 12px;
+      margin-top: 10px;
     }
 
     .project-frame {
-      scroll-snap-align: start;
       background: linear-gradient(145deg, #f7efe2, #ead9c6);
       border-radius: var(--radius-lg);
       border: 1px solid rgba(200, 163, 122, 0.5);
@@ -682,15 +623,13 @@
       position: relative;
       display: grid;
       place-items: center;
-      min-height: 320px;
+      min-height: 200px;
     }
 
-    .project-frame figcaption {
-      font-size: 12px;
-      padding: 10px 12px;
-      color: var(--ink-soft);
-      background: rgba(246, 241, 232, 0.96);
-      border-top: 1px solid rgba(221, 200, 177, 0.8);
+    .project-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
     /* Artwork scrollytelling */
@@ -1321,49 +1260,59 @@
               <div class="service-title">Mumma Marama</div>
               <p class="service-text">Co-created a logo suite, symbols, and a tidal palette for a birthkeeper weaving embodiment and ceremony.</p>
             </div>
-            <div class="project-gallery-wrapper">
-              <button class="gallery-nav prev" aria-label="Previous Mumma Marama image" type="button">&#8249;</button>
-              <div class="project-gallery">
-                <figure class="project-frame">
-                  <img src="assets/images/MummaMarama-logoExample.jpg" alt="Mumma Marama primary logo on textured background" />
-                </figure>
-                <figure class="project-frame">
-                  <img src="assets/images/MummaMarama-logo.png" alt="Mumma Marama stacked logo option" />
-                </figure>
-                <figure class="project-frame">
-                  <img src="assets/images/MummaMarama-Branding.png" alt="Mumma Marama branding sheet with palette" />
-                </figure>
-                <figure class="project-frame">
-                  <img src="assets/images/MummaMarama-flower.png" alt="Mumma Marama floral mark" />
-                </figure>
-                <figure class="project-frame">
-                  <img src="assets/images/MummaMarama- ColorPallet-MoodBoard.jpg" alt="Mumma Marama colour palette and mood board" />
-                </figure>
-              </div>
-              <button class="gallery-nav next" aria-label="Next Mumma Marama image" type="button">&#8250;</button>
+            <div class="project-media-grid">
+              <figure class="project-frame">
+                <img src="assets/images/MummaMarama-logoExample.jpg" alt="Mumma Marama primary logo on textured background" loading="lazy" />
+              </figure>
+              <figure class="project-frame">
+                <img src="assets/images/MummaMarama-Branding.png" alt="Mumma Marama branding sheet with palette" loading="lazy" />
+              </figure>
+              <figure class="project-frame">
+                <img src="assets/images/mumma%20marama%20light%20logo.PNG" alt="Mumma Marama light logo variant" loading="lazy" />
+              </figure>
+              <figure class="project-frame">
+                <img src="assets/images/mumma%20marama%20ocean%20logo.PNG" alt="Mumma Marama ocean logo variation" loading="lazy" />
+              </figure>
+              <figure class="project-frame">
+                <img src="assets/images/MummaMarama-logo.png" alt="Mumma Marama stacked logo option" loading="lazy" />
+              </figure>
+              <figure class="project-frame">
+                <img src="assets/images/mumma%20marama%20logo%20red%20flower.PNG" alt="Mumma Marama red flower logo" loading="lazy" />
+              </figure>
+              <figure class="project-frame">
+                <img src="assets/images/MummaMarama-%20ColorPallet-MoodBoard.jpg" alt="Mumma Marama colour palette and mood board" loading="lazy" />
+              </figure>
             </div>
           </article>
 
           <article class="project-card" data-animate="fade-up-delayed">
             <div class="project-header">
-              <div class="project-label">Brand &amp; product design</div>
+              <div class="project-label">Brand &amp; packaging design</div>
               <div class="service-title">Bee &amp; Ocean</div>
-              <p class="service-text">Partnered on packaging-friendly marks, typography, and label applications for a honey and apothecary range inspired by ocean rhythms.</p>
+              <p class="service-text">Packaging-friendly marks, typography, and social templates for a honey and apothecary range inspired by ocean rhythms.</p>
             </div>
-            <div class="project-gallery-wrapper">
-              <button class="gallery-nav prev" aria-label="Previous Bee &amp; Ocean image" type="button">&#8249;</button>
-              <div class="project-gallery">
-                <figure class="project-frame">
-                  <img src="assets/images/BEE%20(8%20x%205%20cm).zip%20-%2013.PNG" alt="Bee &amp; Ocean label mockup on glass jar" />
-                </figure>
-                <figure class="project-frame">
-                  <img src="assets/images/Bee%20%26%20Ocean%20black%20logo%20-%204.PNG" alt="Bee &amp; Ocean black line logo" />
-                </figure>
-                <figure class="project-frame">
-                  <img src="assets/images/Bee%20%26%20Ocean%20font%20with%20logoPNG.PNG" alt="Bee &amp; Ocean wordmark with illustrated logo" />
-                </figure>
-              </div>
-              <button class="gallery-nav next" aria-label="Next Bee &amp; Ocean image" type="button">&#8250;</button>
+            <div class="project-media-grid">
+              <figure class="project-frame">
+                <img src="assets/images/BEE%20(8%20x%205%20cm).zip%20-%2013.PNG" alt="Bee &amp; Ocean label mockup on glass jar" loading="lazy" />
+              </figure>
+              <figure class="project-frame">
+                <img src="assets/images/Bee%20%26%20Ocean%20font%20with%20logoPNG.PNG" alt="Bee &amp; Ocean wordmark with illustrated logo" loading="lazy" />
+              </figure>
+              <figure class="project-frame">
+                <img src="assets/images/Bee%20%26%20Ocean%20logo.PNG" alt="Bee &amp; Ocean primary logo on light background" loading="lazy" />
+              </figure>
+              <figure class="project-frame">
+                <img src="assets/images/Bee%20%26%20Ocean.%204%20colour%20palettePNG.PNG" alt="Bee &amp; Ocean colour palette options" loading="lazy" />
+              </figure>
+              <figure class="project-frame">
+                <img src="assets/images/bee%20%26%20ocean%20labels.PNG" alt="Bee &amp; Ocean product label designs" loading="lazy" />
+              </figure>
+              <figure class="project-frame">
+                <img src="assets/images/Bee%20%26%20Ocean%20honey%20and%20ocean%20social%20media%2022.PNG" alt="Bee &amp; Ocean social media template example" loading="lazy" />
+              </figure>
+              <figure class="project-frame">
+                <img src="assets/images/Bee%20%26%20Ocean%20logo%20submark%20PNG.PNG" alt="Bee &amp; Ocean submark on beige" loading="lazy" />
+              </figure>
             </div>
           </article>
 
@@ -1373,38 +1322,56 @@
               <div class="service-title">Homegrown</div>
               <p class="service-text">Community-led project turning surplus produce into meals for the community, paired with social templates that keep the story cohesive.</p>
             </div>
-            <div class="project-gallery-wrapper">
-              <button class="gallery-nav prev" aria-label="Previous Homegrown image" type="button">&#8249;</button>
-              <div class="project-gallery">
-                <figure class="project-frame">
-                  <img src="assets/images/Homegrown%20brand%20template.zip%20-%2043.PNG" alt="Homegrown social brand template layout" />
-                </figure>
-                <figure class="project-frame">
-                  <img src="assets/images/Homegrown%20branding%20s.zip%20-%2044.PNG" alt="Homegrown branding sheet with typography and imagery" />
-                </figure>
-                <figure class="project-frame">
-                  <img src="assets/images/Homegrown%20colour%20palette%202.zip%20-%2035.PNG" alt="Homegrown colour palette variation" />
-                </figure>
-                <figure class="project-frame">
-                  <img src="assets/images/Homegrown%20colour%20palette%20zip%20-%2022.PNG" alt="Homegrown colour palette with swatches" />
-                </figure>
-                <figure class="project-frame">
-                  <img src="assets/images/Homegrown%20poster%20design.zip%20-%2037.PNG" alt="Homegrown poster design showcasing community message" />
-                </figure>
-                <figure class="project-frame">
-                  <img src="assets/images/Homegrown%20scoal%20media%20template.zip%20-%2045.PNG" alt="Homegrown social media template with produce imagery" />
-                </figure>
-                <figure class="project-frame">
-                  <img src="assets/images/Homegrown%20social%20media%20template%20.zip%20-%2038.PNG" alt="Homegrown social tile example" />
-                </figure>
-                <figure class="project-frame">
-                  <img src="assets/images/homegrown%20colour%20palette.jpg.JPG" alt="Homegrown printed colour palette" />
-                </figure>
-                <figure class="project-frame">
-                  <img src="assets/images/homegrown%20logo%20(A3).zip%20-%2015.PNG" alt="Homegrown logo mark and wordmark" />
-                </figure>
-              </div>
-              <button class="gallery-nav next" aria-label="Next Homegrown image" type="button">&#8250;</button>
+            <div class="project-media-grid">
+              <figure class="project-frame">
+                <img src="assets/images/Homegrown%20brand%20template.zip%20-%2043.PNG" alt="Homegrown social brand template layout" loading="lazy" />
+              </figure>
+              <figure class="project-frame">
+                <img src="assets/images/Homegrown%20branding%20s.zip%20-%2044.PNG" alt="Homegrown branding sheet with typography and imagery" loading="lazy" />
+              </figure>
+              <figure class="project-frame">
+                <img src="assets/images/Homegrown%20poster%20design.zip%20-%2037.PNG" alt="Homegrown poster design showcasing community message" loading="lazy" />
+              </figure>
+              <figure class="project-frame">
+                <img src="assets/images/Homegrown%20scoal%20media%20template.zip%20-%2045.PNG" alt="Homegrown social media template with produce imagery" loading="lazy" />
+              </figure>
+              <figure class="project-frame">
+                <img src="assets/images/Homegrown%20social%20media%20template%20.zip%20-%2038.PNG" alt="Homegrown social tile example" loading="lazy" />
+              </figure>
+              <figure class="project-frame">
+                <img src="assets/images/Homegrown%20colour%20palette%20zip%20-%2022.PNG" alt="Homegrown colour palette with swatches" loading="lazy" />
+              </figure>
+              <figure class="project-frame">
+                <img src="assets/images/homegrown%20colour%20palette.jpg.JPG" alt="Homegrown printed colour palette" loading="lazy" />
+              </figure>
+              <figure class="project-frame">
+                <img src="assets/images/homegrown%20logo%20(A3).zip%20-%2015.PNG" alt="Homegrown logo mark and wordmark" loading="lazy" />
+              </figure>
+            </div>
+          </article>
+
+          <article class="project-card" data-animate="fade-up-delayed">
+            <div class="project-header">
+              <div class="project-label">Identity &amp; packaging</div>
+              <div class="service-title">Cacao Rituals</div>
+              <p class="service-text">Handcrafted cacao brand with earthy iconography, submarks, and packaging visuals for ritual-ready offerings.</p>
+            </div>
+            <div class="project-media-grid">
+              <figure class="project-frame">
+                <img src="assets/images/Cacao%20branding%20logo%20dark%20background(2551%20x%203950%20px).zip%20-%207.jpg" alt="Cacao logo on dark background with gold detailing" loading="lazy" />
+              </figure>
+              <figure class="project-frame">
+                <img src="assets/images/cacao%20logo%20brand%20submark.PNG" alt="Cacao submark on parchment texture" loading="lazy" />
+              </figure>
+              <figure class="project-frame">
+                <img src="assets/images/logo%20cacao.JPG" alt="Cacao hand-drawn logo sketch" loading="lazy" />
+              </figure>
+              <figure class="project-frame">
+                <img src="assets/images/cacao-logo.JPG" alt="Cacao logo on kraft paper" loading="lazy" />
+              </figure>
+              <figure class="project-frame">
+                <img src="assets/images/logo%20image%20brown%20and%20gold.JPG" alt="Cacao gold foil logo variation" loading="lazy" />
+              </figure>
             </div>
           </article>
         </div>
