@@ -2,10 +2,10 @@
 <html lang="en-NZ">
 <head>
   <meta charset="UTF-8" />
-  <title>Stone to Sky – Artwork &amp; Illustration Highlights</title>
+  <title>Stone to Sky – Illustration Highlights</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Seasonal artwork, botanical illustration, lunar maps, and commissions from Stone to Sky." />
-  <meta name="keywords" content="Stone to Sky artwork, illustration, botanical art, lunar maps, commissioned artwork" />
+  <meta name="description" content="Seasonal Illustration, botanical artwork, lunar maps, and commissions from Stone to Sky. Working remotely across New Zealand, Australia, and internationally." />
+  <meta name="keywords" content="Stone to Sky illustration, botanical art, lunar maps, commissioned illustration" />
   <meta name="author" content="Stone to Sky" />
   <meta name="robots" content="index,follow" />
   <link rel="icon" type="image/png" href="/assets/images/favicon-512.png" />
@@ -14,15 +14,15 @@
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Stone to Sky – Artwork &amp; Illustration Highlights" />
-  <meta property="og:description" content="A closer look at seasonal artwork, botanical studies, lunar maps, and commissions." />
+  <meta property="og:title" content="Stone to Sky – Illustration Highlights" />
+  <meta property="og:description" content="A closer look at seasonal Illustration, botanical studies, lunar maps, and commissions." />
   <meta property="og:url" content="https://stonetosky.nz/artwork.html" />
   <meta property="og:image" content="https://stonetosky.nz/assets/images/og-image.jpg" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Stone to Sky – Artwork &amp; Illustration Highlights" />
-  <meta name="twitter:description" content="A closer look at seasonal artwork, botanical studies, lunar maps, and commissions." />
+  <meta name="twitter:title" content="Stone to Sky – Illustration Highlights" />
+  <meta name="twitter:description" content="A closer look at seasonal Illustration, botanical studies, lunar maps, and commissions." />
   <meta name="twitter:image" content="https://stonetosky.nz/assets/images/og-image.jpg" />
 
   <!-- Google Fonts -->
@@ -631,7 +631,8 @@
     }
 
     .contact-card input,
-    .contact-card textarea {
+    .contact-card textarea,
+    .contact-card select {
       width: 100%;
       font-family: inherit;
       font-size: 14px;
@@ -645,7 +646,8 @@
     }
 
     .contact-card input:focus,
-    .contact-card textarea:focus {
+    .contact-card textarea:focus,
+    .contact-card select:focus {
       border-color: var(--accent);
       box-shadow: 0 0 0 1px rgba(200, 163, 122, 0.5);
     }
@@ -806,16 +808,17 @@
       <div class="wrap">
         <div class="hero-inner" data-animate="fade-up">
           <div>
-            <div class="hero-eyebrow">Artwork</div>
-            <h1>Seasonal artwork, botanical illustration, and commissioned pieces.</h1>
+            <div class="hero-eyebrow">Illustration</div>
+            <h1>Seasonal Illustration, botanical artwork, and commissioned pieces.</h1>
             <p>My artwork is an ongoing conversation with the seasons, the body, and the subtle world. Pieces move between print, digital, and ceremony.</p>
+            <p>Illustration commissions include posters, calendars, botanical studies, and symbolic pieces for brands and personal spaces.</p>
             <div class="hero-tags">
               <span class="pill">Botanical studies</span>
               <span class="pill">Calendars &amp; posters</span>
               <span class="pill">Lunar maps</span>
               <span class="pill">Custom commissions</span>
             </div>
-            <a class="btn" href="#contact">Commission a piece</a>
+            <a class="btn" href="#contact">Request an Illustration</a>
           </div>
 
           <aside class="hero-card" data-animate="fade-up-delayed">
@@ -912,8 +915,31 @@
               <label for="email">Email</label>
               <input id="email" name="email" type="email" placeholder="you@example.com" required />
 
+              <label for="interest">What are you looking for?</label>
+              <select id="interest" name="interest" required>
+                <option value="" disabled selected>Select an option</option>
+                <option>Illustration</option>
+                <option>Brand Design</option>
+                <option>Voice &amp; Facilitation</option>
+                <option>Mixed / not sure</option>
+              </select>
+
+              <label for="budget">Budget range</label>
+              <select id="budget" name="budget" required>
+                <option value="" disabled selected>Select a range</option>
+                <option>Under $1,000</option>
+                <option>$1,000 - $2,500</option>
+                <option>$2,500 - $5,000</option>
+                <option>$5,000 - $10,000</option>
+                <option>$10,000+</option>
+                <option>Not sure yet</option>
+              </select>
+
+              <label for="timeline">Timeline</label>
+              <input id="timeline" name="timeline" type="text" placeholder="e.g., December print run / flexible" />
+
               <label for="project">What would you like to create?</label>
-              <textarea id="project" name="project" placeholder="Share the subject, medium, size, and timeline you have in mind."></textarea>
+              <textarea id="project" name="project" placeholder="Share the subject, medium, size, and any reference or story you have in mind."></textarea>
 
               <button type="submit" class="btn">Send enquiry</button>
             </form>
@@ -921,7 +947,9 @@
 
           <div class="contact-meta" data-animate="fade-up-delayed">
             <p><strong>Email:</strong> <a href="mailto:brooke@stonetosky.nz">brooke@stonetosky.nz</a></p>
-            <p><strong>Location:</strong> Ōtautahi / Christchurch, Aotearoa New Zealand</p>
+            <p><strong>Home base:</strong> Ōtautahi / Christchurch, Aotearoa New Zealand</p>
+            <p>Working remotely across New Zealand, Australia, and internationally.</p>
+            <p><strong>Fit notes:</strong> Best for values-led Illustration with time for nuance. Not a fit for rush timelines, price-first commissions, or heavy control over the creative process.</p>
             <p>Commissions can be shipped or delivered digitally. I welcome collaborations with herbalists, facilitators, and community projects.</p>
           </div>
         </div>
