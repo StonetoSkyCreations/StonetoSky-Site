@@ -62,11 +62,6 @@ a:hover {
   color: var(--ink);
 }
 
-:focus-visible {
-  outline: 2px solid rgba(196, 111, 58, 0.8);
-  outline-offset: 3px;
-}
-
 p {
   margin: 0 0 16px;
 }
@@ -243,7 +238,7 @@ small {
   padding: 10px 12px;
   border-radius: 999px;
   border: 1px solid transparent;
-  font-size: 0.82rem;
+  font-size: 0.9rem;
   text-transform: uppercase;
   letter-spacing: 0.12em;
   color: var(--ink);
@@ -294,20 +289,6 @@ small {
   margin-top: 24px;
 }
 
-.hero-subhead {
-  font-size: 1rem;
-  text-transform: uppercase;
-  letter-spacing: 0.16em;
-  color: var(--ink-muted);
-  margin-bottom: 16px;
-}
-
-.hero-secondary {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
 .hero-cta-note {
   font-size: 0.92rem;
   color: var(--ink-muted);
@@ -326,7 +307,6 @@ small {
   text-transform: uppercase;
   font-size: 0.85rem;
   transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
-  cursor: pointer;
 }
 
 .btn-primary {
@@ -338,11 +318,6 @@ small {
 .btn-primary:hover {
   transform: translateY(-1px);
   background: var(--accent-deep);
-}
-
-.btn-large {
-  padding: 16px 28px;
-  font-size: 0.9rem;
 }
 
 .btn-secondary {
@@ -403,10 +378,6 @@ small {
 
 .grid-4 {
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-}
-
-.span-2 {
-  grid-column: auto;
 }
 
 .card {
@@ -624,8 +595,6 @@ small {
     display: flex;
     flex-direction: row;
     align-items: center;
-    flex-wrap: wrap;
-    justify-content: flex-end;
     background: transparent;
     padding: 0;
     box-shadow: none;
@@ -643,9 +612,5 @@ small {
   .footer-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     align-items: start;
-  }
-
-  .span-2 {
-    grid-column: span 2;
   }
 }
