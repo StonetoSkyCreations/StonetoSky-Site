@@ -326,6 +326,10 @@ li {
   align-items: center;
 }
 
+.hero-grid--single {
+  grid-template-columns: minmax(0, 1fr);
+}
+
 .eyebrow {
   font-size: 12px;
   letter-spacing: 0.2em;
