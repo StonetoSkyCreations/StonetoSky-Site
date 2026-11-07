@@ -1,9 +1,33 @@
-/* Stone to Sky - behaviour. Content is visible without any of this. */
+// Stone to Sky - behaviour. Content is visible without any of this.
 (function () {
   'use strict';
   document.documentElement.classList.add('js');
 
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Scroll reveal (set up first so nothing above can strand content).
+  var reveals = document.querySelectorAll('[data-reveal]');
+  var showAll = function () {
+    for (var i = 0; i < reveals.length; i++) reveals[i].classList.add('revealed');
+  };
+  if (reveals.length) {
+    if (reduceMotion || !('IntersectionObserver' in window)) {
+      showAll();
+    } else {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) {
+          if (en.isIntersecting) {
+            en.target.classList.add('revealed');
+            io.unobserve(en.target);
+          }
+        });
+      }, { threshold: 0.15 });
+      reveals.forEach(function (el) { io.observe(el); });
+      // Fail-safe: if the observer never delivers (stalled pipeline), show everything.
+      setTimeout(showAll, 2000);
+    }
+  }
+
   var header = document.querySelector('.site-header');
 
   // Header shadow
@@ -14,6 +38,22 @@
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
   }
+
+  // Anchor easing (replaces global scroll-behavior: smooth, which locked
+  // scrolling on low-frame devices). Same-document hash links only.
+  document.addEventListener('click', function (e) {
+    if (reduceMotion) return;
+    var a = e.target.closest ? e.target.closest('a[href*="#"]') : null;
+    if (!a) return;
+    var url;
+    try { url = new URL(a.href); } catch (err) { return; }
+    if (url.pathname !== location.pathname || !url.hash || url.hash === '#') return;
+    var target = document.getElementById(url.hash.slice(1));
+    if (!target) return;
+    e.preventDefault();
+    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (history.pushState) history.pushState(null, '', url.hash);
+  });
 
   // Mobile nav: open, close on link, Escape, or outside tap
   var toggle = document.querySelector('.menu-toggle');
@@ -39,24 +79,6 @@
     });
   }
 
-  // Scroll reveal
-  var reveals = document.querySelectorAll('[data-reveal]');
-  if (reveals.length) {
-    if (reduceMotion || !('IntersectionObserver' in window)) {
-      reveals.forEach(function (el) { el.classList.add('revealed'); });
-    } else {
-      var io = new IntersectionObserver(function (entries) {
-        entries.forEach(function (en) {
-          if (en.isIntersecting) {
-            en.target.classList.add('revealed');
-            io.unobserve(en.target);
-          }
-        });
-      }, { threshold: 0.15 });
-      reveals.forEach(function (el) { io.observe(el); });
-    }
-  }
-
   // Sticker drift: depth-based parallax on the hero table
   var drift = Array.prototype.slice.call(document.querySelectorAll('[data-depth]'));
   if (drift.length && !reduceMotion) {
@@ -75,38 +97,47 @@
     apply();
   }
 
-  // Copy email
+  // Copy email - only say it worked when it worked.
   var copyBtn = document.querySelector('.copy-btn');
   var note = document.querySelector('.copy-note');
   if (copyBtn) {
     copyBtn.addEventListener('click', function () {
       var mail = copyBtn.getAttribute('data-email') || 'brooke@stonetosky.nz';
-      var done = function () {
-        if (note) { note.textContent = 'Email copied - see you in the inbox.'; }
+      var say = function (ok) {
+        if (note) {
+          note.textContent = ok
+            ? 'Email copied - see you in the inbox.'
+            : 'Copy did not work - the address is brooke@stonetosky.nz';
+        }
+      };
+      var legacy = function () {
+        var ta = document.createElement('textarea');
+        ta.value = mail;
+        ta.setAttribute('readonly', '');
+        ta.style.position = 'fixed';
+        ta.style.left = '-9999px';
+        document.body.appendChild(ta);
+        ta.select();
+        var ok = false;
+        try { ok = document.execCommand('copy'); } catch (err) { ok = false; }
+        document.body.removeChild(ta);
+        say(ok);
       };
       if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(mail).then(done, done);
-      } else { done(); }
+        navigator.clipboard.writeText(mail).then(function () { say(true); }, legacy);
+      } else {
+        legacy();
+      }
     });
   }
 
-  // Enquiry chips shape the mailto
-  var chips = document.querySelectorAll('.chip');
-  var mailLink = document.querySelector('.contact-mail');
-  if (chips.length && mailLink) {
-    var subject = 'Project enquiry';
-    var body = 'Kia ora Brooke,';
-    Array.prototype.forEach.call(chips, function (chip) {
-      chip.addEventListener('click', function () {
-        Array.prototype.forEach.call(chips, function (c) { c.setAttribute('aria-pressed', 'false'); });
-        chip.setAttribute('aria-pressed', 'true');
-        subject = 'Enquiry: ' + chip.textContent.trim();
-        mailLink.href = 'mailto:brooke@stonetosky.nz' +
-          '?subject=' + encodeURIComponent(subject) +
-          '&body=' + encodeURIComponent('Kia ora Brooke,\n\nI would like to chat about ' + chip.textContent.trim().toLowerCase() + '.\n\nA little about the project:\n');
-      });
-    });
-  }
+  // Lightbox: Escape closes the open case overlay (the × link does it without JS).
+  document.addEventListener('keydown', function (e) {
+    if (e.key !== 'Escape' || !location.hash || location.hash.indexOf('#case-') !== 0) return;
+    var tile = document.querySelector('a[href=' + JSON.stringify('#' + location.hash.slice(1)) + ']');
+    history.replaceState ? history.replaceState(null, '', location.pathname) : (location.hash = '');
+    if (tile) tile.focus();
+  });
 
   // Year
   var year = document.getElementById('year');

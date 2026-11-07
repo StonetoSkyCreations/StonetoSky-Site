@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Stone to Sky - Earthbound Editorial Collage - storyboard v2</title>
+<style>
+/* Storyboard mock v2 for direction review - NOT the site.
+   v2 per Brooke: no rotated-rectangle collage; organic artwork silhouettes embedded in page layers;
+   portfolio shown straight and accurately attributed. Copy = her own shipped strings. */
+@import url('https://fonts.googleapis.com/css2?family=Young+Serif&family=Karla:wght@400;600;700&display=swap');
+:root{
+  --paper:#f4eee2; --paper-deep:#ece3d1; --mount:#fcf9f2;
+  --ink:#33281d; --ink-soft:#6a5947; --rule:#d9c9ae;
+  --madder:#a4442e; --sage:#55613f;
+  --serif:"Young Serif",Georgia,serif; --sans:Karla,system-ui,sans-serif;
+}
+*{box-sizing:border-box} body{margin:0;font-family:var(--sans);color:var(--ink);background:var(--paper)}
+img{display:block;max-width:100%}
+.scene{position:relative;overflow:hidden;border-bottom:3px dashed #b8a888}
+.tag{position:absolute;top:0;left:0;z-index:9;background:var(--madder);color:#fff;font:700 11px/1 var(--sans);letter-spacing:.08em;text-transform:uppercase;padding:8px 12px;border-bottom-right-radius:8px}
+.motion{position:absolute;right:0;top:0;z-index:9;background:#2c2418;color:#e8ddc8;font:600 11px/1 var(--sans);padding:8px 12px;border-bottom-left-radius:8px;text-align:right}
+.note{position:absolute;left:18px;bottom:14px;z-index:9;font:600 10.5px var(--sans);letter-spacing:.06em;color:var(--sage);background:rgba(244,238,226,.85);padding:5px 9px;border:1px dashed var(--sage)}
+.wrap{max-width:1200px;margin:0 auto;padding:0 clamp(20px,5vw,64px)}
+
+/* S1 opening - atmosphere preserved; art rises from the page, no rectangle */
+.s1{min-height:94vh;background:var(--paper)}
+.s1 .ground{position:absolute;inset:0;background:url('ph-plant.jpg') center/cover;opacity:.8}
+.s1 .ground:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(244,238,226,.30),rgba(244,238,226,.85))}
+.s1 .lockup{position:relative;z-index:5;padding:23vh 0 10vh;max-width:58%}
+.s1 .overline{font:600 12px var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--sage)}
+.s1 h1{font:400 clamp(40px,5.8vw,72px)/1.04 var(--serif);margin:14px 0 12px;max-width:12ch}
+.s1 h1 em{font-style:normal;color:var(--madder)}
+.s1 .sub{font-size:1.02rem;color:var(--ink-soft);max-width:36ch}
+.s1 .organic{position:absolute;right:4%;bottom:-8%;width:32%;z-index:6;filter:drop-shadow(0 6px 5px rgba(46,38,30,.16)) drop-shadow(0 26px 24px rgba(46,38,30,.12))}
+.s1 .bloom{position:absolute;right:12%;top:9%;width:9%;z-index:6;opacity:.9;filter:drop-shadow(0 4px 4px rgba(46,38,30,.14))}
+
+/* S2 statement - her line, quiet, one marginal botanical crossing the column */
+.s2{background:var(--paper-deep);padding:clamp(64px,10vw,140px) 0}
+.s2 .cols{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(28px,6vw,80px);align-items:center;position:relative}
+.s2 .pull{font:400 clamp(28px,4vw,52px)/1.2 var(--serif);margin:0}
+.s2 .pull em{font-style:normal;color:var(--madder)}
+.s2 .body p{color:var(--ink-soft)}
+.s2 .organic{position:absolute;right:-3%;bottom:-24%;width:17%;filter:drop-shadow(0 5px 5px rgba(46,38,30,.15))}
+
+/* S3 exhibition - accurate work, straight, held; botanical embedded in the seam */
+.s3{background:var(--paper);display:grid;grid-template-columns:5fr 7fr;min-height:86vh}
+.s3 .art{position:relative;min-height:60vh;z-index:3;background:var(--paper)}
+.s3 .art img.main{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.s3 .seam-flower{position:absolute;left:39%;top:12%;width:22%;z-index:1;opacity:.97;filter:drop-shadow(0 3px 5px rgba(46,38,30,.14))}
+.s3 .labelcard{align-self:center;padding:9%;position:relative;z-index:4}
+.s3 .num{font:600 12px var(--sans);letter-spacing:.2em;color:var(--madder)}
+.s3 h3{font:400 clamp(26px,3vw,42px)/1.12 var(--serif);margin:12px 0 6px}
+.s3 .medium{font-size:.95rem;color:var(--ink-soft)}
+.s3 .meta{font-size:.9rem;color:var(--ink-soft);border-top:1px solid var(--rule);padding-top:14px;margin-top:18px}
+.s3 a{color:var(--madder)}
+
+/* S4 exhibition pair - straight, elegant, generous air; one pressed-botanical water layer */
+.s4{background:var(--mount);padding:clamp(60px,9vw,130px) 0 clamp(70px,10vw,140px);position:relative}
+.s4 .pressed{position:absolute;left:6%;bottom:-4%;width:26%;opacity:.11;pointer-events:none}
+.s4 .watermark{position:absolute;right:8%;top:4%;width:14%;opacity:.09;transform:scaleX(-1);pointer-events:none}
+.s4 h4{font:400 clamp(26px,3.4vw,44px) var(--serif);margin:0 0 8px;position:relative}
+.s4 .lede{color:var(--ink-soft);margin:0 0 48px;max-width:52ch;position:relative}
+.s4 .pair{display:grid;grid-template-columns:7fr 5fr;gap:clamp(24px,4vw,56px);align-items:start;position:relative}
+.s4 figure{margin:0}
+.s4 figure img{width:100%;height:auto;border-radius:0}
+.s4 figcaption{display:flex;justify-content:space-between;gap:16px;padding-top:12px;border-top:1px solid var(--rule);margin-top:14px;font-size:.92rem}
+.s4 figcaption .t{font-family:var(--serif);font-size:1.05rem}
+.s4 figcaption .m{color:var(--ink-soft);text-align:right}
+
+/* S5 voice band */
+.s5{background:#1d1a14 url('ph-matariki.jpg') right center/cover;color:#efe6d4;min-height:62vh;display:flex;align-items:center;position:relative}
+.s5:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(29,26,20,.92) 30%,rgba(29,26,20,.45))}
+.s5 .in{position:relative;z-index:2;max-width:520px}
+.s5 h4{font:400 clamp(26px,3.2vw,42px)/1.15 var(--serif);margin:0 0 14px}
+.s5 h4 em{font-style:normal;color:#d9915f}
+.s5 p{color:#cfc3ab;margin:0 0 8px}
+
+/* S7 invitation */
+.s7{background:var(--paper);text-align:center;padding:clamp(72px,10vw,130px) 24px;position:relative}
+.s7 h4{font:400 clamp(30px,4vw,52px) var(--serif);margin:0 0 12px}
+.s7 .mail{font:600 1.1rem var(--sans);color:var(--madder);border-bottom:2px solid var(--madder);padding-bottom:3px}
+.s7 .organic{position:absolute;left:50%;translate:-50% 0;bottom:-46%;width:170px;opacity:.95;filter:drop-shadow(0 -4px 6px rgba(46,38,30,.10))}
+
+@media (max-width:560px){
+  .s1 .lockup{max-width:88%;padding:16vh 0 26vh}
+  .s1 .organic{width:56%;bottom:-14%}
+  .s1 .bloom{width:14%;top:5%;right:6%}
+  .s2 .cols{grid-template-columns:1fr}
+  .s2 .organic{width:26%;bottom:-30%;right:2%}
+  .s3{grid-template-columns:1fr}
+  .s3 .art{min-height:56vh}
+  .s3 .seam-flower{left:8%;top:auto;bottom:-10%;width:34%}
+  .s3 .labelcard{padding:9% 7%}
+  .s4 .pair{grid-template-columns:1fr}
+  .s4 .pressed{width:44%}
+  .s5{min-height:52vh}
+}
+</style>
+</head>
+<body>
+
+<div class="scene s1">
+  <span class="tag">S1 Opening - atmosphere kept (what she loved)</span>
+  <span class="motion">deer silhouette drift .10<br>ground drift .04 - no rectangle<br>bloom micro-drift .06</span>
+  <div class="ground"></div>
+  <div class="note">PHOTOGRAPH GAP - leaf-shadow plate is a stand-in until Brooke's own bush-light shot</div>
+  <div class="wrap lockup">
+    <p class="overline">Brand design - illustration - voice</p>
+    <h1>Brand design rooted in the <em>living world</em>.</h1>
+    <p class="sub">One studio for identity, botanical illustration and song - working remotely across New Zealand, Australia, and internationally.</p>
+  </div>
+  <img class="organic" src="ph-sticker-deer-forest.webp" alt="Deer in forest linework - isolated from Brooke's artwork, rising from the page edge">
+  <img class="bloom" src="ph-flower.webp" alt="Botanical bloom cut-out">
+</div>
+
+<div class="scene s2">
+  <span class="tag">S2 Statement - her own line</span>
+  <span class="motion">flower held while text passes (sticky)</span>
+  <div class="wrap cols">
+    <p class="pull">Brand design leads. The rest <em>grows from it.</em></p>
+    <div class="body">
+      <p>Illustration grows out of the brand work. Song is held for openings, circles and recordings.</p>
+      <p>Remote from &#332;tautahi, clients across Aotearoa, Australia and further.</p>
+    </div>
+    <img class="organic" src="ph-flower.webp" alt="Marginal botanical crossing the column edge">
+  </div>
+</div>
+
+<div class="scene s3">
+  <span class="tag">S3 Exhibition - accurate attribution, straight presentation</span>
+  <span class="motion">art held (sticky ground); seam botanical drift .08</span>
+  <div class="labelcard">
+    <p class="num">No. 01</p>
+    <h3>Mumma Marama</h3>
+    <p class="medium">Logo, botanical mark and palette - shown here in the red-flower artwork that carries the identity.</p>
+    <p class="meta">Brand identity<br><a href="#">Ask for a case study.</a></p>
+  </div>
+  <div class="art"><img class="main" src="ph-mumma-real.jpg" alt="Mumma Marama - goddess mark over red flower (real project artwork, 2951x3950 master)"></div>
+  <img class="seam-flower" src="ph-flower.webp" alt="Botanical cut-out embedded where paper meets artwork - half paper, half artwork">
+</div>
+
+<div class="scene s4">
+  <span class="tag">S4 Exhibition pair - no collage, air instead</span>
+  <span class="motion">pressed botanicals drift .04/.06 - they are IN the paper</span>
+  <img class="pressed" src="ph-sticker-plant.webp" alt="">
+  <img class="watermark" src="ph-sticker-deer.webp" alt="">
+  <div class="wrap">
+    <h4>Work, laid on the table.</h4>
+    <p class="lede">A selection of brand worlds and botanical pieces. Full case studies for any of these travel by email - one line is all it takes.</p>
+    <div class="pair">
+      <figure>
+        <img src="ph-p-beeocean.jpg" alt="Bee &amp; Ocean - tinned lip balm label suite">
+        <figcaption><span class="t">Bee &amp; Ocean</span><span class="m">Label suite - palette - honey &amp; water</span></figcaption>
+      </figure>
+      <figure>
+        <img src="ph-p-homegrown.jpg" alt="Homegrown - green botanical poster identity">
+        <figcaption><span class="t">Homegrown</span><span class="m">Identity - botanical poster</span></figcaption>
+      </figure>
+    </div>
+  </div>
+</div>
+
+<div class="scene s5">
+  <span class="tag">S5 Voice - Matariki gold, accurate artwork</span>
+  <span class="motion">calm - the only dark act</span>
+  <div class="wrap in">
+    <h4>And when the brand is sung, <em>she sings it.</em></h4>
+    <p>Voice work and facilitated circles - song for openings, gatherings and recordings. Invitations welcome.</p>
+    <p>Sound - Facilitation - Songwriting</p>
+  </div>
+</div>
+
+<div class="scene s7">
+  <span class="tag">S7 Invitation</span>
+  <span class="motion">plant rises from the fold as you arrive</span>
+  <h4>No forms. Just a hello.</h4>
+  <p class="mail">brooke@stonetosky.nz</p>
+  <img class="organic" src="ph-sticker-plant.webp" alt="Pressed botanical rising from the page edge">
+</div>
+
+</body></html>
