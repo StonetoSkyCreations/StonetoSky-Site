@@ -10,6 +10,7 @@ Role of each reference (do not average them - each governs one layer):
 - Laura Dawn - movement: scroll-linked layering that tells the story.
 
 The five are complementary because they govern different layers. Averaging them is what produces the wellness template; we assign them jobs instead.
+Reference status (live-probed today): danu-anima.com and lauradawn.co inspected hands-on; aurora-healer and ava-coach previews are 401-gated (only their gate cards render - their own design proves the point that the identity layer stays ungated here); the Tambourine/Midsummer preview URL is now DEAD (TLS error; the subdomain shows a "Coming Soon" placeholder) - Brooke should supply a fresh link or a screenshot, and until then Midsummer's restraint layer is honoured from her written intent. Full evidence: /opt/data/cache/scratch/sts-audit/REF-FINDINGS.md.
 
 ## Deliberate refusals (what we are NOT doing)
 1. No uniform specimen-mount cards site-wide. The mount grid made every offering the same rectangle - it reads as a features table, and Assessment A measured it as the source of the 11 cramped-padding findings too. Cards survive only where they are genuinely a list (services tiers, contact intents).
@@ -20,11 +21,12 @@ The five are complementary because they govern different layers. Averaging them 
 6. No motion for motion's sake: no idle loops, no parallax on sections the eye isn't moving between, full prefers-reduced-motion respect (already structural).
 7. Nothing deploys from this document. It is the contract the implementation stage must satisfy.
 
-## Typography
-Keep Brooke's stack - Young Serif (display) + Karla (body). The type family is not the problem; the *scale discipline* is.
-- Display sizes become editorially shameless: hero 6.5-9vw (was ~3.4rem max), pull statements 3-3.6vw/1.25, section titles 2.5-3vw. One oversized serif moment per scroll act.
+## Typography (corrected against REF-FINDINGS.md: references keep type quiet and let the artwork carry drama)
+Keep Brooke's stack - Young Serif (display) + Karla (body). The problem was scale *undisciplined*, not scale itself: observed references run small, calm type with the imagery as the drama.
+- Display: hero max ~5.5-6.5vw (down from a first-draft 9vw), section titles ~2.4-3vw. One confident oversized line per scroll act, never two. Drama is ceded to the full-bleed plates.
 - Display leading tight (0.98-1.05); body leading relaxed (1.6-1.7). Detector's tight-leading flags came from mid-size serif at 1.12-1.27 - that size class stops existing: type is either display or body.
-- Structure is carried by rules and numbering, not weight tricks: Karla 11-12px, letterspaced .14em, sentence case, madder for numbers only.
+- Structure is carried by rules, numbering and space, not weight tricks: Karla 11-12px, letterspaced .14em, sentence case, madder for numbers only.
+- Exactly ONE feeling-face moment per page (the Danu/Laura pattern: quiet workhorse + one expressive face - here, Young Serif IS the feeling face; Karla never performs).
 - The lowercase madder italic accent word (currently *living*) stays - it is the hand-set quirk - but appears at most once per page.
 
 ## Colour
@@ -41,7 +43,8 @@ New: tonal bands come from PHOTOGRAPHY, not flat fills. The page alternates pape
 ## Texture
 - Grain veil: up from the invisible 0.055 to 0.075-0.09 with a 240px tile (two-layer turbulence). If a visitor can't notice it on an OLED phone, it isn't done.
 - Photographic grade (Aurora Healer): hero-class photos get lifted blacks + warmth, implemented as `filter: contrast(.96) brightness(1.02) sepia(.05)` + the grain veil above them. Analogue feel, no preset crush.
-- Paper edge: sections that sit on paper get a 1px `--rule-soft` hairline where they meet banded scenes, so pages feel like stacked prints, not one infinite background.
+- Section transitions use the observed reference grammar: ART-STRIP DIVIDERS (a thin band of Brooke's linework between acts), held theme bands (danu alternates white/black worlds - our bark band follows this), and an accent wash behind text (Laura Dawn's pink halo) instead of generic hairlines. One hairline style remains where a mount meets paper.
+- Decoration is anchored to artwork, never CSS ornament (cross-reference pattern 4): no gradient rules, no generated flourishes - if it decorates, it came from Brooke's hand.
 
 ## Artwork treatment - three modes, chosen per piece
 | Mode | What it looks like | Used for |
@@ -51,12 +54,13 @@ New: tonal bands come from PHOTOGRAPHY, not flat fills. The page alternates pape
 | Mounted work | finished brand artifacts shown whole at real-world scale on paper/mount, small gallery label, no cut-out | brand case tiles (Bee & Ocean labels spread, Mumma set at proper 2551px sources, Homegrown, River Moon, Red Thread), cacao submark linework (7972px master - it deserves size) |
 No mode mixes with another on the same piece. Fix upstream first: logo-stone-to-sky.png is pure-black strokes (needs a stroke-faithful re-export incl. a light variant), work-cacao-dark.jpg carries Canva "YOUR BRAND" text (replace from the clean master or drop).
 
-## Movement (Laura Dawn layer)
-- Parallax PAIRS, not wallpaper drift: inside one frame, photographic layer moves at depth 0.04-0.08, artwork layer at 0.12-0.18 - art appears to hover above the atmosphere. Scene 1: photo 0.06 / plate 0.14. Exhibition wall: image 0.08 / label card static (the still anchor).
-- Sticky-label against panning image wall for the exhibition act (CSS position: sticky; no JS).
-- Reveals become a 12-14px rise-and-settle (already fail-safed visible-by-default). Entry once; never on scroll-back.
-- The scroll handler stays one passive listener + rAF, gate on prefers-reduced-motion, no global scroll-behavior:smooth (Stage 2 branch proved why).
-- Budget: at most 3 moving systems on the homepage. If a motion doesn't connect two layers, it dies.
+## Movement (Laura Dawn layer - corrected against REF-FINDINGS.md)
+Observed truth about the references: they do NOT choreograph scroll. Danu ships `data-animation="none"` and Laura Dawn's parallax list is EMPTY - their depth comes from FIXED artwork grounds (6 fixed-attachment hand-drawn pattern layers), held bands, <=6 entrance fades, exactly one living loop, and a 5px hover lift. Motion = atmosphere, not choreography.
+Therefore, revised motion contract:
+- Held-ground scenes: the references get depth from fixed-attachment artwork grounds - but fixed backgrounds are the exact bug class we measured locking scroll (original audit + this session's P0), so we imitate the EFFECT, not the property: a `position: sticky` art layer inside a tall scene wrapper (art holds while text scrolls past), zero `background-attachment: fixed` anywhere. This is also safer for the reduced-motion swap (sticky degrades to static for free).
+- Parallax PAIRS demoted from signature to exactly ONE moment: scene 1's photo 0.06 against the NAKED EARTH plate 0.14. Everywhere else, held ground + static content.
+- One living loop site-wide, budget-capped (candidate: the slow leaf-shadow drift on S2's die-cut flower). Entrance fades <=6 across the homepage; 5px hover lift on works (already close).
+- Sticky-label vs panning wall stays (danu's held-band grammar). Reveals stay 12-14px rise-and-settle, fail-safed visible-by-default; all motion gated on prefers-reduced-motion; single passive scroll listener + rAF.
 
 ## Homepage storyboard (7 scenes - mocks captured at :8124, desktop + mobile)
 S1 Opening: full-bleed bush-light PHOTOGRAPH (GAP - see list; mock uses leaf-shadow plate stand-in, clearly labelled) washed under paper; oversized serif left ("A studio made of earth, ink and *voice*."); NAKED EARTH plate die-mate lower right (full plate, mounted - not stickered), drifts 0.14 against photo 0.06. Mobile: photo becomes top 52vh band, type below, plate overlaps the seam at -4.5deg.
