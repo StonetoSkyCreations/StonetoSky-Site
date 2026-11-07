@@ -1,4 +1,6 @@
-# DESIGN.md (PROPOSED - awaiting approval) - Earthbound Editorial Collage
+# DESIGN.md (SHIPPED) - Earthbound Editorial Collage, Burnished Earth palette
+
+> Final palette (implemented): **Burnished Earth, beige-led.** Sand #F1E2D4 / cream #F4EDE3 / beige #E9D8C7 / sand-deep #D8C0AA lead (~70%); cacao #402D26 for text and the one occasional dark band; moss #525838 labels, sparingly; terracotta #B66E48 / clay pink #D7AA9A / gold #C8A465 accents. Earlier olive / near-black / muddy-hero concept frames are superseded - warm light, tactile texture, and varied beiges do the depth work.
 
 Direction one-liner: Stone to Sky is an artist's exhibition that happens to be a website - nature photography sets the atmosphere, Brooke's artwork carries identity, editorial typography holds it all upright, and gentle scroll-linked movement makes the layers feel like one world.
 
