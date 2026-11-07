@@ -15,11 +15,10 @@ Reference status (live-probed today): danu-anima.com and lauradawn.co inspected 
 ## Deliberate refusals (what we are NOT doing)
 1. No uniform specimen-mount cards site-wide. The mount grid made every offering the same rectangle - it reads as a features table, and Assessment A measured it as the source of the 11 cramped-padding findings too. Cards survive only where they are genuinely a list (services tiers, contact intents).
 2. No all-caps tracked eyebrows as section signalling (detector: hero-eyebrow-chip x5; our own brief already banned uppercase labels). Exhibition numbering ("No. 01") replaces them as the editorial device.
-3. No mechanical die-cut-everything. Sticker treatment is a technique chosen per piece (see Artwork treatment), not a coat of paint.
-4. No decorative-only artwork. The hero and exhibition scenes use FINISHED work (the never-deployed poster series), not watermark-faint cut-outs. Measured today: deployed sticker inks are 1.1-5.3% coverage, mean luminance ~149-183 on 238 paper - literally ghosting.
-5. No new pages, no frameworks, no forms, no stock imagery, no invented scans. History contains zero genuine print scans (the "paper pencil study" is a digital fake - it stays archived).
-6. No motion for motion's sake: no idle loops, no parallax on sections the eye isn't moving between, full prefers-reduced-motion respect (already structural).
-7. Nothing deploys from this document. It is the contract the implementation stage must satisfy.
+3. No collage, no scrapbook, no scattered rectangles (Brooke's v1 rejection: "looks like scattered photographs"). Organic artwork integrates as silhouettes in page layers (see Artwork treatment); finished pieces are held straight and whole. And no decorative-only artwork: the hero-class imagery is FINISHED work (the never-deployed poster series among the exhibition plates), not watermark-faint fragments - deployed sticker inks measured 2.8-14.6% coverage at mean luminance ~149-183 on 238 paper, which is why v1 read as ghosts; pressed water-layers are the one sanctioned low-opacity use, and they read as texture, not as broken images.
+4. No new pages, no frameworks, no forms, no stock imagery, no invented scans. History contains zero genuine print scans (the "paper pencil study" is a digital fake - it stays archived).
+5. No motion for motion's sake: no idle loops, no parallax on sections the eye isn't moving between, full prefers-reduced-motion respect (already structural).
+6. Nothing deploys from this document. It is the contract the implementation stage must satisfy.
 
 ## Typography (corrected against REF-FINDINGS.md: references keep type quiet and let the artwork carry drama)
 Keep Brooke's stack - Young Serif (display) + Karla (body). The problem was scale *undisciplined*, not scale itself: observed references run small, calm type with the imagery as the drama.
@@ -46,13 +45,16 @@ New: tonal bands come from PHOTOGRAPHY, not flat fills. The page alternates pape
 - Section transitions use the observed reference grammar: ART-STRIP DIVIDERS (a thin band of Brooke's linework between acts), held theme bands (danu alternates white/black worlds - our bark band follows this), and an accent wash behind text (Laura Dawn's pink halo) instead of generic hairlines. One hairline style remains where a mount meets paper.
 - Decoration is anchored to artwork, never CSS ornament (cross-reference pattern 4): no gradient rules, no generated flourishes - if it decorates, it came from Brooke's hand.
 
-## Artwork treatment - three modes, chosen per piece
-| Mode | What it looks like | Used for |
+## Artwork treatment - "stickers" defined (Brooke's meaning, v2)
+"Stickers" = organic, naturally-shaped elements isolated from Brooke's artwork - shells, botanicals, hand-drawn plants, the deer - WITHOUT rectangular framing, integrated into the page's visual layers. Artwork becomes part of the page, not rectangles floating on it. Four embedding techniques only:
+| Technique | Mechanics | Where |
 |---|---|---|
-| Die-cut | thin white edge (6-9px), tight contact shadow (2-3px @38% + soft fall), rotated 3-6deg, transparent webp | the three cut-outs that already work (flower, deer, plant) in About/404/scene accents ONLY |
-| Full-bleed plate | the piece IS the atmosphere or wall; crop to viewport, no frame, label card over treated dark/soft zone | the seven never-deployed posters (NAKED EARTH, ANCIENT MOTHER, SILENT HUM, BEAUTY WAY, creative_6...), art-matariki for the Voice band |
-| Mounted work | finished brand artifacts shown whole at real-world scale on paper/mount, small gallery label, no cut-out | brand case tiles (Bee & Ocean labels spread, Mumma set at proper 2551px sources, Homegrown, River Moon, Red Thread), cacao submark linework (7972px master - it deserves size) |
-No mode mixes with another on the same piece. Fix upstream first: logo-stone-to-sky.png is pure-black strokes (needs a stroke-faithful re-export incl. a light variant), work-cacao-dark.jpg carries Canva "YOUR BRAND" text (replace from the clean master or drop).
+| Rising | transparent silhouette cropped by a viewport/page edge - art grows into frame as you scroll | S1 deer-forest at bottom edge; S7 plant under the invitation |
+| Tucking | element sits UNDER the next layer (artwork or band slides over its edge) - pressed under glass | S3 botanical in the paper/artwork seam (z-order, not shadow, sells it) |
+| Pressing | very low opacity (~.09-.12), behind text - in the paper, like a watermark in handmade stock | S4 pair scene bed; footer |
+| Marginalia | small silhouette crossing a text-column edge, held while text passes | S2 flower |
+Rules: shapes never rotate more than their own natural posture allows; no white outlines except where a true die-cut read is wanted (rare); contact shadow only when the element hovers above a layer it visibly sits on. Stage 3 produces the isolates from her artwork masters with the proven remove-background pipeline (candidates: fern frond, moon-phase ring from the deer totem, nautilus spiral, cacao submark linework, queen-anne's-lace head).
+Finished portfolio pieces follow exhibition grammar, never collage: straight edges, radius 0, no rotation, no drop shadow (held, not floating), accurately attributed - every image/label pair verified against the source files (the v1 S3 error: a Cycle-of-Seasons image under a Mumma Marama label - never again; S3 v2 uses the real 2951x3950 mumma_marama_logo_red_flower master).
 
 ## Movement (Laura Dawn layer - corrected against REF-FINDINGS.md)
 Observed truth about the references: they do NOT choreograph scroll. Danu ships `data-animation="none"` and Laura Dawn's parallax list is EMPTY - their depth comes from FIXED artwork grounds (6 fixed-attachment hand-drawn pattern layers), held bands, <=6 entrance fades, exactly one living loop, and a 5px hover lift. Motion = atmosphere, not choreography.
@@ -62,15 +64,17 @@ Therefore, revised motion contract:
 - One living loop site-wide, budget-capped (candidate: the slow leaf-shadow drift on S2's die-cut flower). Entrance fades <=6 across the homepage; 5px hover lift on works (already close).
 - Sticky-label vs panning wall stays (danu's held-band grammar). Reveals stay 12-14px rise-and-settle, fail-safed visible-by-default; all motion gated on prefers-reduced-motion; single passive scroll listener + rAF.
 
-## Homepage storyboard (7 scenes - mocks captured at :8124, desktop + mobile)
-S1 Opening: full-bleed bush-light PHOTOGRAPH (GAP - see list; mock uses leaf-shadow plate stand-in, clearly labelled) washed under paper; oversized serif left ("A studio made of earth, ink and *voice*."); NAKED EARTH plate die-mate lower right (full plate, mounted - not stickered), drifts 0.14 against photo 0.06. Mobile: photo becomes top 52vh band, type below, plate overlaps the seam at -4.5deg.
-S2 Statement: paper, 5/7 split, one pull quote, sticker-flower crosses the column edge (die-cut here IS right - it's a marginal mark, not the work itself). Sticky while text passes.
-S3 Exhibition wall: half-viewport photographic wall (framed pieces, dapple; real asset: a commissioned studio-wall shot - mock uses art-cycle), gallery label card static left, wall parallax 0.08. First finished-work moment within ~1.5 scrolls.
-S4 The table: five finished pieces scattered at true scales (labels spread landscape, Mumma rust poster, Red Thread white, Homegrown green, cacao gold), depths .05/.12/.18; tap enlarges in place (docs/portfolio-tile-ux.md), mailto lives inside the overlay. Mobile keeps 4 pieces, tighter scatter, caption drops to a heading.
-S5 Voice band: bark-dark, gold art-matariki bled right, text left; the site's only dark act.
-S6 Process: open paper, four seasons as numbered horizontal timeline, one small mounted botanical per season - text earns air, no cards.
-S7 Invitation: centered, serif, mailto, sticker-plant corner die-cut (accent use).
-Clarity guardrail (priority 6): above the fold = finished artwork + plain-English offering line + one CTA. Everything else is atmosphere serving that.
+## Copy rule (added after v1 feedback)
+Headings and lines come from Brooke's shipped string bank ("Work, laid on the table.", "Brand design leads. The rest grows from it.", "No forms, just a hello.", "Ask for a case study.") or are written in her register and flagged for her sign-off. No constructed whimsy ("What came off the table lately" is dead - it read as generic AI copy, her words). When in doubt, reuse what she already wrote.
+
+## Homepage storyboard v2 (mocks re-shot per Brooke's notes; organic embeds, straight exhibition)
+S1 Opening: keep exactly what she loved - soft leaf-shadow atmosphere over paper; her line "Brand design rooted in the living world." set large; deer-forest silhouette RISING from the bottom edge (no frame, no tilt fight, gentle drift .10 over ground .04); small bloom marginalia top right. Mobile: silhouette 56% width rising under the type, bloom small top corner.
+S2 Statement: her line "Brand design leads. The rest grows from it." as the one pull; flower as marginalia held while text passes (sticky).
+S3 Exhibition: label left (No. 01 / Mumma Marama / medium line / ask), real red-flower artwork held full-bleed right, straight; botanical TUCKED under the artwork seam - half paper, half artwork, genuinely under the layer.
+S4 Exhibition pair (replaces the retired table collage): "Work, laid on the table." + her lede; Bee & Ocean label spread and Homegrown poster shown whole, straight, 7/5 asymmetric, gallery captions on a hairline rule; pressed botanicals at ~10% IN the paper behind them, slowest drift.
+S5 Voice band: unchanged - gold Matariki artwork bled right over bark, accurate to the Matariki calendar project.
+S7 Invitation: "No forms. Just a hello." with the plant rising from the fold.
+Clarity guardrail unchanged: above the fold = authentic atmosphere + her offering in plain words + one CTA.
 
 ## Asset decisions (selective - 131 recovered, 121 unique, ~40 chosen)
 Reuse from live site: brand artifacts at masters (Mumma set 5x upgrade), sticker trio (accents), og-image, art-matariki (S5), beeocean labels spread, homegrown poster, redthread.
