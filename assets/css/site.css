@@ -18,7 +18,7 @@
   --gold: #c8a465;        /* accents on cacao only */
   --rule: #d3b69c;
   --rule-soft: #e2cbb4;
-  --font-display: 'Young Serif', Georgia, serif;
+  --font-display: 'Instrument Serif', Georgia, serif;
   --font-body: 'Karla', system-ui, -apple-system, sans-serif;
   --shadow-warm: 0 12px 28px rgba(64, 45, 38, 0.13);
   --shadow-lift: 0 20px 40px rgba(64, 45, 38, 0.2);
@@ -49,15 +49,15 @@ a { color: var(--terra-ink); text-decoration: none; }
 p { margin: 0 0 18px; }
 ::selection { background: var(--clay); color: var(--cacao); }
 
-h1, h2, h3 { font-family: var(--font-display); font-weight: 400; color: var(--cacao); margin: 0 0 14px; line-height: 1.08; }
-h1 { font-size: clamp(40px, 5.4vw, 68px); }
-h2 { font-size: clamp(29px, 3.6vw, 44px); }
-h3 { font-size: clamp(20px, 2.2vw, 26px); line-height: 1.2; }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 400; color: var(--cacao); margin: 0 0 16px; line-height: 1.12; letter-spacing: -0.015em; }
+h1 { font-size: clamp(44px, 4.9vw, 68px); }
+h2 { font-size: clamp(32px, 3.3vw, 46px); }
+h3 { font-size: clamp(25px, 2.3vw, 32px); line-height: 1.18; }
 .accent-word { color: var(--terra); }
 
 .wrap { max-width: 1180px; margin: 0 auto; padding: 0 clamp(22px, 5vw, 60px); }
 
-.label { font-size: 12px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--moss); margin: 0 0 14px; }
+.label { font-size: 12px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--moss); margin: 0 0 14px; }
 .on-cacao .label { color: var(--gold); }
 
 .skip-link { position: absolute; left: -9999px; top: 8px; background: var(--cacao); color: var(--cream); padding: 10px 16px; border-radius: 8px; z-index: 100; font-size: 14px; }
@@ -113,9 +113,9 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px soli
 @media (max-width: 760px) { .hero .marq-in b:nth-of-type(4) { display: none; } }
 
 /* page head (inner pages) */
-.page-head { padding: clamp(56px, 8vw, 100px) 0 clamp(30px, 4vw, 46px); }
-.page-head h1 { max-width: 16ch; margin: 10px 0 14px; }
-.page-head .hero-sub { max-width: 54ch; font-size: 18px; }
+.page-head { padding: clamp(44px, 6vw, 78px) 0 clamp(34px, 4vw, 52px); }
+.page-head h1 { max-width: 24ch; font-size: clamp(48px, 5vw, 72px); margin: 8px 0 20px; line-height: 1.06; }
+.page-head .hero-sub { max-width: 56ch; font-size: clamp(16px, 1.45vw, 18px); line-height: 1.65; }
 
 /* curve transition into next section (Midsummer softness) */
 .curve { position: relative; height: clamp(48px, 7vw, 96px); margin: -1px 0 0; background: transparent; }
@@ -125,7 +125,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px soli
 .section { padding: clamp(60px, 8vw, 104px) 0; }
 .section.alt { background: var(--beige); }
 .section.cream { background: var(--cream); }
-.section-head { max-width: 660px; margin-bottom: clamp(30px, 4vw, 50px); }
+.section-head { max-width: 700px; margin-bottom: clamp(32px, 4vw, 52px); }
 .section-head.center { margin-left: auto; margin-right: auto; text-align: center; }
 .section-intro { color: var(--soft); font-size: 1.06rem; max-width: 62ch; margin: 14px 0 0; }
 .section-head.center .section-intro { margin-left: auto; margin-right: auto; }
@@ -153,10 +153,10 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px soli
 .exhibit { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: clamp(28px, 5vw, 66px); align-items: center; padding: clamp(30px, 5vw, 56px) 0; border-top: 1px solid rgba(220, 199, 182, 0.3); }
 .exhibit .ph { max-width: 520px; width: 100%; }
 .exhibit.rev .ph { margin-left: auto; }
-.exhibit img { border-radius: 4px; box-shadow: 0 22px 44px rgba(0, 0, 0, 0.35); }
+.exhibit img { border-radius: 2px; box-shadow: 0 10px 26px rgba(22, 13, 10, 0.17); }
 .exhibit .num { font-size: 12px; font-weight: 700; letter-spacing: 0.24em; color: var(--gold); }
-.exhibit h3 { margin: 10px 0 10px; }
-.exhibit .med { color: #d8c3b4; max-width: 46ch; }
+.exhibit h3 { font-size: clamp(38px, 4vw, 58px); margin: 8px 0 14px; line-height: 1.08; }
+.exhibit .med { color: #e8d8cc; max-width: 48ch; font-size: 17px; line-height: 1.65; }
 .exhibit .link-arrow { color: var(--clay); border-bottom-color: var(--clay); }
 .exhibit .link-arrow:hover { color: var(--gold); border-bottom-color: var(--gold); }
 
@@ -165,8 +165,8 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px soli
 .shelf figure { margin: 0; }
 .shelf img { border-radius: var(--radius); box-shadow: var(--shadow-warm); width: 100%; object-fit: cover; aspect-ratio: 4 / 5; transition: transform 0.25s ease-out, box-shadow 0.25s ease-out; }
 .shelf a:hover img { transform: translateY(-4px); box-shadow: var(--shadow-lift); }
-.shelf figcaption { padding-top: 10px; font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--soft-2); }
-.shelf figcaption b { display: block; font-family: var(--font-display); font-weight: 400; font-size: 18px; letter-spacing: 0; text-transform: none; color: var(--cacao); margin-bottom: 2px; }
+.shelf figcaption { padding-top: 12px; font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--soft-2); }
+.shelf figcaption b { display: block; font-family: var(--font-display); font-weight: 400; font-size: 26px; letter-spacing: -0.01em; text-transform: none; color: var(--cacao); margin-bottom: 3px; }
 
 /* ---------- lightbox overlay for case journeys (:target works without JS) ---------- */
 .lb { position: fixed; inset: 0; z-index: 80; display: none; align-items: center; justify-content: center; background: rgba(58, 40, 33, 0.7); backdrop-filter: blur(4px); padding: 24px; }
@@ -176,7 +176,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px soli
 .lb-grid img { border-radius: var(--radius); width: 100%; }
 .lb .close { position: absolute; top: 12px; right: 12px; width: 42px; height: 42px; border-radius: 50%; background: var(--cacao); color: var(--cream); display: grid; place-items: center; font-size: 20px; font-weight: 700; line-height: 1; }
 .lb .close:hover { background: #55392e; }
-.lb .med { color: var(--soft); font-size: 15.5px; }
+.lb .med { color: var(--soft); font-size: 16px; line-height: 1.7; }
 .lb .btn { margin-top: 6px; }
 
 /* ---------- tiers (services) ---------- */
