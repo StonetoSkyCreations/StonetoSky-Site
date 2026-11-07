@@ -48,6 +48,8 @@
     var url;
     try { url = new URL(a.href); } catch (err) { return; }
     if (url.pathname !== location.pathname || !url.hash || url.hash === '#') return;
+    // Let native fragment navigation open :target portfolio overlays reliably.
+    if (url.hash.indexOf('#case-') === 0) return;
     var target = document.getElementById(url.hash.slice(1));
     if (!target) return;
     e.preventDefault();
