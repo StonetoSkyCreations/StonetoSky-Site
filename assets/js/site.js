@@ -131,6 +131,14 @@
     });
   }
 
+  // Lightbox: Escape closes the open case overlay (the × link does it without JS).
+  document.addEventListener('keydown', function (e) {
+    if (e.key !== 'Escape' || !location.hash || location.hash.indexOf('#case-') !== 0) return;
+    var tile = document.querySelector('a[href=' + JSON.stringify('#' + location.hash.slice(1)) + ']');
+    history.replaceState ? history.replaceState(null, '', location.pathname) : (location.hash = '');
+    if (tile) tile.focus();
+  });
+
   // Year
   var year = document.getElementById('year');
   if (year) { year.textContent = new Date().getFullYear(); }
