@@ -20,7 +20,8 @@
 
 * { box-sizing: border-box; }
 
-html { scroll-behavior: smooth; }
+/* No global scroll-behavior: smooth - the scroll animation stalls (and with it
+   IO-based reveals) on frame-starved devices. Anchor easing lives in site.js. */
 
 body {
   margin: 0;
@@ -425,17 +426,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
   transition: border-color 0.15s;
 }
 .copy-btn:hover { border-color: var(--madder); color: var(--madder); }
-.chips { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 8px; }
-.chip {
-  font-size: 13.5px;
-  font-weight: 600;
-  padding: 9px 16px;
-  border-radius: 999px;
-  border: 1.5px solid var(--rule);
-  color: var(--ink-soft);
-  transition: border-color 0.15s, color 0.15s;
-}
-.chip:hover, .chip[aria-pressed="true"] { border-color: var(--madder); color: var(--madder); }
+/* (chip enquiry pattern retired - contact works as direct mailto + copy) */
 
 /* Footer */
 footer {
